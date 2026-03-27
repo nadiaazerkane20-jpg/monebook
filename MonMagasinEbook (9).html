@@ -1,0 +1,2424 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>MonMagasinEbook — Fournisseurs Vinted Premium</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<!-- Facebook Pixel -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '2238554926882361');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=2238554926882361&ev=PageView&noscript=1"/></noscript>
+<style>
+:root {
+  --primary: #017783;
+  --primary-dark: #015f6b;
+  --primary-light: #01909e;
+  --accent: #017783;
+  --white: #ffffff;
+  --bg: #ffffff;
+  --text-dark: #1a1a2e;
+  --text-mid: #4a5568;
+  --text-light: #718096;
+  --border: #e2e8f0;
+  --bg-light: #f7fafc;
+  --bg-section: #f0f9fa;
+  --red: #e53e3e;
+  --green-tp: #00B67A;
+  --gold: #f6ad55;
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.08), 0 1px 2px rgba(0,0,0,0.06);
+  --shadow-md: 0 4px 6px rgba(0,0,0,0.07), 0 2px 4px rgba(0,0,0,0.06);
+  --shadow-lg: 0 10px 15px rgba(0,0,0,0.1), 0 4px 6px rgba(0,0,0,0.05);
+  --shadow-xl: 0 20px 25px rgba(0,0,0,0.1), 0 10px 10px rgba(0,0,0,0.04);
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  font-family: 'Poppins', sans-serif;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { font-family: 'Poppins', sans-serif; color: var(--text-dark); background: var(--bg); overflow-x: hidden; }
+a { text-decoration: none; color: inherit; }
+img { max-width: 100%; display: block; }
+button { font-family: 'Poppins', sans-serif; cursor: pointer; border: none; outline: none; }
+
+/* ========== ANNOUNCEMENT BAR ========== */
+#announcement-bar {
+  background: var(--primary);
+  color: #fff;
+  text-align: center;
+  font-size: 13px;
+  font-weight: 500;
+  padding: 0;
+  position: relative;
+  z-index: 1000;
+  overflow: hidden;
+  height: 40px;
+}
+.ann-slider { display: flex; height: 40px; transition: transform 0.5s ease; }
+.ann-slide {
+  min-width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  padding: 0 16px;
+  white-space: nowrap;
+}
+.ann-slide a { color: #fff; text-decoration: underline; font-weight: 600; }
+.ann-sep { opacity: 0.5; }
+.ann-tp { display: inline-flex; align-items: center; gap: 6px; }
+.ann-tp .stars { color: var(--green-tp); font-size: 13px; }
+
+/* ========== HEADER ========== */
+#header {
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  background: rgba(255,255,255,0.92);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(0,0,0,0.06);
+  box-shadow: var(--shadow-sm);
+  transition: all 0.3s;
+}
+.header-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+.logo {
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--primary);
+  letter-spacing: -0.5px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+.logo span { color: var(--text-dark); }
+.nav-desktop { display: flex; gap: 32px; align-items: center; }
+.nav-desktop a {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-mid);
+  transition: color 0.2s;
+  position: relative;
+  padding-bottom: 2px;
+}
+.nav-desktop a::after {
+  content: '';
+  position: absolute;
+  bottom: -2px; left: 0;
+  width: 0; height: 2px;
+  background: var(--primary);
+  transition: width 0.3s;
+}
+.nav-desktop a:hover { color: var(--primary); }
+.nav-desktop a:hover::after { width: 100%; }
+.header-actions { display: flex; align-items: center; gap: 12px; }
+.btn-cta-header {
+  background: var(--primary);
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: var(--radius-md);
+  font-size: 14px;
+  font-weight: 600;
+  transition: all 0.2s;
+  cursor: pointer;
+  border: none;
+}
+.btn-cta-header:hover { background: var(--primary-dark); transform: translateY(-1px); box-shadow: var(--shadow-md); }
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  padding: 8px;
+  background: none;
+  border: none;
+}
+.hamburger span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: var(--text-dark);
+  border-radius: 2px;
+  transition: all 0.3s;
+}
+
+/* Mobile Menu */
+#mobile-menu {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: #fff;
+  z-index: 9999;
+  flex-direction: column;
+  padding: 24px 20px;
+}
+#mobile-menu.open { display: flex; }
+.mobile-menu-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 40px; }
+.mobile-menu-close { font-size: 28px; background: none; border: none; cursor: pointer; color: var(--text-dark); }
+.mobile-nav { display: flex; flex-direction: column; gap: 0; }
+.mobile-nav a {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--text-dark);
+  padding: 16px 0;
+  border-bottom: 1px solid var(--border);
+  transition: color 0.2s;
+}
+.mobile-nav a:hover { color: var(--primary); }
+
+/* ========== PAGES ========== */
+.page { display: none; min-height: 100vh; }
+.page.active { display: block; }
+
+/* ========== HERO ========== */
+.hero {
+  background: linear-gradient(135deg, #015f6b 0%, #017783 50%, #01909e 100%);
+  color: #fff;
+  padding: 80px 20px 100px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.04'%3E%3Ccircle cx='30' cy='30' r='20'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  pointer-events: none;
+}
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255,255,255,0.15);
+  border: 1px solid rgba(255,255,255,0.25);
+  border-radius: 100px;
+  padding: 6px 16px;
+  font-size: 13px;
+  font-weight: 600;
+  margin-bottom: 24px;
+  backdrop-filter: blur(8px);
+}
+.hero h1 {
+  font-size: clamp(28px, 6vw, 56px);
+  font-weight: 900;
+  line-height: 1.15;
+  margin-bottom: 20px;
+  letter-spacing: -1px;
+}
+.hero h1 span { color: #a8edff; }
+.hero p {
+  font-size: clamp(16px, 2vw, 20px);
+  opacity: 0.9;
+  max-width: 600px;
+  margin: 0 auto 40px;
+  line-height: 1.7;
+}
+.hero-ctas { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+.btn-hero-primary {
+  background: #fff;
+  color: var(--primary);
+  padding: 16px 32px;
+  border-radius: var(--radius-md);
+  font-size: 16px;
+  font-weight: 700;
+  transition: all 0.25s;
+  cursor: pointer;
+  border: none;
+  box-shadow: var(--shadow-lg);
+  min-height: 56px;
+}
+.btn-hero-primary:hover { transform: translateY(-2px); box-shadow: var(--shadow-xl); }
+.btn-hero-secondary {
+  background: rgba(255,255,255,0.15);
+  color: #fff;
+  padding: 16px 32px;
+  border-radius: var(--radius-md);
+  font-size: 16px;
+  font-weight: 600;
+  border: 1.5px solid rgba(255,255,255,0.4);
+  cursor: pointer;
+  transition: all 0.25s;
+  min-height: 56px;
+}
+.btn-hero-secondary:hover { background: rgba(255,255,255,0.25); }
+.hero-trust {
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+  margin-top: 56px;
+  flex-wrap: wrap;
+}
+.hero-trust-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  opacity: 0.85;
+}
+.hero-trust-item svg { width: 20px; height: 20px; opacity: 0.9; }
+
+/* ========== SECTIONS ========== */
+.section { padding: 80px 20px; }
+.section-sm { padding: 60px 20px; }
+.container { max-width: 1200px; margin: 0 auto; }
+.section-title { font-size: clamp(24px, 4vw, 40px); font-weight: 800; color: var(--text-dark); margin-bottom: 12px; letter-spacing: -0.5px; }
+.section-sub { font-size: 16px; color: var(--text-mid); margin-bottom: 48px; line-height: 1.7; }
+.section-header { text-align: center; margin-bottom: 48px; }
+
+/* ========== PRODUCT CARDS ========== */
+.products-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+}
+@media(min-width:640px){.products-grid{grid-template-columns:repeat(2,1fr);}}
+@media(min-width:1024px){.products-grid{grid-template-columns:repeat(3,1fr);}}
+@media(min-width:1200px){.products-grid{grid-template-columns:repeat(4,1fr);}}
+
+.product-card {
+  background: #fff;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--border);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+}
+.product-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-xl); }
+.product-card:active { transform: scale(0.98); }
+.product-img-wrap {
+  position: relative;
+  width: 100%;
+  padding-top: 100%;
+  overflow: hidden;
+  background: var(--bg-light);
+}
+.product-img-wrap img {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+  display: block;
+}
+.product-card:hover .product-img-wrap img { transform: scale(1.06); }
+.product-badge {
+  position: absolute;
+  top: 12px; left: 12px;
+  background: var(--red);
+  color: #fff;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 100px;
+  letter-spacing: 0.3px;
+}
+.product-badge.new { background: var(--primary); }
+.product-badge.best { background: var(--gold); color: #7b4f00; }
+.product-info { padding: 20px; flex: 1; display: flex; flex-direction: column; gap: 8px; }
+.product-name { font-size: 15px; font-weight: 700; color: var(--text-dark); line-height: 1.4; }
+.product-prices { display: flex; align-items: center; gap: 10px; }
+.price-old { font-size: 14px; color: var(--text-light); text-decoration: line-through; }
+.price-new { font-size: 20px; font-weight: 800; color: var(--primary); }
+.product-rating { display: flex; align-items: center; gap: 6px; font-size: 13px; }
+.stars { color: var(--green-tp); font-size: 13px; }
+.product-card-btn {
+  margin-top: auto;
+  background: var(--primary);
+  color: #fff;
+  text-align: center;
+  padding: 14px;
+  font-size: 14px;
+  font-weight: 600;
+  transition: background 0.2s;
+  border-radius: 0 0 var(--radius-lg) var(--radius-lg);
+}
+.product-card:hover .product-card-btn { background: var(--primary-dark); }
+
+/* ========== FEATURES ========== */
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+@media(min-width:768px){.features-grid{grid-template-columns:repeat(3,1fr);}}
+.feature-card {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 28px 20px;
+  text-align: center;
+  transition: all 0.3s;
+  box-shadow: var(--shadow-sm);
+}
+.feature-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); border-color: var(--primary); }
+.feature-icon { font-size: 36px; margin-bottom: 12px; display: block; }
+.feature-title { font-size: 15px; font-weight: 700; color: var(--text-dark); margin-bottom: 8px; }
+.feature-desc { font-size: 13px; color: var(--text-mid); line-height: 1.6; }
+
+/* ========== TESTIMONIALS ========== */
+.testimonials-bg { background: var(--bg-section); }
+.tp-score {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  background: #fff;
+  border-radius: var(--radius-lg);
+  padding: 16px 24px;
+  box-shadow: var(--shadow-md);
+  margin-bottom: 40px;
+}
+.tp-logo { font-size: 22px; font-weight: 900; color: var(--green-tp); letter-spacing: -1px; }
+.tp-stars { color: var(--green-tp); font-size: 22px; letter-spacing: 2px; }
+.tp-text { font-size: 14px; color: var(--text-mid); }
+.tp-text strong { color: var(--text-dark); font-weight: 700; }
+.reviews-carousel {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  padding-bottom: 16px;
+  scrollbar-width: none;
+}
+.reviews-carousel::-webkit-scrollbar { display: none; }
+.review-card {
+  min-width: 300px;
+  max-width: 300px;
+  background: #fff;
+  border-radius: var(--radius-lg);
+  padding: 24px;
+  box-shadow: var(--shadow-md);
+  scroll-snap-align: start;
+  flex-shrink: 0;
+  border: 1px solid var(--border);
+}
+.review-header { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; }
+.review-avatar { width: 48px; height: 48px; border-radius: 50%; object-fit: cover; }
+.review-name { font-weight: 600; font-size: 14px; color: var(--text-dark); }
+.review-date { font-size: 12px; color: var(--text-light); margin-top: 2px; }
+.review-stars { color: var(--green-tp); font-size: 16px; margin-bottom: 10px; }
+.review-text { font-size: 14px; color: var(--text-mid); line-height: 1.7; }
+.review-verified { margin-top: 12px; font-size: 12px; color: var(--green-tp); font-weight: 600; }
+.tp-btn-all {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 32px;
+  background: var(--green-tp);
+  color: #fff;
+  padding: 14px 28px;
+  border-radius: var(--radius-md);
+  font-size: 15px;
+  font-weight: 600;
+  transition: all 0.2s;
+  text-decoration: none;
+}
+.tp-btn-all:hover { background: #009966; transform: translateY(-2px); box-shadow: var(--shadow-md); }
+
+/* ========== FAQ ========== */
+.faq-tabs { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 32px; }
+.faq-tab {
+  padding: 10px 20px;
+  border-radius: 100px;
+  font-size: 14px;
+  font-weight: 600;
+  border: 1.5px solid var(--border);
+  background: #fff;
+  color: var(--text-mid);
+  cursor: pointer;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+.faq-tab.active { background: var(--primary); color: #fff; border-color: var(--primary); }
+.faq-panel { display: none; }
+.faq-panel.active { display: block; }
+.faq-item { border-bottom: 1px solid var(--border); }
+.faq-question {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text-dark);
+  cursor: pointer;
+  min-height: 44px;
+  gap: 16px;
+}
+.faq-arrow {
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: var(--bg-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s;
+  font-size: 16px;
+  color: var(--primary);
+}
+.faq-item.open .faq-arrow { transform: rotate(180deg); background: var(--primary); color: #fff; }
+.faq-answer {
+  font-size: 15px;
+  color: var(--text-mid);
+  line-height: 1.8;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease, padding 0.3s ease;
+  padding-bottom: 0;
+}
+.faq-item.open .faq-answer { max-height: 500px; padding-bottom: 20px; }
+
+/* ========== NEWSLETTER ========== */
+.newsletter-section { background: linear-gradient(135deg, #015f6b, #017783); color: #fff; text-align: center; padding: 80px 20px; }
+.newsletter-form { display: flex; gap: 12px; max-width: 480px; margin: 24px auto 0; flex-wrap: wrap; }
+.newsletter-input {
+  flex: 1;
+  min-width: 200px;
+  padding: 16px 20px;
+  border-radius: var(--radius-md);
+  border: none;
+  font-size: 15px;
+  font-family: 'Poppins', sans-serif;
+  outline: none;
+}
+.newsletter-btn {
+  background: #fff;
+  color: var(--primary);
+  padding: 16px 24px;
+  border-radius: var(--radius-md);
+  font-weight: 700;
+  font-size: 15px;
+  transition: all 0.2s;
+}
+.newsletter-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(0,0,0,0.2); }
+
+/* ========== FOOTER ========== */
+footer {
+  background: var(--text-dark);
+  color: rgba(255,255,255,0.7);
+  padding: 60px 20px 24px;
+}
+.footer-inner { max-width: 1200px; margin: 0 auto; }
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 40px;
+  margin-bottom: 48px;
+}
+@media(min-width:768px){.footer-grid{grid-template-columns:2fr 1fr 1fr 1fr;}}
+.footer-brand .logo-footer { font-size: 22px; font-weight: 800; color: #fff; margin-bottom: 12px; }
+.footer-brand p { font-size: 14px; line-height: 1.7; }
+.footer-col h4 { font-size: 15px; font-weight: 700; color: #fff; margin-bottom: 16px; }
+.footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+.footer-col ul li a { font-size: 14px; color: rgba(255,255,255,0.6); transition: color 0.2s; }
+.footer-col ul li a:hover { color: #fff; }
+.footer-tp {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(255,255,255,0.08);
+  border-radius: var(--radius-md);
+  padding: 12px 16px;
+  margin-top: 16px;
+  transition: all 0.2s;
+  text-decoration: none;
+}
+.footer-tp:hover { background: rgba(255,255,255,0.15); }
+.footer-tp span { font-size: 13px; color: rgba(255,255,255,0.8); }
+.footer-bottom {
+  border-top: 1px solid rgba(255,255,255,0.08);
+  padding-top: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  font-size: 13px;
+  text-align: center;
+}
+@media(min-width:768px){.footer-bottom{flex-direction:row;justify-content:space-between;text-align:left;}}
+.footer-links { display: flex; gap: 20px; flex-wrap: wrap; justify-content: center; }
+.footer-links a { color: rgba(255,255,255,0.5); font-size: 13px; transition: color 0.2s; }
+.footer-links a:hover { color: #fff; }
+
+/* ========== PRODUCT PAGE ========== */
+.product-page-top { max-width: 1200px; margin: 0 auto; padding: 40px 20px; }
+.product-layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 40px;
+}
+@media(min-width:768px){.product-layout{grid-template-columns:1fr 1fr;}}
+.product-gallery .main-img {
+  width: 100%;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  display: block;
+}
+.thumb-row { display: flex; gap: 8px; margin-top: 12px; }
+.thumb-row img {
+  width: 72px;
+  height: 72px;
+  object-fit: cover;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: all 0.2s;
+}
+.thumb-row img.active, .thumb-row img:hover { border-color: var(--primary); }
+.product-right { display: flex; flex-direction: column; gap: 20px; }
+.product-right h1 { font-size: clamp(22px, 4vw, 32px); font-weight: 800; color: var(--text-dark); line-height: 1.3; }
+.product-tp-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--green-tp);
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  border: 1.5px solid var(--green-tp);
+  padding: 6px 14px;
+  border-radius: 100px;
+  width: fit-content;
+  transition: all 0.2s;
+}
+.product-tp-badge:hover { background: var(--green-tp); color: #fff; }
+.product-price-block { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
+.product-price-old { font-size: 18px; color: var(--text-light); text-decoration: line-through; }
+.product-price-new { font-size: 36px; font-weight: 900; color: var(--primary); }
+.product-discount-badge {
+  background: var(--red);
+  color: #fff;
+  font-size: 14px;
+  font-weight: 700;
+  padding: 6px 12px;
+  border-radius: 100px;
+}
+.btn-atc {
+  display: block;
+  width: 100%;
+  background: var(--primary);
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+  border-radius: var(--radius-md);
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  transition: all 0.25s;
+  box-shadow: 0 6px 24px rgba(1,119,131,0.35);
+  cursor: pointer;
+  text-decoration: none;
+}
+.btn-atc:hover { background: var(--primary-dark); transform: translateY(-2px); box-shadow: 0 10px 30px rgba(1,119,131,0.45); }
+.btn-atc:active { transform: scale(0.99); }
+.trust-badges { display: flex; gap: 12px; flex-wrap: wrap; }
+.trust-badge {
+  flex: 1;
+  min-width: 120px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  padding: 14px;
+  background: var(--bg-light);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border);
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-mid);
+  text-align: center;
+}
+.trust-badge .t-icon { font-size: 22px; }
+/* Sticky ATC mobile */
+.sticky-atc {
+  display: none;
+  position: fixed;
+  bottom: 0; left: 0; right: 0;
+  background: #fff;
+  padding: 12px 20px 20px;
+  box-shadow: 0 -4px 24px rgba(0,0,0,0.12);
+  z-index: 998;
+  border-top: 1px solid var(--border);
+}
+.sticky-atc .btn-atc { padding: 16px; font-size: 16px; }
+
+/* Product Zones */
+.product-zone { max-width: 1200px; margin: 0 auto; padding: 40px 20px; }
+.product-zone + .product-zone { padding-top: 0; }
+.zone-title { font-size: 22px; font-weight: 800; color: var(--text-dark); margin-bottom: 20px; padding-bottom: 12px; border-bottom: 2px solid var(--border); }
+
+.feat-badges-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 16px; }
+.feat-badge-card {
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 20px 16px;
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  background: #fff;
+  transition: all 0.2s;
+  box-shadow: var(--shadow-sm);
+}
+.feat-badge-card:hover { border-color: var(--primary); box-shadow: var(--shadow-md); }
+.feat-badge-icon { font-size: 28px; flex-shrink: 0; }
+.feat-badge-text h4 { font-size: 14px; font-weight: 700; color: var(--text-dark); margin-bottom: 4px; }
+.feat-badge-text p { font-size: 12px; color: var(--text-mid); line-height: 1.5; }
+
+.tech-table { width: 100%; border-collapse: collapse; }
+.tech-table tr:nth-child(even) { background: var(--bg-light); }
+.tech-table td { padding: 14px 16px; font-size: 14px; border-bottom: 1px solid var(--border); }
+.tech-table td:first-child { color: var(--text-light); font-weight: 500; width: 40%; }
+.tech-table td:last-child { font-weight: 600; color: var(--text-dark); }
+
+.colis-list { list-style: none; display: flex; flex-direction: column; gap: 12px; }
+.colis-list li { display: flex; align-items: center; gap: 10px; font-size: 15px; color: var(--text-mid); }
+.colis-list li::before { content: '✓'; color: var(--primary); font-weight: 700; font-size: 16px; }
+
+.product-desc { font-size: 15px; color: var(--text-mid); line-height: 1.85; }
+.product-desc strong { color: var(--text-dark); }
+
+.also-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 16px; }
+@media(min-width:640px){.also-grid{grid-template-columns:repeat(4,1fr);}}
+
+/* ========== COLLECTION PAGE ========== */
+.collection-hero {
+  background: var(--bg-section);
+  padding: 48px 20px 40px;
+  text-align: center;
+  border-bottom: 1px solid var(--border);
+}
+
+/* ========== CONTACT PAGE ========== */
+.contact-layout { display: grid; grid-template-columns: 1fr; gap: 40px; }
+@media(min-width:768px){.contact-layout{grid-template-columns:1fr 1fr;}}
+.contact-form-group { display: flex; flex-direction: column; gap: 8px; margin-bottom: 20px; }
+.contact-form-group label { font-size: 14px; font-weight: 600; color: var(--text-dark); }
+.contact-form-group input,
+.contact-form-group textarea {
+  padding: 14px 16px;
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-md);
+  font-size: 15px;
+  font-family: 'Poppins', sans-serif;
+  outline: none;
+  transition: border-color 0.2s;
+  width: 100%;
+  resize: vertical;
+}
+.contact-form-group input:focus,
+.contact-form-group textarea:focus { border-color: var(--primary); }
+.btn-submit {
+  width: 100%;
+  background: var(--primary);
+  color: #fff;
+  padding: 16px;
+  border-radius: var(--radius-md);
+  font-size: 16px;
+  font-weight: 700;
+  transition: all 0.2s;
+  cursor: pointer;
+  border: none;
+}
+.btn-submit:hover { background: var(--primary-dark); transform: translateY(-1px); box-shadow: var(--shadow-md); }
+
+.legal-card {
+  background: var(--bg-light);
+  border-radius: var(--radius-lg);
+  padding: 28px;
+  border: 1px solid var(--border);
+}
+.legal-card h3 { font-size: 17px; font-weight: 700; color: var(--text-dark); margin-bottom: 12px; }
+.legal-card p { font-size: 14px; color: var(--text-mid); line-height: 1.7; margin-bottom: 8px; }
+
+/* ========== BREADCRUMB ========== */
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: var(--text-light);
+  padding: 16px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.breadcrumb a { color: var(--text-light); transition: color 0.2s; }
+.breadcrumb a:hover { color: var(--primary); }
+.breadcrumb span { color: var(--text-mid); font-weight: 500; }
+
+/* ========== ANIMATIONS ========== */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.animate-in { animation: fadeInUp 0.6s ease both; }
+.animate-in:nth-child(2) { animation-delay: 0.1s; }
+.animate-in:nth-child(3) { animation-delay: 0.2s; }
+.animate-in:nth-child(4) { animation-delay: 0.3s; }
+
+/* ========== TRUST STRIP ========== */
+.trust-strip {
+  background: var(--text-dark);
+  padding: 20px;
+  overflow-x: auto;
+}
+.trust-strip-inner {
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+  max-width: 1000px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+}
+.trust-strip-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: rgba(255,255,255,0.85);
+  font-size: 13px;
+  font-weight: 500;
+  white-space: nowrap;
+}
+.trust-strip-item .ti { font-size: 20px; }
+
+/* Featured section */
+.featured-layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 32px;
+  align-items: center;
+}
+@media(min-width:768px){.featured-layout{grid-template-columns:1.2fr 1fr;}}
+.featured-img {
+  width: 100%;
+  aspect-ratio: 4/3;
+  object-fit: cover;
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-xl);
+  display: block;
+}
+.featured-right { display: flex; flex-direction: column; gap: 20px; }
+.featured-right .section-title { text-align: left; }
+.featured-pts { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+.featured-pts li { display: flex; align-items: center; gap: 10px; font-size: 15px; color: var(--text-mid); }
+.featured-pts li::before { content: '✦'; color: var(--primary); font-weight: 700; }
+
+/* ========== PAGE TRANSITION ========== */
+.page { animation: fadeInUp 0.4s ease both; }
+
+/* ========== DESKTOP: hide hamburger, show sticky only on mobile ========== */
+@media(min-width:768px){
+  .sticky-atc { display: none !important; }
+  .hamburger { display: none !important; }
+}
+
+/* ========================================================
+   MOBILE OPTIMISATION — max-width 767px
+======================================================== */
+@media(max-width:767px){
+
+  /* --- GLOBAL --- */
+  body { font-size: 16px; }
+  * { -webkit-tap-highlight-color: transparent; }
+
+  /* --- ANNOUNCEMENT BAR --- */
+  #announcement-bar { height: 36px; font-size: 11px; }
+  .ann-slider { height: 36px; }
+  .ann-slide { gap: 8px; padding: 0 12px; font-size: 11px; }
+  .ann-sep { display: none; }
+
+  /* --- HEADER --- */
+  .header-inner { height: 56px; padding: 0 16px; }
+  .logo { font-size: 17px; }
+  .nav-desktop, .btn-cta-header { display: none !important; }
+  .hamburger { display: flex !important; }
+
+  /* --- HERO --- */
+  .hero { padding: 48px 16px 64px; }
+  .hero-badge { font-size: 12px; padding: 5px 14px; margin-bottom: 18px; }
+  .hero h1 { font-size: 28px; letter-spacing: -0.5px; margin-bottom: 14px; line-height: 1.2; }
+  .hero p { font-size: 15px; margin-bottom: 28px; }
+  .hero-ctas { flex-direction: column; gap: 12px; align-items: stretch; }
+  .btn-hero-primary, .btn-hero-secondary {
+    width: 100%;
+    padding: 18px 20px;
+    font-size: 16px;
+    min-height: 58px;
+    border-radius: 14px;
+  }
+  .hero-trust { gap: 14px; margin-top: 36px; }
+  .hero-trust-item { font-size: 12px; gap: 6px; }
+  .hero-trust-item svg { width: 16px; height: 16px; }
+
+  /* --- TRUST STRIP --- */
+  .trust-strip { padding: 14px 0; overflow-x: auto; scrollbar-width: none; }
+  .trust-strip::-webkit-scrollbar { display: none; }
+  .trust-strip-inner { flex-wrap: nowrap; gap: 20px; padding: 0 16px; justify-content: flex-start; width: max-content; }
+  .trust-strip-item { font-size: 12px; }
+  .trust-strip-item .ti { font-size: 17px; }
+
+  /* --- SECTIONS --- */
+  .section { padding: 48px 16px; }
+  .section-sm { padding: 36px 16px; }
+  .section-header { margin-bottom: 28px; }
+  .section-title { font-size: 24px; margin-bottom: 8px; }
+  .section-sub { font-size: 14px; margin-bottom: 28px; }
+  .container { padding: 0; }
+
+  /* --- BRANDS MARQUEE --- */
+  .brands-header { padding: 14px 16px 0; }
+  .brands-eyebrow { font-size: 10px; letter-spacing: 1.5px; }
+  .brand-pill { padding: 8px 14px; font-size: 12px; }
+  .brand-icon { font-size: 14px; }
+
+  /* --- BRANDS SHOWCASE --- */
+  .brands-showcase-grid { grid-template-columns: repeat(2,1fr); gap: 12px; }
+  .brand-card { padding: 16px 12px; gap: 8px; border-radius: 12px; }
+  .brand-card-icon { font-size: 28px; }
+  .brand-card-name { font-size: 13px; }
+  .brand-card-desc { font-size: 11px; line-height: 1.5; }
+  .brand-card-tag { font-size: 10px; padding: 4px 10px; }
+  .brand-card-bonus { grid-column: span 2; }
+
+  /* --- FEATURED SECTION --- */
+  .featured-layout { gap: 20px; }
+  .featured-img { border-radius: 16px; aspect-ratio: 4/3; }
+  .featured-right { gap: 14px; }
+  .featured-right .section-title { font-size: 22px; }
+  .featured-pts li { font-size: 14px; }
+
+  /* --- PRODUCT CARDS --- */
+  .products-grid { grid-template-columns: 1fr; gap: 16px; }
+  .product-card { border-radius: 14px; }
+  .product-name { font-size: 15px; }
+  .price-new { font-size: 18px; }
+  .price-old { font-size: 13px; }
+  .product-info { padding: 16px; }
+  .product-card-btn { font-size: 14px; padding: 14px; }
+
+  /* --- FEATURES GRID --- */
+  .features-grid { grid-template-columns: repeat(2,1fr); gap: 12px; }
+  .feature-card { padding: 20px 14px; border-radius: 12px; }
+  .feature-icon { font-size: 28px; margin-bottom: 8px; }
+  .feature-title { font-size: 13px; }
+  .feature-desc { font-size: 12px; }
+
+  /* --- TESTIMONIALS --- */
+  .tp-score { padding: 12px 16px; gap: 8px; flex-wrap: wrap; border-radius: 12px; }
+  .tp-logo { font-size: 17px; }
+  .tp-stars { font-size: 17px; }
+  .tp-text { font-size: 13px; }
+  .reviews-carousel { gap: 14px; padding: 0 16px 16px; margin: 0 -16px; }
+  .review-card { min-width: 270px; max-width: 270px; padding: 18px; border-radius: 14px; }
+  .review-avatar { width: 40px; height: 40px; }
+  .review-name { font-size: 13px; }
+  .review-date { font-size: 11px; }
+  .review-stars { font-size: 14px; }
+  .review-text { font-size: 13px; line-height: 1.65; }
+  .review-verified { font-size: 11px; }
+  .tp-btn-all { padding: 14px 22px; font-size: 14px; border-radius: 12px; }
+
+  /* --- FAQ --- */
+  .faq-tabs { gap: 6px; }
+  .faq-tab { padding: 9px 14px; font-size: 13px; }
+  .faq-question { font-size: 15px; padding: 18px 0; }
+  .faq-answer { font-size: 14px; line-height: 1.75; }
+
+  /* --- NEWSLETTER --- */
+  .newsletter-section { padding: 52px 16px; }
+  .newsletter-form { flex-direction: column; gap: 10px; }
+  .newsletter-input, .newsletter-btn { width: 100%; min-height: 52px; border-radius: 12px; font-size: 15px; }
+
+  /* --- PRODUCT PAGE --- */
+  .product-page-top { padding: 20px 16px 0; }
+  .product-layout { grid-template-columns: 1fr; gap: 24px; }
+  .product-gallery .main-img { border-radius: 14px; }
+  .thumb-row img { width: 60px; height: 60px; border-radius: 8px; }
+  .product-right h1 { font-size: 22px; }
+  .product-tp-badge { font-size: 13px; padding: 5px 12px; }
+  .product-price-new { font-size: 30px; }
+  .product-price-old { font-size: 16px; }
+  .btn-atc { padding: 18px; font-size: 17px; border-radius: 14px; }
+  .trust-badges { gap: 8px; }
+  .trust-badge { padding: 12px 8px; font-size: 11px; min-width: 90px; border-radius: 10px; }
+  .trust-badge .t-icon { font-size: 20px; }
+
+  /* --- PRODUCT ZONES --- */
+  .product-zone { padding: 28px 16px; }
+  .product-zone + .product-zone { padding-top: 0; }
+  /* Extra bottom padding for sticky bar */
+  #product-les-meilleures-fournisseurs-vinted .product-zone:last-of-type { padding-bottom: 100px; }
+  .zone-title { font-size: 19px; margin-bottom: 16px; }
+
+  /* Feature badges */
+  .feat-badges-grid { grid-template-columns: 1fr; gap: 12px; }
+  .feat-badge-card { padding: 16px 14px; border-radius: 12px; }
+  .feat-badge-icon { font-size: 24px; }
+  .feat-badge-text h4 { font-size: 14px; }
+  .feat-badge-text p { font-size: 12px; }
+
+  /* Tech table */
+  .tech-table td { padding: 12px 14px; font-size: 13px; }
+
+  /* Colis */
+  .colis-list li { font-size: 14px; gap: 8px; }
+
+  /* Description */
+  .product-desc { font-size: 14px; line-height: 1.8; }
+
+  /* Also grid */
+  .also-grid { grid-template-columns: repeat(2,1fr); gap: 12px; }
+
+  /* --- STICKY ATC --- */
+  .sticky-atc { display: block !important; padding: 10px 16px 20px; }
+  .sticky-atc .btn-atc { padding: 17px; font-size: 16px; border-radius: 14px; }
+
+  /* --- COLLECTION PAGE --- */
+  .collection-hero { padding: 32px 16px 28px; }
+  .collection-hero .section-title { font-size: 24px; }
+
+  /* --- CONTACT PAGE --- */
+  .contact-layout { gap: 28px; }
+  .contact-form-group input,
+  .contact-form-group textarea { font-size: 16px; padding: 14px; }
+  .btn-submit { min-height: 54px; font-size: 16px; border-radius: 14px; }
+  .legal-card { padding: 20px 16px; border-radius: 14px; }
+  .legal-card h3 { font-size: 16px; }
+  .legal-card p { font-size: 13px; }
+
+  /* --- FOOTER --- */
+  footer { padding: 40px 16px 20px; }
+  .footer-grid { grid-template-columns: 1fr; gap: 28px; }
+  .footer-brand { border-bottom: 1px solid rgba(255,255,255,0.08); padding-bottom: 24px; }
+  .footer-col { display: none; } /* collapsible on mobile - hide extra columns */
+  .footer-brand + .footer-col { display: block; } /* show first nav column only */
+  .footer-bottom { font-size: 12px; gap: 10px; }
+  .footer-links { gap: 14px; }
+
+  /* --- BREADCRUMB --- */
+  .breadcrumb { padding: 12px 16px; font-size: 12px; }
+
+  /* --- DARK BRANDS SECTION --- */
+  #home > section[style*="0d1117"] .container > div[style*="inline-block"] {
+    padding: 24px 20px;
+  }
+  #home > section[style*="0d1117"] { padding: 52px 16px; }
+
+}
+
+/* ========== COLIS SECTION - MOBILE OPTIMIZED ========== */
+.colis-brands-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+.colis-brand-card {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 14px 16px;
+  box-shadow: var(--shadow-sm);
+  transition: all 0.2s;
+}
+.colis-brand-card:hover { border-color: var(--primary); box-shadow: var(--shadow-md); }
+.colis-brand-new {
+  border-color: #a8edff;
+  background: linear-gradient(135deg, #f0fdff, #fff);
+}
+.colis-brand-icon { font-size: 26px; flex-shrink: 0; line-height: 1; }
+.colis-brand-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  flex: 1;
+  min-width: 0;
+}
+.colis-brand-name {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--text-dark);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.colis-new-tag {
+  background: #a8edff;
+  color: #015f6b;
+  font-size: 10px;
+  font-weight: 800;
+  padding: 2px 8px;
+  border-radius: 100px;
+  letter-spacing: 0.5px;
+}
+.colis-brand-desc {
+  font-size: 12px;
+  color: var(--text-light);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.colis-check {
+  font-size: 16px;
+  font-weight: 800;
+  color: var(--primary);
+  flex-shrink: 0;
+  width: 28px;
+  height: 28px;
+  background: var(--bg-section);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+}
+.colis-bonus-card {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background: linear-gradient(135deg, #fef9ec, #fff8e1);
+  border: 1.5px solid var(--gold);
+  border-radius: var(--radius-md);
+  padding: 18px 16px;
+  margin-bottom: 4px;
+}
+.colis-bonus-left { flex-shrink: 0; }
+.colis-bonus-right { display: flex; flex-direction: column; gap: 3px; }
+.colis-bonus-title { font-size: 15px; font-weight: 800; color: #7b4f00; }
+.colis-bonus-desc { font-size: 12px; color: #92400e; }
+.colis-bonus-value {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--primary);
+  margin-top: 4px;
+}
+.colis-extras {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+.colis-extra-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--bg-light);
+  border-radius: var(--radius-sm);
+  padding: 10px 12px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-mid);
+  border: 1px solid var(--border);
+}
+.colis-extra-item span:first-child { font-size: 18px; flex-shrink: 0; }
+
+/* Mobile tweaks for colis */
+@media(max-width:767px) {
+  .colis-brand-card { padding: 12px 14px; gap: 12px; }
+  .colis-brand-icon { font-size: 22px; }
+  .colis-brand-name { font-size: 14px; }
+  .colis-brand-desc { font-size: 11px; }
+  .colis-bonus-card { padding: 14px; gap: 12px; }
+  .colis-bonus-title { font-size: 14px; }
+  .colis-extras { grid-template-columns: 1fr; gap: 6px; }
+  .colis-extra-item { padding: 10px 12px; font-size: 13px; }
+}
+
+/* ========== BACK BUTTON ========== */
+.back-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--primary);
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 8px 0;
+  background: none;
+  border: none;
+  transition: gap 0.2s;
+}
+.back-btn:hover { gap: 10px; }
+
+/* ========== BRANDS MARQUEE ========== */
+.brands-section {
+  background: #fff;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  overflow: hidden;
+  padding: 0;
+}
+.brands-header {
+  text-align: center;
+  padding: 20px 20px 0;
+}
+.brands-eyebrow {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: var(--primary);
+  text-transform: uppercase;
+}
+.brands-marquee-wrap {
+  overflow: hidden;
+  padding: 16px 0;
+  -webkit-mask-image: linear-gradient(to right, transparent, black 80px, black calc(100% - 80px), transparent);
+  mask-image: linear-gradient(to right, transparent, black 80px, black calc(100% - 80px), transparent);
+}
+.brands-marquee {
+  display: flex;
+  gap: 12px;
+  width: max-content;
+  animation: marqueeScroll 22s linear infinite;
+}
+.brands-marquee:hover { animation-play-state: paused; }
+@keyframes marqueeScroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+.brand-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--bg-light);
+  border: 1.5px solid var(--border);
+  border-radius: 100px;
+  padding: 10px 20px;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--text-dark);
+  white-space: nowrap;
+  cursor: default;
+  transition: all 0.2s;
+  letter-spacing: 0.5px;
+}
+.brand-pill:hover { border-color: var(--primary); background: var(--bg-section); }
+.brand-icon { font-size: 16px; }
+.brand-pill.brand-bonus {
+  background: linear-gradient(135deg, #fef3c7, #fde68a);
+  border-color: var(--gold);
+  color: #92400e;
+}
+
+/* ========== BRANDS SHOWCASE ========== */
+.brands-showcase-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+@media(min-width:640px){.brands-showcase-grid{grid-template-columns:repeat(3,1fr);}}
+@media(min-width:1024px){.brands-showcase-grid{grid-template-columns:repeat(4,1fr);}}
+.brand-card {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: var(--radius-lg);
+  padding: 24px 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  cursor: pointer;
+  transition: all 0.3s;
+  position: relative;
+  overflow: hidden;
+}
+.brand-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(1,119,131,0.08), transparent);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+.brand-card:hover { border-color: var(--primary); transform: translateY(-4px); box-shadow: 0 12px 32px rgba(1,119,131,0.25); }
+.brand-card:hover::before { opacity: 1; }
+.brand-card:active { transform: scale(0.98); }
+.brand-card-featured {
+  border-color: var(--primary);
+  background: rgba(1,119,131,0.08);
+}
+.brand-card-bonus {
+  grid-column: span 2;
+  background: linear-gradient(135deg, rgba(246,173,85,0.12), rgba(246,173,85,0.04));
+  border-color: rgba(246,173,85,0.4);
+}
+@media(min-width:640px){.brand-card-bonus{grid-column:span 3;}}
+@media(min-width:1024px){.brand-card-bonus{grid-column:span 1;}}
+.brand-card-icon { font-size: 36px; line-height: 1; }
+.brand-card-name { font-size: 16px; font-weight: 800; color: #fff; letter-spacing: -0.3px; }
+.brand-card-desc { font-size: 13px; color: rgba(255,255,255,0.55); line-height: 1.6; flex: 1; }
+.brand-card-tag {
+  display: inline-flex;
+  align-items: center;
+  background: rgba(1,119,131,0.25);
+  color: var(--primary-light);
+  border-radius: 100px;
+  padding: 5px 12px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  width: fit-content;
+  margin-top: 4px;
+}
+.back-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--primary);
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 8px 0;
+  background: none;
+  border: none;
+  transition: gap 0.2s;
+}
+.back-btn:hover { gap: 10px; }
+</style>
+</head>
+<body>
+
+<!-- ANNOUNCEMENT BAR -->
+<div id="announcement-bar">
+  <div class="ann-slider" id="annSlider">
+    <div class="ann-slide">
+      <span>✦ LIVRAISON RAPIDE OFFERTE</span>
+      <span class="ann-sep">|</span>
+      <a href="https://trustpilot.customerthread.com/?country=FR&shop=MonMagasinEbook&logo=&url=MonMagasinEbook.com" target="_blank" class="ann-tp"><span class="stars">★★★★★</span> 4,8/5 sur Trustpilot</a>
+    </div>
+    <div class="ann-slide">
+      <span>🎁 +100 FOURNISSEURS INCLUS DANS L'EBOOK</span>
+      <span class="ann-sep">|</span>
+      <span>✦ MIS À JOUR 2026</span>
+    </div>
+    <div class="ann-slide">
+      <span>↩️ RETOURS GRATUITS SOUS 30 JOURS</span>
+      <span class="ann-sep">|</span>
+      <span>🔒 PAIEMENT 100% SÉCURISÉ</span>
+    </div>
+    <div class="ann-slide">
+      <span>🏆 +3000 VENDEURS VINTED SATISFAITS</span>
+      <span class="ann-sep">|</span>
+      <span>✦ ACCÈS IMMÉDIAT APRÈS PAIEMENT</span>
+    </div>
+  </div>
+</div>
+
+<!-- HEADER -->
+<header id="header">
+  <div class="header-inner">
+    <div class="logo" onclick="navigateTo('home')">MonMagasin<span>Ebook</span></div>
+    <nav class="nav-desktop">
+      <a href="#home" onclick="navigateTo('home');return false;">Accueil</a>
+      <a href="#collection" onclick="navigateTo('collection');return false;">Collection</a>
+      <a href="#faq" onclick="navigateTo('faq');return false;">FAQ</a>
+      <a href="#contact" onclick="navigateTo('contact');return false;">Contact</a>
+    </nav>
+    <div class="header-actions">
+      <button class="btn-cta-header" onclick="navigateTo('collection')">Voir les Ebooks →</button>
+      <button class="hamburger" id="hamburgerBtn" onclick="openMenu()">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- MOBILE MENU -->
+<div id="mobile-menu">
+  <div class="mobile-menu-top">
+    <div class="logo">MonMagasin<span style="color:var(--text-dark)">Ebook</span></div>
+    <button class="mobile-menu-close" onclick="closeMenu()">✕</button>
+  </div>
+  <nav class="mobile-nav">
+    <a href="#home" onclick="navigateTo('home');closeMenu()">Accueil</a>
+    <a href="#collection" onclick="navigateTo('collection');closeMenu()">Collection</a>
+    <a href="#faq" onclick="navigateTo('faq');closeMenu()">FAQ</a>
+    <a href="#contact" onclick="navigateTo('contact');closeMenu()">Contact</a>
+  </nav>
+</div>
+
+<!-- ===================== PAGE: HOME ===================== -->
+<div class="page" id="home">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-badge">
+      <span>⚡</span>
+      <span>+3 000 vendeurs Vinted satisfaits</span>
+    </div>
+    <h1>Les Fournisseurs <span>Dyson, Nike, Adidas</span><br>& +100 Marques Révélés</h1>
+    <p>Accédez aux fournisseurs officiels des plus grandes marques : Dyson, Nike Dunk, Adidas Samba, UGG, Ralph Lauren, Tommy, Nike Tech, AirPods Max et bien plus. Revendez sur Vinted avec des marges imbattables. Mis à jour 2026.</p>
+    <div class="hero-ctas">
+      <button class="btn-hero-primary" onclick="navigateTo('product-les-meilleures-fournisseurs-vinted')">Découvrir l'Ebook →</button>
+      <button class="btn-hero-secondary" onclick="navigateTo('collection')">Voir la Collection</button>
+    </div>
+    <div class="hero-trust">
+      <div class="hero-trust-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 13l4 4L19 7"/></svg>
+        <span>Accès immédiat</span>
+      </div>
+      <div class="hero-trust-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        <span>Paiement sécurisé</span>
+      </div>
+      <div class="hero-trust-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        <span>100% en Français</span>
+      </div>
+      <div class="hero-trust-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        <span>4.8/5 Trustpilot</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRUST STRIP -->
+  <div class="trust-strip">
+    <div class="trust-strip-inner">
+      <div class="trust-strip-item"><span class="ti">🚀</span><span>Livraison digitale instantanée</span></div>
+      <div class="trust-strip-item"><span class="ti">🔒</span><span>Paiement sécurisé SSL</span></div>
+      <div class="trust-strip-item"><span class="ti">↩️</span><span>Remboursement 30 jours</span></div>
+      <div class="trust-strip-item"><span class="ti">⭐</span><span>+3 000 clients satisfaits</span></div>
+      <div class="trust-strip-item"><span class="ti">📱</span><span>Support réactif 7j/7</span></div>
+    </div>
+  </div>
+
+  <!-- BRANDS MARQUEE -->
+  <div class="brands-section">
+    <div class="brands-header">
+      <span class="brands-eyebrow">✦ FOURNISSEURS INCLUS DANS L'EBOOK</span>
+    </div>
+    <div class="brands-marquee-wrap">
+      <div class="brands-marquee" id="brandsMarquee">
+        <div class="brand-pill"><span class="brand-icon">👟</span><span>NIKE DUNK</span></div>
+        <div class="brand-pill"><span class="brand-icon">👟</span><span>ADIDAS SAMBA</span></div>
+        <div class="brand-pill"><span class="brand-icon">💨</span><span>DYSON</span></div>
+        <div class="brand-pill"><span class="brand-icon">🥾</span><span>UGG</span></div>
+        <div class="brand-pill"><span class="brand-icon">👔</span><span>RALPH LAUREN</span></div>
+        <div class="brand-pill"><span class="brand-icon">🧢</span><span>TOMMY HILFIGER</span></div>
+        <div class="brand-pill"><span class="brand-icon">🏃</span><span>NIKE TECH</span></div>
+        <div class="brand-pill brand-bonus" style="background:linear-gradient(135deg,#e0f7ff,#b3ecff);border-color:#a8edff;color:#015f6b;"><span>🎧</span><span>AIRPODS MAX</span></div>
+        <div class="brand-pill brand-bonus"><span>🎁</span><span>+100 MARQUES BONUS</span></div>
+        <!-- Duplicate for seamless loop -->
+        <div class="brand-pill"><span class="brand-icon">👟</span><span>NIKE DUNK</span></div>
+        <div class="brand-pill"><span class="brand-icon">👟</span><span>ADIDAS SAMBA</span></div>
+        <div class="brand-pill"><span class="brand-icon">💨</span><span>DYSON</span></div>
+        <div class="brand-pill"><span class="brand-icon">🥾</span><span>UGG</span></div>
+        <div class="brand-pill"><span class="brand-icon">👔</span><span>RALPH LAUREN</span></div>
+        <div class="brand-pill"><span class="brand-icon">🧢</span><span>TOMMY HILFIGER</span></div>
+        <div class="brand-pill"><span class="brand-icon">🏃</span><span>NIKE TECH</span></div>
+        <div class="brand-pill brand-bonus" style="background:linear-gradient(135deg,#e0f7ff,#b3ecff);border-color:#a8edff;color:#015f6b;"><span>🎧</span><span>AIRPODS MAX</span></div>
+        <div class="brand-pill brand-bonus"><span>🎁</span><span>+100 MARQUES BONUS</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- BRANDS SHOWCASE -->
+  <section class="section" style="background:#0d1117;padding:80px 20px;">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-title" style="color:#fff;">Les Fournisseurs des Grandes Marques<br><span style="color:var(--primary-light);">Révélés dans Notre Ebook</span></div>
+        <p class="section-sub" style="color:rgba(255,255,255,0.6);">Des fournisseurs vérifiés pour les marques les plus revendues sur Vinted</p>
+      </div>
+      <div class="brands-showcase-grid">
+
+        <div class="brand-card" onclick="navigateTo('product-les-meilleures-fournisseurs-vinted')">
+          <div class="brand-card-icon">👟</div>
+          <div class="brand-card-name">NIKE DUNK</div>
+          <div class="brand-card-desc">Fournisseurs officiels Nike Dunk Low & High. Marges jusqu'à +300% sur Vinted.</div>
+          <div class="brand-card-tag">Inclus dans l'Ebook</div>
+        </div>
+
+        <div class="brand-card" onclick="navigateTo('product-les-meilleures-fournisseurs-vinted')">
+          <div class="brand-card-icon">👟</div>
+          <div class="brand-card-name">ADIDAS SAMBA</div>
+          <div class="brand-card-desc">Sources directes pour les Adidas Samba & Gazelle, les silhouettes les plus vendues du moment.</div>
+          <div class="brand-card-tag">Inclus dans l'Ebook</div>
+        </div>
+
+        <div class="brand-card brand-card-featured" onclick="navigateTo('product-les-meilleures-fournisseurs-vinted')">
+          <div class="brand-card-icon">💨</div>
+          <div class="brand-card-name">DYSON</div>
+          <div class="brand-card-desc">Fournisseurs reconditionneurs et liquidateurs Dyson (aspirateurs, sèche-cheveux). Marges exceptionnelles.</div>
+          <div class="brand-card-tag">POPULAIRE ✦ Inclus</div>
+        </div>
+
+        <div class="brand-card" onclick="navigateTo('product-les-meilleures-fournisseurs-vinted')">
+          <div class="brand-card-icon">🥾</div>
+          <div class="brand-card-name">UGG</div>
+          <div class="brand-card-desc">Sources UGG Classic & Platform. Les boots les plus recherchées sur Vinted en hiver.</div>
+          <div class="brand-card-tag">Inclus dans l'Ebook</div>
+        </div>
+
+        <div class="brand-card" onclick="navigateTo('product-les-meilleures-fournisseurs-vinted')">
+          <div class="brand-card-icon">👔</div>
+          <div class="brand-card-name">RALPH LAUREN</div>
+          <div class="brand-card-desc">Fournisseurs polos, chemises et vestes Ralph Lauren. Un classique indémodable très demandé.</div>
+          <div class="brand-card-tag">Inclus dans l'Ebook</div>
+        </div>
+
+        <div class="brand-card" onclick="navigateTo('product-les-meilleures-fournisseurs-vinted')">
+          <div class="brand-card-icon">🧢</div>
+          <div class="brand-card-name">TOMMY HILFIGER</div>
+          <div class="brand-card-desc">Sources Tommy Jeans & Tommy Hilfiger. Streetwear premium très apprécié sur Vinted.</div>
+          <div class="brand-card-tag">Inclus dans l'Ebook</div>
+        </div>
+
+        <div class="brand-card brand-card-featured" onclick="navigateTo('product-les-meilleures-fournisseurs-vinted')">
+          <div class="brand-card-icon">🎧</div>
+          <div class="brand-card-name" style="color:#a8edff;">AIRPODS MAX</div>
+          <div class="brand-card-desc">Contact direct du fournisseur AirPods Max. Marges exceptionnelles sur l'électronique Apple la plus demandée sur Vinted.</div>
+          <div class="brand-card-tag" style="background:rgba(168,237,255,0.2);color:#a8edff;">NOUVEAU 2026 ✦ Inclus</div>
+        </div>
+
+        <div class="brand-card brand-card-featured" onclick="navigateTo('product-les-meilleures-fournisseurs-vinted')">
+          <div class="brand-card-icon">🏃</div>
+          <div class="brand-card-name">NIKE TECH</div>
+          <div class="brand-card-desc">Fournisseurs Nike Tech Fleece & Nike Tech Pack. Les joggings les plus revendus sur Vinted.</div>
+          <div class="brand-card-tag">POPULAIRE ✦ Inclus</div>
+        </div>
+
+        <div class="brand-card brand-card-bonus" onclick="navigateTo('product-les-meilleures-fournisseurs-vinted')">
+          <div class="brand-card-icon" style="font-size:48px;">🎁</div>
+          <div class="brand-card-name" style="font-size:20px;">BONUS : +100 Fournisseurs</div>
+          <div class="brand-card-desc" style="font-size:14px;">En plus des 7 marques vedettes, découvrez plus de 100 fournisseurs supplémentaires pour toutes catégories : électronique, luxe, sport, mode, maison et bien plus encore.</div>
+          <div class="brand-card-tag" style="background:var(--gold);color:#7b4f00;">BONUS EXCLUSIF ✦ Valeur 49,99€</div>
+        </div>
+
+      </div>
+      <div style="text-align:center;margin-top:48px;">
+        <div style="display:inline-block;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.12);border-radius:var(--radius-xl);padding:32px 40px;max-width:560px;">
+          <div style="font-size:36px;margin-bottom:8px;">🔓</div>
+          <div style="font-size:20px;font-weight:800;color:#fff;margin-bottom:8px;">Accédez à TOUT pour seulement 6,99€</div>
+          <div style="font-size:14px;color:rgba(255,255,255,0.6);margin-bottom:24px;">7 marques phares + +100 fournisseurs bonus + mises à jour gratuites</div>
+          <button class="btn-atc" onclick="navigateTo('product-les-meilleures-fournisseurs-vinted')" style="max-width:340px;margin:0 auto;">🛒 Obtenir l'Ebook Maintenant →</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURED COLLECTION -->
+  <section class="section" style="background:var(--bg-section);">
+    <div class="container">
+      <div class="featured-layout">
+        <div>
+          <img class="featured-img" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4MDAiIGhlaWdodD0iODAwIiB2aWV3Qm94PSIwIDAgODAwIDgwMCI+CiAgPGRlZnM+CiAgICA8bGluZWFyR3JhZGllbnQgaWQ9ImJnIiB4MT0iMCUiIHkxPSIwJSIgeDI9IjEwMCUiIHkyPSIxMDAlIj4KICAgICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3R5bGU9InN0b3AtY29sb3I6IzAxNWY2YiIvPgogICAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0eWxlPSJzdG9wLWNvbG9yOiMwMTkwOWUiLz4KICAgIDwvbGluZWFyR3JhZGllbnQ+CiAgPC9kZWZzPgogIDxyZWN0IHdpZHRoPSI4MDAiIGhlaWdodD0iODAwIiBmaWxsPSJ1cmwoI2JnKSIvPgogIDxyZWN0IHg9IjYwIiB5PSI2MCIgd2lkdGg9IjY4MCIgaGVpZ2h0PSI2ODAiIHJ4PSIyNCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSJyZ2JhKDI1NSwyNTUsMjU1LDAuMTUpIiBzdHJva2Utd2lkdGg9IjIiLz4KCiAgPCEtLSBVcGRhdGVkIDIwMjYgYmFkZ2UgdG9wIHJpZ2h0IC0tPgogIDxyZWN0IHg9IjU2MCIgeT0iODgiIHdpZHRoPSIxNTIiIGhlaWdodD0iMzYiIHJ4PSIxOCIgZmlsbD0iI2Y2YWQ1NSIvPgogIDx0ZXh0IHg9IjYzNiIgeT0iMTEyIiBmb250LWZhbWlseT0iQXJpYWwgQmxhY2ssc2Fucy1zZXJpZiIgZm9udC1zaXplPSIxNCIgZmlsbD0iIzdiNGYwMCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC13ZWlnaHQ9IjkwMCI+TUlTIEEgSk9VUiAyMDI2PC90ZXh0PgoKICA8IS0tIFRvcCBsYWJlbCAtLT4KICA8dGV4dCB4PSIzODAiIHk9IjE2MCIgZm9udC1mYW1pbHk9IkFyaWFsLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTIiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC41KSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgbGV0dGVyLXNwYWNpbmc9IjMiPkVCT09LIFBSRU1JVU08L3RleHQ+CgogIDwhLS0gTWFpbiB0aXRsZSAtLT4KICA8dGV4dCB4PSI0MDAiIHk9IjIzMCIgZm9udC1mYW1pbHk9IkFyaWFsIEJsYWNrLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMzQiIGZpbGw9IndoaXRlIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LXdlaWdodD0iOTAwIj5MRVMgTUVJTExFVVJFUzwvdGV4dD4KICA8dGV4dCB4PSI0MDAiIHk9IjI3NCIgZm9udC1mYW1pbHk9IkFyaWFsIEJsYWNrLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMzQiIGZpbGw9IndoaXRlIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LXdlaWdodD0iOTAwIj5GT1VSTklTU0VVUlM8L3RleHQ+CiAgPHRleHQgeD0iNDAwIiB5PSIzMTgiIGZvbnQtZmFtaWx5PSJBcmlhbCBCbGFjayxzYW5zLXNlcmlmIiBmb250LXNpemU9IjM0IiBmaWxsPSIjYThlZGZmIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LXdlaWdodD0iOTAwIj5WSU5URUQ8L3RleHQ+CgogIDwhLS0gRGl2aWRlciAtLT4KICA8cmVjdCB4PSIxNTAiIHk9IjM0NSIgd2lkdGg9IjUwMCIgaGVpZ2h0PSIyIiBmaWxsPSJyZ2JhKDI1NSwyNTUsMjU1LDAuMikiIHJ4PSIxIi8+CgogIDwhLS0gQnJhbmQgdGFncyByb3cgMSAtLT4KICA8cmVjdCB4PSI5MCIgeT0iMzY1IiB3aWR0aD0iMTMwIiBoZWlnaHQ9IjMyIiByeD0iMTYiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC4xMikiLz4KICA8dGV4dCB4PSIxNTUiIHk9IjM4NiIgZm9udC1mYW1pbHk9IkFyaWFsLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTIiIGZpbGw9IndoaXRlIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LXdlaWdodD0iNzAwIj5OSUtFIERVTks8L3RleHQ+CgogIDxyZWN0IHg9IjIzMiIgeT0iMzY1IiB3aWR0aD0iMTQ4IiBoZWlnaHQ9IjMyIiByeD0iMTYiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC4xMikiLz4KICA8dGV4dCB4PSIzMDYiIHk9IjM4NiIgZm9udC1mYW1pbHk9IkFyaWFsLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTIiIGZpbGw9IndoaXRlIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LXdlaWdodD0iNzAwIj5BRElEQVMgU0FNQkE8L3RleHQ+CgogIDxyZWN0IHg9IjM5MiIgeT0iMzY1IiB3aWR0aD0iOTgiIGhlaWdodD0iMzIiIHJ4PSIxNiIgZmlsbD0icmdiYSgyNTUsMjU1LDI1NSwwLjEyKSIvPgogIDx0ZXh0IHg9IjQ0MSIgeT0iMzg2IiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIxMiIgZmlsbD0id2hpdGUiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtd2VpZ2h0PSI3MDAiPkRZU09OPC90ZXh0PgoKICA8cmVjdCB4PSI1MDIiIHk9IjM2NSIgd2lkdGg9Ijc2IiBoZWlnaHQ9IjMyIiByeD0iMTYiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC4xMikiLz4KICA8dGV4dCB4PSI1NDAiIHk9IjM4NiIgZm9udC1mYW1pbHk9IkFyaWFsLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTIiIGZpbGw9IndoaXRlIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LXdlaWdodD0iNzAwIj5VR0c8L3RleHQ+CgogIDxyZWN0IHg9IjU5MCIgeT0iMzY1IiB3aWR0aD0iMTIwIiBoZWlnaHQ9IjMyIiByeD0iMTYiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC4xMikiLz4KICA8dGV4dCB4PSI2NTAiIHk9IjM4NiIgZm9udC1mYW1pbHk9IkFyaWFsLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTIiIGZpbGw9IndoaXRlIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LXdlaWdodD0iNzAwIj5OSUtFIFRFQ0g8L3RleHQ+CgogIDwhLS0gQnJhbmQgdGFncyByb3cgMiAtLT4KICA8cmVjdCB4PSI5MCIgeT0iNDEwIiB3aWR0aD0iMTUwIiBoZWlnaHQ9IjMyIiByeD0iMTYiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC4xMikiLz4KICA8dGV4dCB4PSIxNjUiIHk9IjQzMSIgZm9udC1mYW1pbHk9IkFyaWFsLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTIiIGZpbGw9IndoaXRlIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LXdlaWdodD0iNzAwIj5SQUxQSCBMQVVSRU48L3RleHQ+CgogIDxyZWN0IHg9IjI1MiIgeT0iNDEwIiB3aWR0aD0iMTQ4IiBoZWlnaHQ9IjMyIiByeD0iMTYiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC4xMikiLz4KICA8dGV4dCB4PSIzMjYiIHk9IjQzMSIgZm9udC1mYW1pbHk9IkFyaWFsLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTIiIGZpbGw9IndoaXRlIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LXdlaWdodD0iNzAwIj5UT01NWSBISUxGSUdFUjwvdGV4dD4KCiAgPCEtLSBORVc6IEFpclBvZHMgTWF4IGJhZGdlIC0gaGlnaGxpZ2h0ZWQgLS0+CiAgPHJlY3QgeD0iNDEyIiB5PSI0MTAiIHdpZHRoPSIxMzgiIGhlaWdodD0iMzIiIHJ4PSIxNiIgZmlsbD0icmdiYSgxNjgsMjM3LDI1NSwwLjIyKSIgc3Ryb2tlPSIjYThlZGZmIiBzdHJva2Utd2lkdGg9IjEuNSIvPgogIDx0ZXh0IHg9IjQ4MSIgeT0iNDMxIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIxMiIgZmlsbD0iI2E4ZWRmZiIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC13ZWlnaHQ9IjcwMCI+QUlSUE9EUyBNQVg8L3RleHQ+CgogIDxyZWN0IHg9IjU2MiIgeT0iNDEwIiB3aWR0aD0iMTQ4IiBoZWlnaHQ9IjMyIiByeD0iMTYiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC4xMikiLz4KICA8dGV4dCB4PSI2MzYiIHk9IjQzMSIgZm9udC1mYW1pbHk9IkFyaWFsLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTIiIGZpbGw9IndoaXRlIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LXdlaWdodD0iNzAwIj4rIDEwMCBBVVRSRVM8L3RleHQ+CgogIDwhLS0gRGl2aWRlciAyIC0tPgogIDxyZWN0IHg9IjE1MCIgeT0iNDU4IiB3aWR0aD0iNTAwIiBoZWlnaHQ9IjEiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC4xKSIgcng9IjEiLz4KCiAgPCEtLSBCb251cyBiYWRnZSAtLT4KICA8cmVjdCB4PSIyMDAiIHk9IjQ3NSIgd2lkdGg9IjQwMCIgaGVpZ2h0PSI0NCIgcng9IjIyIiBmaWxsPSIjZjZhZDU1Ii8+CiAgPHRleHQgeD0iNDAwIiB5PSI1MDMiIGZvbnQtZmFtaWx5PSJBcmlhbCBCbGFjayxzYW5zLXNlcmlmIiBmb250LXNpemU9IjE0IiBmaWxsPSIjN2I0ZjAwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LXdlaWdodD0iOTAwIj5CT05VUyA6ICsxMDAgRk9VUk5JU1NFVVJTIElOQ0xVUzwvdGV4dD4KCiAgPCEtLSBBaXJQb2RzIGhpZ2hsaWdodCBib3ggLS0+CiAgPHJlY3QgeD0iOTAiIHk9IjUzNSIgd2lkdGg9IjYyMCIgaGVpZ2h0PSI3MCIgcng9IjE2IiBmaWxsPSJyZ2JhKDE2OCwyMzcsMjU1LDAuMDgpIiBzdHJva2U9InJnYmEoMTY4LDIzNywyNTUsMC4zKSIgc3Ryb2tlLXdpZHRoPSIxLjUiLz4KICA8dGV4dCB4PSI0MDAiIHk9IjU2MiIgZm9udC1mYW1pbHk9IkFyaWFsIEJsYWNrLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTUiIGZpbGw9IiNhOGVkZmYiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtd2VpZ2h0PSI5MDAiPk5PVVZFQVUgOiBGT1VSTklTU0VVUiBBSVJQT0RTIE1BWDwvdGV4dD4KICA8dGV4dCB4PSI0MDAiIHk9IjU4NiIgZm9udC1mYW1pbHk9IkFyaWFsLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTIiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC42KSIgdGV4dC1hbmNob3I9Im1pZGRsZSI+Q29udGFjdCBkaXJlY3QgaW5jbHVzIGRhbnMgbCBlYm9vazwvdGV4dD4KCiAgPCEtLSBQcmljZSAtLT4KICA8dGV4dCB4PSI0MDAiIHk9IjY3MCIgZm9udC1mYW1pbHk9IkFyaWFsIEJsYWNrLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iNTYiIGZpbGw9IndoaXRlIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LXdlaWdodD0iOTAwIj42LDk5IEVVUjwvdGV4dD4KICA8dGV4dCB4PSI0MDAiIHk9IjcxMCIgZm9udC1mYW1pbHk9IkFyaWFsLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTQiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC41NSkiIHRleHQtYW5jaG9yPSJtaWRkbGUiPkFjY2VzIGltbWVkaWF0IC0gUERGIC0gTWlzIGEgam91ciAyMDI2PC90ZXh0Pgo8L3N2Zz4=" alt="Les Meilleures Fournisseurs Vinted">
+        </div>
+        <div class="featured-right">
+          <div>
+            <span style="display:inline-block;background:var(--primary);color:#fff;padding:4px 14px;border-radius:100px;font-size:12px;font-weight:700;margin-bottom:12px;">BEST-SELLER</span>
+            <div class="section-title">Les Meilleures Fournisseurs Vinted</div>
+            <p style="font-size:16px;color:var(--text-mid);line-height:1.7;margin:12px 0 0;">Le guide ultime pour trouver les meilleurs fournisseurs et revendre sur Vinted avec des marges imbattables. Tout ce qu'il faut savoir pour démarrer ou scaler son activité.</p>
+          </div>
+          <ul class="featured-pts">
+            <li>Fournisseurs Nike Dunk, Adidas Samba, Nike Tech vérifiés</li>
+            <li>Sources Dyson, UGG, Ralph Lauren, Tommy Hilfiger</li>
+            <li>🎧 NOUVEAU — Contact fournisseur AirPods Max</li>
+            <li>+100 fournisseurs bonus pour toutes catégories</li>
+            <li>Mis à jour 2026 — contacts actifs et vérifiés</li>
+          </ul>
+          <div style="display:flex;align-items:center;gap:16px;flex-wrap:wrap;">
+            <div>
+              <span style="font-size:14px;color:var(--text-light);text-decoration:line-through;">9,99€</span>
+              <span style="font-size:32px;font-weight:900;color:var(--primary);display:block;line-height:1.1;">6,99€</span>
+            </div>
+            <span style="background:var(--primary);color:#fff;padding:6px 14px;border-radius:100px;font-size:13px;font-weight:700;">✦ MIS À JOUR 2026</span>
+          </div>
+          <button class="btn-atc" style="margin-top:4px;" onclick="navigateTo('product-les-meilleures-fournisseurs-vinted')">Voir le Produit →</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COLLECTION PREVIEW -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-title">Notre Collection</div>
+        <p class="section-sub">Tous nos guides premium pour réussir sur Vinted</p>
+      </div>
+      <div class="products-grid">
+        <div class="product-card animate-in" onclick="navigateTo('product-les-meilleures-fournisseurs-vinted')">
+          <div class="product-img-wrap">
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4MDAiIGhlaWdodD0iODAwIiB2aWV3Qm94PSIwIDAgODAwIDgwMCI+CiAgPGRlZnM+CiAgICA8bGluZWFyR3JhZGllbnQgaWQ9ImJnIiB4MT0iMCUiIHkxPSIwJSIgeDI9IjEwMCUiIHkyPSIxMDAlIj4KICAgICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3R5bGU9InN0b3AtY29sb3I6IzAxNWY2YiIvPgogICAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0eWxlPSJzdG9wLWNvbG9yOiMwMTkwOWUiLz4KICAgIDwvbGluZWFyR3JhZGllbnQ+CiAgPC9kZWZzPgogIDxyZWN0IHdpZHRoPSI4MDAiIGhlaWdodD0iODAwIiBmaWxsPSJ1cmwoI2JnKSIvPgogIDxyZWN0IHg9IjYwIiB5PSI2MCIgd2lkdGg9IjY4MCIgaGVpZ2h0PSI2ODAiIHJ4PSIyNCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSJyZ2JhKDI1NSwyNTUsMjU1LDAuMTUpIiBzdHJva2Utd2lkdGg9IjIiLz4KCiAgPCEtLSBVcGRhdGVkIDIwMjYgYmFkZ2UgdG9wIHJpZ2h0IC0tPgogIDxyZWN0IHg9IjU2MCIgeT0iODgiIHdpZHRoPSIxNTIiIGhlaWdodD0iMzYiIHJ4PSIxOCIgZmlsbD0iI2Y2YWQ1NSIvPgogIDx0ZXh0IHg9IjYzNiIgeT0iMTEyIiBmb250LWZhbWlseT0iQXJpYWwgQmxhY2ssc2Fucy1zZXJpZiIgZm9udC1zaXplPSIxNCIgZmlsbD0iIzdiNGYwMCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC13ZWlnaHQ9IjkwMCI+TUlTIEEgSk9VUiAyMDI2PC90ZXh0PgoKICA8IS0tIFRvcCBsYWJlbCAtLT4KICA8dGV4dCB4PSIzODAiIHk9IjE2MCIgZm9udC1mYW1pbHk9IkFyaWFsLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTIiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC41KSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgbGV0dGVyLXNwYWNpbmc9IjMiPkVCT09LIFBSRU1JVU08L3RleHQ+CgogIDwhLS0gTWFpbiB0aXRsZSAtLT4KICA8dGV4dCB4PSI0MDAiIHk9IjIzMCIgZm9udC1mYW1pbHk9IkFyaWFsIEJsYWNrLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMzQiIGZpbGw9IndoaXRlIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LXdlaWdodD0iOTAwIj5MRVMgTUVJTExFVVJFUzwvdGV4dD4KICA8dGV4dCB4PSI0MDAiIHk9IjI3NCIgZm9udC1mYW1pbHk9IkFyaWFsIEJsYWNrLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMzQiIGZpbGw9IndoaXRlIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LXdlaWdodD0iOTAwIj5GT1VSTklTU0VVUlM8L3RleHQ+CiAgPHRleHQgeD0iNDAwIiB5PSIzMTgiIGZvbnQtZmFtaWx5PSJBcmlhbCBCbGFjayxzYW5zLXNlcmlmIiBmb250LXNpemU9IjM0IiBmaWxsPSIjYThlZGZmIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LXdlaWdodD0iOTAwIj5WSU5URUQ8L3RleHQ+CgogIDwhLS0gRGl2aWRlciAtLT4KICA8cmVjdCB4PSIxNTAiIHk9IjM0NSIgd2lkdGg9IjUwMCIgaGVpZ2h0PSIyIiBmaWxsPSJyZ2JhKDI1NSwyNTUsMjU1LDAuMikiIHJ4PSIxIi8+CgogIDwhLS0gQnJhbmQgdGFncyByb3cgMSAtLT4KICA8cmVjdCB4PSI5MCIgeT0iMzY1IiB3aWR0aD0iMTMwIiBoZWlnaHQ9IjMyIiByeD0iMTYiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC4xMikiLz4KICA8dGV4dCB4PSIxNTUiIHk9IjM4NiIgZm9udC1mYW1pbHk9IkFyaWFsLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTIiIGZpbGw9IndoaXRlIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LXdlaWdodD0iNzAwIj5OSUtFIERVTks8L3RleHQ+CgogIDxyZWN0IHg9IjIzMiIgeT0iMzY1IiB3aWR0aD0iMTQ4IiBoZWlnaHQ9IjMyIiByeD0iMTYiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC4xMikiLz4KICA8dGV4dCB4PSIzMDYiIHk9IjM4NiIgZm9udC1mYW1pbHk9IkFyaWFsLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTIiIGZpbGw9IndoaXRlIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LXdlaWdodD0iNzAwIj5BRElEQVMgU0FNQkE8L3RleHQ+CgogIDxyZWN0IHg9IjM5MiIgeT0iMzY1IiB3aWR0aD0iOTgiIGhlaWdodD0iMzIiIHJ4PSIxNiIgZmlsbD0icmdiYSgyNTUsMjU1LDI1NSwwLjEyKSIvPgogIDx0ZXh0IHg9IjQ0MSIgeT0iMzg2IiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIxMiIgZmlsbD0id2hpdGUiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtd2VpZ2h0PSI3MDAiPkRZU09OPC90ZXh0PgoKICA8cmVjdCB4PSI1MDIiIHk9IjM2NSIgd2lkdGg9Ijc2IiBoZWlnaHQ9IjMyIiByeD0iMTYiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC4xMikiLz4KICA8dGV4dCB4PSI1NDAiIHk9IjM4NiIgZm9udC1mYW1pbHk9IkFyaWFsLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTIiIGZpbGw9IndoaXRlIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LXdlaWdodD0iNzAwIj5VR0c8L3RleHQ+CgogIDxyZWN0IHg9IjU5MCIgeT0iMzY1IiB3aWR0aD0iMTIwIiBoZWlnaHQ9IjMyIiByeD0iMTYiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC4xMikiLz4KICA8dGV4dCB4PSI2NTAiIHk9IjM4NiIgZm9udC1mYW1pbHk9IkFyaWFsLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTIiIGZpbGw9IndoaXRlIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LXdlaWdodD0iNzAwIj5OSUtFIFRFQ0g8L3RleHQ+CgogIDwhLS0gQnJhbmQgdGFncyByb3cgMiAtLT4KICA8cmVjdCB4PSI5MCIgeT0iNDEwIiB3aWR0aD0iMTUwIiBoZWlnaHQ9IjMyIiByeD0iMTYiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC4xMikiLz4KICA8dGV4dCB4PSIxNjUiIHk9IjQzMSIgZm9udC1mYW1pbHk9IkFyaWFsLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTIiIGZpbGw9IndoaXRlIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LXdlaWdodD0iNzAwIj5SQUxQSCBMQVVSRU48L3RleHQ+CgogIDxyZWN0IHg9IjI1MiIgeT0iNDEwIiB3aWR0aD0iMTQ4IiBoZWlnaHQ9IjMyIiByeD0iMTYiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC4xMikiLz4KICA8dGV4dCB4PSIzMjYiIHk9IjQzMSIgZm9udC1mYW1pbHk9IkFyaWFsLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTIiIGZpbGw9IndoaXRlIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LXdlaWdodD0iNzAwIj5UT01NWSBISUxGSUdFUjwvdGV4dD4KCiAgPCEtLSBORVc6IEFpclBvZHMgTWF4IGJhZGdlIC0gaGlnaGxpZ2h0ZWQgLS0+CiAgPHJlY3QgeD0iNDEyIiB5PSI0MTAiIHdpZHRoPSIxMzgiIGhlaWdodD0iMzIiIHJ4PSIxNiIgZmlsbD0icmdiYSgxNjgsMjM3LDI1NSwwLjIyKSIgc3Ryb2tlPSIjYThlZGZmIiBzdHJva2Utd2lkdGg9IjEuNSIvPgogIDx0ZXh0IHg9IjQ4MSIgeT0iNDMxIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIxMiIgZmlsbD0iI2E4ZWRmZiIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC13ZWlnaHQ9IjcwMCI+QUlSUE9EUyBNQVg8L3RleHQ+CgogIDxyZWN0IHg9IjU2MiIgeT0iNDEwIiB3aWR0aD0iMTQ4IiBoZWlnaHQ9IjMyIiByeD0iMTYiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC4xMikiLz4KICA8dGV4dCB4PSI2MzYiIHk9IjQzMSIgZm9udC1mYW1pbHk9IkFyaWFsLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTIiIGZpbGw9IndoaXRlIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LXdlaWdodD0iNzAwIj4rIDEwMCBBVVRSRVM8L3RleHQ+CgogIDwhLS0gRGl2aWRlciAyIC0tPgogIDxyZWN0IHg9IjE1MCIgeT0iNDU4IiB3aWR0aD0iNTAwIiBoZWlnaHQ9IjEiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC4xKSIgcng9IjEiLz4KCiAgPCEtLSBCb251cyBiYWRnZSAtLT4KICA8cmVjdCB4PSIyMDAiIHk9IjQ3NSIgd2lkdGg9IjQwMCIgaGVpZ2h0PSI0NCIgcng9IjIyIiBmaWxsPSIjZjZhZDU1Ii8+CiAgPHRleHQgeD0iNDAwIiB5PSI1MDMiIGZvbnQtZmFtaWx5PSJBcmlhbCBCbGFjayxzYW5zLXNlcmlmIiBmb250LXNpemU9IjE0IiBmaWxsPSIjN2I0ZjAwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LXdlaWdodD0iOTAwIj5CT05VUyA6ICsxMDAgRk9VUk5JU1NFVVJTIElOQ0xVUzwvdGV4dD4KCiAgPCEtLSBBaXJQb2RzIGhpZ2hsaWdodCBib3ggLS0+CiAgPHJlY3QgeD0iOTAiIHk9IjUzNSIgd2lkdGg9IjYyMCIgaGVpZ2h0PSI3MCIgcng9IjE2IiBmaWxsPSJyZ2JhKDE2OCwyMzcsMjU1LDAuMDgpIiBzdHJva2U9InJnYmEoMTY4LDIzNywyNTUsMC4zKSIgc3Ryb2tlLXdpZHRoPSIxLjUiLz4KICA8dGV4dCB4PSI0MDAiIHk9IjU2MiIgZm9udC1mYW1pbHk9IkFyaWFsIEJsYWNrLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTUiIGZpbGw9IiNhOGVkZmYiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtd2VpZ2h0PSI5MDAiPk5PVVZFQVUgOiBGT1VSTklTU0VVUiBBSVJQT0RTIE1BWDwvdGV4dD4KICA8dGV4dCB4PSI0MDAiIHk9IjU4NiIgZm9udC1mYW1pbHk9IkFyaWFsLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTIiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC42KSIgdGV4dC1hbmNob3I9Im1pZGRsZSI+Q29udGFjdCBkaXJlY3QgaW5jbHVzIGRhbnMgbCBlYm9vazwvdGV4dD4KCiAgPCEtLSBQcmljZSAtLT4KICA8dGV4dCB4PSI0MDAiIHk9IjY3MCIgZm9udC1mYW1pbHk9IkFyaWFsIEJsYWNrLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iNTYiIGZpbGw9IndoaXRlIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LXdlaWdodD0iOTAwIj42LDk5IEVVUjwvdGV4dD4KICA8dGV4dCB4PSI0MDAiIHk9IjcxMCIgZm9udC1mYW1pbHk9IkFyaWFsLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTQiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC41NSkiIHRleHQtYW5jaG9yPSJtaWRkbGUiPkFjY2VzIGltbWVkaWF0IC0gUERGIC0gTWlzIGEgam91ciAyMDI2PC90ZXh0Pgo8L3N2Zz4=" alt="Les Meilleures Fournisseurs Vinted" loading="lazy">
+            <span class="product-badge new">2026</span>
+            <span class="product-badge best" style="top:12px;left:auto;right:12px;">BEST-SELLER</span>
+          </div>
+          <div class="product-info">
+            <div class="product-name">Les Meilleures Fournisseurs Vinted</div>
+            <div class="product-rating"><span class="stars">★★★★★</span><span style="color:var(--text-light);font-size:12px;">(124)</span></div>
+            <div class="product-prices">
+              <span class="price-old">9,99€</span>
+              <span class="price-new">6,99€</span>
+            </div>
+          </div>
+          <div class="product-card-btn">Voir le Produit →</div>
+        </div>
+      </div>
+      <div style="text-align:center;margin-top:40px;">
+        <button class="btn-hero-primary" style="background:var(--primary);color:#fff;" onclick="navigateTo('collection')">Voir Toute la Collection →</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURES -->
+  <section class="section" style="background:var(--bg-section);">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-title">Pourquoi Nous Choisir ?</div>
+        <p class="section-sub">Des avantages exclusifs pour booster vos ventes Vinted</p>
+      </div>
+      <div class="features-grid">
+        <div class="feature-card animate-in">
+          <span class="feature-icon">🚀</span>
+          <div class="feature-title">Livraison Instantanée</div>
+          <div class="feature-desc">Accès à votre ebook immédiatement après le paiement. Commencez à apprendre dès maintenant.</div>
+        </div>
+        <div class="feature-card animate-in">
+          <span class="feature-icon">🔒</span>
+          <div class="feature-title">Paiement 100% Sécurisé</div>
+          <div class="feature-desc">Transactions chiffrées SSL. Votre sécurité est notre priorité absolue.</div>
+        </div>
+        <div class="feature-card animate-in">
+          <span class="feature-icon">↩️</span>
+          <div class="feature-title">Remboursement 30 Jours</div>
+          <div class="feature-desc">Pas satisfait ? Remboursement intégral sans questions posées sous 30 jours.</div>
+        </div>
+        <div class="feature-card animate-in">
+          <span class="feature-icon">⭐</span>
+          <div class="feature-title">Qualité Premium</div>
+          <div class="feature-desc">Guides rédigés par des experts Vinted avec des années d'expérience terrain.</div>
+        </div>
+        <div class="feature-card animate-in">
+          <span class="feature-icon">📞</span>
+          <div class="feature-title">Support 7j/7</div>
+          <div class="feature-desc">Notre équipe est disponible 7 jours sur 7 pour vous accompagner dans votre succès.</div>
+        </div>
+        <div class="feature-card animate-in">
+          <span class="feature-icon">✅</span>
+          <div class="feature-title">Mis à Jour Régulièrement</div>
+          <div class="feature-desc">Nos guides évoluent avec les algorithmes Vinted. Toujours à la pointe des dernières tendances.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="section testimonials-bg">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-title">Ce Que Nos Clients Disent</div>
+        <div style="display:flex;justify-content:center;margin-top:8px;">
+          <a href="https://trustpilot.customerthread.com/?country=FR&shop=MonMagasinEbook&logo=&url=MonMagasinEbook.com" target="_blank" class="tp-score">
+            <span class="tp-logo">Trustpilot</span>
+            <span class="tp-stars">★★★★★</span>
+            <div class="tp-text"><strong>4,8/5</strong> · Excellent · 2 400+ avis</div>
+          </a>
+        </div>
+      </div>
+      <div class="reviews-carousel">
+        <div class="review-card">
+          <div class="review-header">
+            <img class="review-avatar" src="https://i.pravatar.cc/100?img=1" alt="Sophie L.">
+            <div><div class="review-name">Sophie L.</div><div class="review-date">12 mars 2025</div></div>
+          </div>
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">Guide incroyable ! J'ai trouvé des fournisseurs que je ne connaissais pas du tout. Mes ventes ont doublé en 2 mois. Je recommande à tous les vendeurs Vinted !</p>
+          <div class="review-verified">✓ Achat Vérifié</div>
+        </div>
+        <div class="review-card">
+          <div class="review-header">
+            <img class="review-avatar" src="https://i.pravatar.cc/100?img=5" alt="Thomas M.">
+            <div><div class="review-name">Thomas M.</div><div class="review-date">28 février 2025</div></div>
+          </div>
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">Je pensais tout savoir sur Vinted mais ce guide m'a ouvert les yeux sur des stratégies de sourcage que je n'aurais jamais imaginées. Excellent investissement !</p>
+          <div class="review-verified">✓ Achat Vérifié</div>
+        </div>
+        <div class="review-card">
+          <div class="review-header">
+            <img class="review-avatar" src="https://i.pravatar.cc/100?img=9" alt="Marie-Claire D.">
+            <div><div class="review-name">Marie-Claire D.</div><div class="review-date">15 mars 2025</div></div>
+          </div>
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">Super guide, très complet et facile à suivre. Les conseils sur les fournisseurs sont vraiment précieux. J'ai récupéré mon investissement dès la première semaine !</p>
+          <div class="review-verified">✓ Achat Vérifié</div>
+        </div>
+        <div class="review-card">
+          <div class="review-header">
+            <img class="review-avatar" src="https://i.pravatar.cc/100?img=12" alt="Lucas B.">
+            <div><div class="review-name">Lucas B.</div><div class="review-date">5 mars 2025</div></div>
+          </div>
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">J'aurais aimé avoir ce guide quand j'ai commencé ! Tout y est : les fournisseurs, les négociations, les prix. Un must-have pour tout vendeur sérieux.</p>
+          <div class="review-verified">✓ Achat Vérifié</div>
+        </div>
+        <div class="review-card">
+          <div class="review-header">
+            <img class="review-avatar" src="https://i.pravatar.cc/100?img=20" alt="Camille R.">
+            <div><div class="review-name">Camille R.</div><div class="review-date">1 mars 2025</div></div>
+          </div>
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">Très bonne surprise ! Le contenu est de qualité professionnelle. Les fournisseurs listés sont vérifiés et fiables. Je ne vois plus Vinted de la même façon.</p>
+          <div class="review-verified">✓ Achat Vérifié</div>
+        </div>
+        <div class="review-card">
+          <div class="review-header">
+            <img class="review-avatar" src="https://i.pravatar.cc/100?img=25" alt="Antoine F.">
+            <div><div class="review-name">Antoine F.</div><div class="review-date">20 mars 2025</div></div>
+          </div>
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">Accessible, pratique et très rentable. L'accès immédiat est un vrai plus. J'ai commencé à appliquer les conseils le soir même de l'achat. Merci !</p>
+          <div class="review-verified">✓ Achat Vérifié</div>
+        </div>
+      </div>
+      <div style="text-align:center;margin-top:32px;">
+        <a href="https://trustpilot.customerthread.com/?country=FR&shop=MonMagasinEbook&logo=&url=MonMagasinEbook.com" target="_blank" class="tp-btn-all">Voir tous les avis sur Trustpilot →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ PREVIEW -->
+  <section class="section">
+    <div class="container" style="max-width:800px;">
+      <div class="section-header">
+        <div class="section-title">Questions Fréquentes</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFaq(this)">
+          Comment recevoir mon ebook après l'achat ?
+          <span class="faq-arrow">▼</span>
+        </div>
+        <div class="faq-answer">Votre ebook vous est envoyé immédiatement après le paiement par email. Vous recevrez un lien de téléchargement sécurisé valable 30 jours. Vérifiez vos spams si vous ne le recevez pas dans les 5 minutes.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFaq(this)">
+          Le guide est-il mis à jour régulièrement ?
+          <span class="faq-arrow">▼</span>
+        </div>
+        <div class="faq-answer">Oui, nos guides sont mis à jour régulièrement pour refléter les dernières tendances et fournisseurs disponibles. Les clients bénéficient des mises à jour gratuitement.</div>
+      </div>
+      <div style="text-align:center;margin-top:32px;">
+        <button onclick="navigateTo('faq')" style="color:var(--primary);font-size:15px;font-weight:600;background:none;border:none;cursor:pointer;">Voir toutes les questions →</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- NEWSLETTER -->
+  <section class="newsletter-section">
+    <div class="container">
+      <div class="section-title" style="color:#fff;">Recevez Nos Meilleures Astuces Vinted</div>
+      <p style="color:rgba(255,255,255,0.85);font-size:16px;margin-top:8px;">Inscrivez-vous et obtenez un guide gratuit + nos dernières offres exclusives</p>
+      <div class="newsletter-form">
+        <input class="newsletter-input" type="email" placeholder="Votre adresse email...">
+        <button class="newsletter-btn">Je m'inscris →</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="logo-footer">MonMagasinEbook</div>
+          <p>La référence française pour les guides et stratégies de vente sur Vinted. Des ebooks premium pour maximiser vos revenus.</p>
+          <a href="https://trustpilot.customerthread.com/?country=FR&shop=MonMagasinEbook&logo=&url=MonMagasinEbook.com" target="_blank" class="footer-tp">
+            <span style="color:var(--green-tp);font-weight:900;font-size:16px;">Trustpilot</span>
+            <span style="color:var(--green-tp);">★★★★★</span>
+            <span>4,8/5 · Excellent</span>
+          </a>
+        </div>
+        <div class="footer-col">
+          <h4>Navigation</h4>
+          <ul>
+            <li><a href="#home" onclick="navigateTo('home');return false;">Accueil</a></li>
+            <li><a href="#collection" onclick="navigateTo('collection');return false;">Collection</a></li>
+            <li><a href="#faq" onclick="navigateTo('faq');return false;">FAQ</a></li>
+            <li><a href="#contact" onclick="navigateTo('contact');return false;">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Aide</h4>
+          <ul>
+            <li><a href="#faq" onclick="navigateTo('faq');return false;">Questions fréquentes</a></li>
+            <li><a href="#contact" onclick="navigateTo('contact');return false;">Support client</a></li>
+            <li><a href="#contact" onclick="navigateTo('contact');return false;">Remboursement</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Légal</h4>
+          <ul>
+            <li><a href="#contact" onclick="navigateTo('contact');return false;">Mentions légales</a></li>
+            <li><a href="#contact" onclick="navigateTo('contact');return false;">Politique de confidentialité</a></li>
+            <li><a href="#contact" onclick="navigateTo('contact');return false;">CGV</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2025 MonMagasinEbook.com · Tous droits réservés</span>
+        <div class="footer-links">
+          <a href="#contact" onclick="navigateTo('contact');return false;">Mentions légales</a>
+          <a href="#contact" onclick="navigateTo('contact');return false;">CGV</a>
+          <a href="#contact" onclick="navigateTo('contact');return false;">Confidentialité</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+</div>
+
+<!-- ===================== PAGE: COLLECTION ===================== -->
+<div class="page" id="collection">
+  <div class="collection-hero">
+    <div class="section-title">Notre Collection</div>
+    <p style="color:var(--text-mid);font-size:16px;margin-top:8px;">Tous nos guides premium pour réussir sur Vinted</p>
+  </div>
+  <section class="section">
+    <div class="container">
+      <div class="products-grid">
+        <div class="product-card" onclick="navigateTo('product-les-meilleures-fournisseurs-vinted')">
+          <div class="product-img-wrap">
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4MDAiIGhlaWdodD0iODAwIiB2aWV3Qm94PSIwIDAgODAwIDgwMCI+CiAgPGRlZnM+CiAgICA8bGluZWFyR3JhZGllbnQgaWQ9ImJnIiB4MT0iMCUiIHkxPSIwJSIgeDI9IjEwMCUiIHkyPSIxMDAlIj4KICAgICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3R5bGU9InN0b3AtY29sb3I6IzAxNWY2YiIvPgogICAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0eWxlPSJzdG9wLWNvbG9yOiMwMTkwOWUiLz4KICAgIDwvbGluZWFyR3JhZGllbnQ+CiAgPC9kZWZzPgogIDxyZWN0IHdpZHRoPSI4MDAiIGhlaWdodD0iODAwIiBmaWxsPSJ1cmwoI2JnKSIvPgogIDxyZWN0IHg9IjYwIiB5PSI2MCIgd2lkdGg9IjY4MCIgaGVpZ2h0PSI2ODAiIHJ4PSIyNCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSJyZ2JhKDI1NSwyNTUsMjU1LDAuMTUpIiBzdHJva2Utd2lkdGg9IjIiLz4KCiAgPCEtLSBVcGRhdGVkIDIwMjYgYmFkZ2UgdG9wIHJpZ2h0IC0tPgogIDxyZWN0IHg9IjU2MCIgeT0iODgiIHdpZHRoPSIxNTIiIGhlaWdodD0iMzYiIHJ4PSIxOCIgZmlsbD0iI2Y2YWQ1NSIvPgogIDx0ZXh0IHg9IjYzNiIgeT0iMTEyIiBmb250LWZhbWlseT0iQXJpYWwgQmxhY2ssc2Fucy1zZXJpZiIgZm9udC1zaXplPSIxNCIgZmlsbD0iIzdiNGYwMCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC13ZWlnaHQ9IjkwMCI+TUlTIEEgSk9VUiAyMDI2PC90ZXh0PgoKICA8IS0tIFRvcCBsYWJlbCAtLT4KICA8dGV4dCB4PSIzODAiIHk9IjE2MCIgZm9udC1mYW1pbHk9IkFyaWFsLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTIiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC41KSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgbGV0dGVyLXNwYWNpbmc9IjMiPkVCT09LIFBSRU1JVU08L3RleHQ+CgogIDwhLS0gTWFpbiB0aXRsZSAtLT4KICA8dGV4dCB4PSI0MDAiIHk9IjIzMCIgZm9udC1mYW1pbHk9IkFyaWFsIEJsYWNrLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMzQiIGZpbGw9IndoaXRlIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LXdlaWdodD0iOTAwIj5MRVMgTUVJTExFVVJFUzwvdGV4dD4KICA8dGV4dCB4PSI0MDAiIHk9IjI3NCIgZm9udC1mYW1pbHk9IkFyaWFsIEJsYWNrLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMzQiIGZpbGw9IndoaXRlIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LXdlaWdodD0iOTAwIj5GT1VSTklTU0VVUlM8L3RleHQ+CiAgPHRleHQgeD0iNDAwIiB5PSIzMTgiIGZvbnQtZmFtaWx5PSJBcmlhbCBCbGFjayxzYW5zLXNlcmlmIiBmb250LXNpemU9IjM0IiBmaWxsPSIjYThlZGZmIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LXdlaWdodD0iOTAwIj5WSU5URUQ8L3RleHQ+CgogIDwhLS0gRGl2aWRlciAtLT4KICA8cmVjdCB4PSIxNTAiIHk9IjM0NSIgd2lkdGg9IjUwMCIgaGVpZ2h0PSIyIiBmaWxsPSJyZ2JhKDI1NSwyNTUsMjU1LDAuMikiIHJ4PSIxIi8+CgogIDwhLS0gQnJhbmQgdGFncyByb3cgMSAtLT4KICA8cmVjdCB4PSI5MCIgeT0iMzY1IiB3aWR0aD0iMTMwIiBoZWlnaHQ9IjMyIiByeD0iMTYiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC4xMikiLz4KICA8dGV4dCB4PSIxNTUiIHk9IjM4NiIgZm9udC1mYW1pbHk9IkFyaWFsLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTIiIGZpbGw9IndoaXRlIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LXdlaWdodD0iNzAwIj5OSUtFIERVTks8L3RleHQ+CgogIDxyZWN0IHg9IjIzMiIgeT0iMzY1IiB3aWR0aD0iMTQ4IiBoZWlnaHQ9IjMyIiByeD0iMTYiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC4xMikiLz4KICA8dGV4dCB4PSIzMDYiIHk9IjM4NiIgZm9udC1mYW1pbHk9IkFyaWFsLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTIiIGZpbGw9IndoaXRlIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LXdlaWdodD0iNzAwIj5BRElEQVMgU0FNQkE8L3RleHQ+CgogIDxyZWN0IHg9IjM5MiIgeT0iMzY1IiB3aWR0aD0iOTgiIGhlaWdodD0iMzIiIHJ4PSIxNiIgZmlsbD0icmdiYSgyNTUsMjU1LDI1NSwwLjEyKSIvPgogIDx0ZXh0IHg9IjQ0MSIgeT0iMzg2IiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIxMiIgZmlsbD0id2hpdGUiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtd2VpZ2h0PSI3MDAiPkRZU09OPC90ZXh0PgoKICA8cmVjdCB4PSI1MDIiIHk9IjM2NSIgd2lkdGg9Ijc2IiBoZWlnaHQ9IjMyIiByeD0iMTYiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC4xMikiLz4KICA8dGV4dCB4PSI1NDAiIHk9IjM4NiIgZm9udC1mYW1pbHk9IkFyaWFsLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTIiIGZpbGw9IndoaXRlIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LXdlaWdodD0iNzAwIj5VR0c8L3RleHQ+CgogIDxyZWN0IHg9IjU5MCIgeT0iMzY1IiB3aWR0aD0iMTIwIiBoZWlnaHQ9IjMyIiByeD0iMTYiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC4xMikiLz4KICA8dGV4dCB4PSI2NTAiIHk9IjM4NiIgZm9udC1mYW1pbHk9IkFyaWFsLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTIiIGZpbGw9IndoaXRlIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LXdlaWdodD0iNzAwIj5OSUtFIFRFQ0g8L3RleHQ+CgogIDwhLS0gQnJhbmQgdGFncyByb3cgMiAtLT4KICA8cmVjdCB4PSI5MCIgeT0iNDEwIiB3aWR0aD0iMTUwIiBoZWlnaHQ9IjMyIiByeD0iMTYiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC4xMikiLz4KICA8dGV4dCB4PSIxNjUiIHk9IjQzMSIgZm9udC1mYW1pbHk9IkFyaWFsLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTIiIGZpbGw9IndoaXRlIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LXdlaWdodD0iNzAwIj5SQUxQSCBMQVVSRU48L3RleHQ+CgogIDxyZWN0IHg9IjI1MiIgeT0iNDEwIiB3aWR0aD0iMTQ4IiBoZWlnaHQ9IjMyIiByeD0iMTYiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC4xMikiLz4KICA8dGV4dCB4PSIzMjYiIHk9IjQzMSIgZm9udC1mYW1pbHk9IkFyaWFsLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTIiIGZpbGw9IndoaXRlIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LXdlaWdodD0iNzAwIj5UT01NWSBISUxGSUdFUjwvdGV4dD4KCiAgPCEtLSBORVc6IEFpclBvZHMgTWF4IGJhZGdlIC0gaGlnaGxpZ2h0ZWQgLS0+CiAgPHJlY3QgeD0iNDEyIiB5PSI0MTAiIHdpZHRoPSIxMzgiIGhlaWdodD0iMzIiIHJ4PSIxNiIgZmlsbD0icmdiYSgxNjgsMjM3LDI1NSwwLjIyKSIgc3Ryb2tlPSIjYThlZGZmIiBzdHJva2Utd2lkdGg9IjEuNSIvPgogIDx0ZXh0IHg9IjQ4MSIgeT0iNDMxIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIxMiIgZmlsbD0iI2E4ZWRmZiIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC13ZWlnaHQ9IjcwMCI+QUlSUE9EUyBNQVg8L3RleHQ+CgogIDxyZWN0IHg9IjU2MiIgeT0iNDEwIiB3aWR0aD0iMTQ4IiBoZWlnaHQ9IjMyIiByeD0iMTYiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC4xMikiLz4KICA8dGV4dCB4PSI2MzYiIHk9IjQzMSIgZm9udC1mYW1pbHk9IkFyaWFsLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTIiIGZpbGw9IndoaXRlIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LXdlaWdodD0iNzAwIj4rIDEwMCBBVVRSRVM8L3RleHQ+CgogIDwhLS0gRGl2aWRlciAyIC0tPgogIDxyZWN0IHg9IjE1MCIgeT0iNDU4IiB3aWR0aD0iNTAwIiBoZWlnaHQ9IjEiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC4xKSIgcng9IjEiLz4KCiAgPCEtLSBCb251cyBiYWRnZSAtLT4KICA8cmVjdCB4PSIyMDAiIHk9IjQ3NSIgd2lkdGg9IjQwMCIgaGVpZ2h0PSI0NCIgcng9IjIyIiBmaWxsPSIjZjZhZDU1Ii8+CiAgPHRleHQgeD0iNDAwIiB5PSI1MDMiIGZvbnQtZmFtaWx5PSJBcmlhbCBCbGFjayxzYW5zLXNlcmlmIiBmb250LXNpemU9IjE0IiBmaWxsPSIjN2I0ZjAwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LXdlaWdodD0iOTAwIj5CT05VUyA6ICsxMDAgRk9VUk5JU1NFVVJTIElOQ0xVUzwvdGV4dD4KCiAgPCEtLSBBaXJQb2RzIGhpZ2hsaWdodCBib3ggLS0+CiAgPHJlY3QgeD0iOTAiIHk9IjUzNSIgd2lkdGg9IjYyMCIgaGVpZ2h0PSI3MCIgcng9IjE2IiBmaWxsPSJyZ2JhKDE2OCwyMzcsMjU1LDAuMDgpIiBzdHJva2U9InJnYmEoMTY4LDIzNywyNTUsMC4zKSIgc3Ryb2tlLXdpZHRoPSIxLjUiLz4KICA8dGV4dCB4PSI0MDAiIHk9IjU2MiIgZm9udC1mYW1pbHk9IkFyaWFsIEJsYWNrLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTUiIGZpbGw9IiNhOGVkZmYiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtd2VpZ2h0PSI5MDAiPk5PVVZFQVUgOiBGT1VSTklTU0VVUiBBSVJQT0RTIE1BWDwvdGV4dD4KICA8dGV4dCB4PSI0MDAiIHk9IjU4NiIgZm9udC1mYW1pbHk9IkFyaWFsLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTIiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC42KSIgdGV4dC1hbmNob3I9Im1pZGRsZSI+Q29udGFjdCBkaXJlY3QgaW5jbHVzIGRhbnMgbCBlYm9vazwvdGV4dD4KCiAgPCEtLSBQcmljZSAtLT4KICA8dGV4dCB4PSI0MDAiIHk9IjY3MCIgZm9udC1mYW1pbHk9IkFyaWFsIEJsYWNrLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iNTYiIGZpbGw9IndoaXRlIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LXdlaWdodD0iOTAwIj42LDk5IEVVUjwvdGV4dD4KICA8dGV4dCB4PSI0MDAiIHk9IjcxMCIgZm9udC1mYW1pbHk9IkFyaWFsLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTQiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC41NSkiIHRleHQtYW5jaG9yPSJtaWRkbGUiPkFjY2VzIGltbWVkaWF0IC0gUERGIC0gTWlzIGEgam91ciAyMDI2PC90ZXh0Pgo8L3N2Zz4=" alt="Les Meilleures Fournisseurs Vinted" loading="lazy">
+            <span class="product-badge new">2026</span>
+            <span class="product-badge best" style="top:12px;left:auto;right:12px;">BEST-SELLER</span>
+          </div>
+          <div class="product-info">
+            <div class="product-name">Les Meilleures Fournisseurs Vinted</div>
+            <div class="product-rating"><span class="stars">★★★★★</span><span style="color:var(--text-light);font-size:12px;">(124)</span></div>
+            <div class="product-prices">
+              <span class="price-old">9,99€</span>
+              <span class="price-new">6,99€</span>
+            </div>
+          </div>
+          <div class="product-card-btn">Voir le Produit →</div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Footer -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="logo-footer">MonMagasinEbook</div>
+          <p>La référence française pour les guides Vinted premium.</p>
+          <a href="https://trustpilot.customerthread.com/?country=FR&shop=MonMagasinEbook&logo=&url=MonMagasinEbook.com" target="_blank" class="footer-tp">
+            <span style="color:var(--green-tp);font-weight:900;">Trustpilot</span>
+            <span style="color:var(--green-tp);">★★★★★</span>
+            <span>4,8/5 · Excellent</span>
+          </a>
+        </div>
+        <div class="footer-col"><h4>Navigation</h4><ul><li><a href="#home" onclick="navigateTo('home');return false;">Accueil</a></li><li><a href="#collection" onclick="navigateTo('collection');return false;">Collection</a></li><li><a href="#faq" onclick="navigateTo('faq');return false;">FAQ</a></li><li><a href="#contact" onclick="navigateTo('contact');return false;">Contact</a></li></ul></div>
+        <div class="footer-col"><h4>Aide</h4><ul><li><a href="#faq" onclick="navigateTo('faq');return false;">FAQ</a></li><li><a href="#contact" onclick="navigateTo('contact');return false;">Support</a></li></ul></div>
+        <div class="footer-col"><h4>Légal</h4><ul><li><a href="#contact" onclick="navigateTo('contact');return false;">Mentions légales</a></li><li><a href="#contact" onclick="navigateTo('contact');return false;">CGV</a></li></ul></div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2025 MonMagasinEbook.com</span>
+        <div class="footer-links"><a href="#contact" onclick="navigateTo('contact');return false;">Mentions légales</a><a href="#contact" onclick="navigateTo('contact');return false;">CGV</a></div>
+      </div>
+    </div>
+  </footer>
+</div>
+
+<!-- ===================== PAGE: PRODUCT - LES MEILLEURES FOURNISSEURS VINTED ===================== -->
+<div class="page" id="product-les-meilleures-fournisseurs-vinted">
+  <div class="breadcrumb">
+    <a onclick="navigateTo('home')">Accueil</a>
+    <span>›</span>
+    <a onclick="navigateTo('collection')">Collection</a>
+    <span>›</span>
+    <span>Les Meilleures Fournisseurs Vinted</span>
+  </div>
+
+  <!-- ZONE 1: Product Top -->
+  <div class="product-page-top">
+    <div class="product-layout">
+      <!-- Colonne Gauche: Galerie -->
+      <div class="product-gallery">
+        <img class="main-img" id="mainProductImg" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4MDAiIGhlaWdodD0iODAwIiB2aWV3Qm94PSIwIDAgODAwIDgwMCI+CiAgPGRlZnM+CiAgICA8bGluZWFyR3JhZGllbnQgaWQ9ImJnIiB4MT0iMCUiIHkxPSIwJSIgeDI9IjEwMCUiIHkyPSIxMDAlIj4KICAgICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3R5bGU9InN0b3AtY29sb3I6IzAxNWY2YiIvPgogICAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0eWxlPSJzdG9wLWNvbG9yOiMwMTkwOWUiLz4KICAgIDwvbGluZWFyR3JhZGllbnQ+CiAgPC9kZWZzPgogIDxyZWN0IHdpZHRoPSI4MDAiIGhlaWdodD0iODAwIiBmaWxsPSJ1cmwoI2JnKSIvPgogIDxyZWN0IHg9IjYwIiB5PSI2MCIgd2lkdGg9IjY4MCIgaGVpZ2h0PSI2ODAiIHJ4PSIyNCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSJyZ2JhKDI1NSwyNTUsMjU1LDAuMTUpIiBzdHJva2Utd2lkdGg9IjIiLz4KCiAgPCEtLSBVcGRhdGVkIDIwMjYgYmFkZ2UgdG9wIHJpZ2h0IC0tPgogIDxyZWN0IHg9IjU2MCIgeT0iODgiIHdpZHRoPSIxNTIiIGhlaWdodD0iMzYiIHJ4PSIxOCIgZmlsbD0iI2Y2YWQ1NSIvPgogIDx0ZXh0IHg9IjYzNiIgeT0iMTEyIiBmb250LWZhbWlseT0iQXJpYWwgQmxhY2ssc2Fucy1zZXJpZiIgZm9udC1zaXplPSIxNCIgZmlsbD0iIzdiNGYwMCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC13ZWlnaHQ9IjkwMCI+TUlTIEEgSk9VUiAyMDI2PC90ZXh0PgoKICA8IS0tIFRvcCBsYWJlbCAtLT4KICA8dGV4dCB4PSIzODAiIHk9IjE2MCIgZm9udC1mYW1pbHk9IkFyaWFsLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTIiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC41KSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgbGV0dGVyLXNwYWNpbmc9IjMiPkVCT09LIFBSRU1JVU08L3RleHQ+CgogIDwhLS0gTWFpbiB0aXRsZSAtLT4KICA8dGV4dCB4PSI0MDAiIHk9IjIzMCIgZm9udC1mYW1pbHk9IkFyaWFsIEJsYWNrLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMzQiIGZpbGw9IndoaXRlIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LXdlaWdodD0iOTAwIj5MRVMgTUVJTExFVVJFUzwvdGV4dD4KICA8dGV4dCB4PSI0MDAiIHk9IjI3NCIgZm9udC1mYW1pbHk9IkFyaWFsIEJsYWNrLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMzQiIGZpbGw9IndoaXRlIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LXdlaWdodD0iOTAwIj5GT1VSTklTU0VVUlM8L3RleHQ+CiAgPHRleHQgeD0iNDAwIiB5PSIzMTgiIGZvbnQtZmFtaWx5PSJBcmlhbCBCbGFjayxzYW5zLXNlcmlmIiBmb250LXNpemU9IjM0IiBmaWxsPSIjYThlZGZmIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LXdlaWdodD0iOTAwIj5WSU5URUQ8L3RleHQ+CgogIDwhLS0gRGl2aWRlciAtLT4KICA8cmVjdCB4PSIxNTAiIHk9IjM0NSIgd2lkdGg9IjUwMCIgaGVpZ2h0PSIyIiBmaWxsPSJyZ2JhKDI1NSwyNTUsMjU1LDAuMikiIHJ4PSIxIi8+CgogIDwhLS0gQnJhbmQgdGFncyByb3cgMSAtLT4KICA8cmVjdCB4PSI5MCIgeT0iMzY1IiB3aWR0aD0iMTMwIiBoZWlnaHQ9IjMyIiByeD0iMTYiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC4xMikiLz4KICA8dGV4dCB4PSIxNTUiIHk9IjM4NiIgZm9udC1mYW1pbHk9IkFyaWFsLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTIiIGZpbGw9IndoaXRlIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LXdlaWdodD0iNzAwIj5OSUtFIERVTks8L3RleHQ+CgogIDxyZWN0IHg9IjIzMiIgeT0iMzY1IiB3aWR0aD0iMTQ4IiBoZWlnaHQ9IjMyIiByeD0iMTYiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC4xMikiLz4KICA8dGV4dCB4PSIzMDYiIHk9IjM4NiIgZm9udC1mYW1pbHk9IkFyaWFsLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTIiIGZpbGw9IndoaXRlIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LXdlaWdodD0iNzAwIj5BRElEQVMgU0FNQkE8L3RleHQ+CgogIDxyZWN0IHg9IjM5MiIgeT0iMzY1IiB3aWR0aD0iOTgiIGhlaWdodD0iMzIiIHJ4PSIxNiIgZmlsbD0icmdiYSgyNTUsMjU1LDI1NSwwLjEyKSIvPgogIDx0ZXh0IHg9IjQ0MSIgeT0iMzg2IiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIxMiIgZmlsbD0id2hpdGUiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtd2VpZ2h0PSI3MDAiPkRZU09OPC90ZXh0PgoKICA8cmVjdCB4PSI1MDIiIHk9IjM2NSIgd2lkdGg9Ijc2IiBoZWlnaHQ9IjMyIiByeD0iMTYiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC4xMikiLz4KICA8dGV4dCB4PSI1NDAiIHk9IjM4NiIgZm9udC1mYW1pbHk9IkFyaWFsLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTIiIGZpbGw9IndoaXRlIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LXdlaWdodD0iNzAwIj5VR0c8L3RleHQ+CgogIDxyZWN0IHg9IjU5MCIgeT0iMzY1IiB3aWR0aD0iMTIwIiBoZWlnaHQ9IjMyIiByeD0iMTYiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC4xMikiLz4KICA8dGV4dCB4PSI2NTAiIHk9IjM4NiIgZm9udC1mYW1pbHk9IkFyaWFsLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTIiIGZpbGw9IndoaXRlIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LXdlaWdodD0iNzAwIj5OSUtFIFRFQ0g8L3RleHQ+CgogIDwhLS0gQnJhbmQgdGFncyByb3cgMiAtLT4KICA8cmVjdCB4PSI5MCIgeT0iNDEwIiB3aWR0aD0iMTUwIiBoZWlnaHQ9IjMyIiByeD0iMTYiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC4xMikiLz4KICA8dGV4dCB4PSIxNjUiIHk9IjQzMSIgZm9udC1mYW1pbHk9IkFyaWFsLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTIiIGZpbGw9IndoaXRlIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LXdlaWdodD0iNzAwIj5SQUxQSCBMQVVSRU48L3RleHQ+CgogIDxyZWN0IHg9IjI1MiIgeT0iNDEwIiB3aWR0aD0iMTQ4IiBoZWlnaHQ9IjMyIiByeD0iMTYiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC4xMikiLz4KICA8dGV4dCB4PSIzMjYiIHk9IjQzMSIgZm9udC1mYW1pbHk9IkFyaWFsLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTIiIGZpbGw9IndoaXRlIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LXdlaWdodD0iNzAwIj5UT01NWSBISUxGSUdFUjwvdGV4dD4KCiAgPCEtLSBORVc6IEFpclBvZHMgTWF4IGJhZGdlIC0gaGlnaGxpZ2h0ZWQgLS0+CiAgPHJlY3QgeD0iNDEyIiB5PSI0MTAiIHdpZHRoPSIxMzgiIGhlaWdodD0iMzIiIHJ4PSIxNiIgZmlsbD0icmdiYSgxNjgsMjM3LDI1NSwwLjIyKSIgc3Ryb2tlPSIjYThlZGZmIiBzdHJva2Utd2lkdGg9IjEuNSIvPgogIDx0ZXh0IHg9IjQ4MSIgeT0iNDMxIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIxMiIgZmlsbD0iI2E4ZWRmZiIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC13ZWlnaHQ9IjcwMCI+QUlSUE9EUyBNQVg8L3RleHQ+CgogIDxyZWN0IHg9IjU2MiIgeT0iNDEwIiB3aWR0aD0iMTQ4IiBoZWlnaHQ9IjMyIiByeD0iMTYiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC4xMikiLz4KICA8dGV4dCB4PSI2MzYiIHk9IjQzMSIgZm9udC1mYW1pbHk9IkFyaWFsLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTIiIGZpbGw9IndoaXRlIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LXdlaWdodD0iNzAwIj4rIDEwMCBBVVRSRVM8L3RleHQ+CgogIDwhLS0gRGl2aWRlciAyIC0tPgogIDxyZWN0IHg9IjE1MCIgeT0iNDU4IiB3aWR0aD0iNTAwIiBoZWlnaHQ9IjEiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC4xKSIgcng9IjEiLz4KCiAgPCEtLSBCb251cyBiYWRnZSAtLT4KICA8cmVjdCB4PSIyMDAiIHk9IjQ3NSIgd2lkdGg9IjQwMCIgaGVpZ2h0PSI0NCIgcng9IjIyIiBmaWxsPSIjZjZhZDU1Ii8+CiAgPHRleHQgeD0iNDAwIiB5PSI1MDMiIGZvbnQtZmFtaWx5PSJBcmlhbCBCbGFjayxzYW5zLXNlcmlmIiBmb250LXNpemU9IjE0IiBmaWxsPSIjN2I0ZjAwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LXdlaWdodD0iOTAwIj5CT05VUyA6ICsxMDAgRk9VUk5JU1NFVVJTIElOQ0xVUzwvdGV4dD4KCiAgPCEtLSBBaXJQb2RzIGhpZ2hsaWdodCBib3ggLS0+CiAgPHJlY3QgeD0iOTAiIHk9IjUzNSIgd2lkdGg9IjYyMCIgaGVpZ2h0PSI3MCIgcng9IjE2IiBmaWxsPSJyZ2JhKDE2OCwyMzcsMjU1LDAuMDgpIiBzdHJva2U9InJnYmEoMTY4LDIzNywyNTUsMC4zKSIgc3Ryb2tlLXdpZHRoPSIxLjUiLz4KICA8dGV4dCB4PSI0MDAiIHk9IjU2MiIgZm9udC1mYW1pbHk9IkFyaWFsIEJsYWNrLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTUiIGZpbGw9IiNhOGVkZmYiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtd2VpZ2h0PSI5MDAiPk5PVVZFQVUgOiBGT1VSTklTU0VVUiBBSVJQT0RTIE1BWDwvdGV4dD4KICA8dGV4dCB4PSI0MDAiIHk9IjU4NiIgZm9udC1mYW1pbHk9IkFyaWFsLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTIiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC42KSIgdGV4dC1hbmNob3I9Im1pZGRsZSI+Q29udGFjdCBkaXJlY3QgaW5jbHVzIGRhbnMgbCBlYm9vazwvdGV4dD4KCiAgPCEtLSBQcmljZSAtLT4KICA8dGV4dCB4PSI0MDAiIHk9IjY3MCIgZm9udC1mYW1pbHk9IkFyaWFsIEJsYWNrLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iNTYiIGZpbGw9IndoaXRlIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LXdlaWdodD0iOTAwIj42LDk5IEVVUjwvdGV4dD4KICA8dGV4dCB4PSI0MDAiIHk9IjcxMCIgZm9udC1mYW1pbHk9IkFyaWFsLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTQiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC41NSkiIHRleHQtYW5jaG9yPSJtaWRkbGUiPkFjY2VzIGltbWVkaWF0IC0gUERGIC0gTWlzIGEgam91ciAyMDI2PC90ZXh0Pgo8L3N2Zz4=" alt="Les Meilleures Fournisseurs Vinted" fetchpriority="high">
+        <div class="thumb-row">
+          <img class="active" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4MDAiIGhlaWdodD0iODAwIiB2aWV3Qm94PSIwIDAgODAwIDgwMCI+CiAgPGRlZnM+CiAgICA8bGluZWFyR3JhZGllbnQgaWQ9ImJnIiB4MT0iMCUiIHkxPSIwJSIgeDI9IjEwMCUiIHkyPSIxMDAlIj4KICAgICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3R5bGU9InN0b3AtY29sb3I6IzAxNWY2YiIvPgogICAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0eWxlPSJzdG9wLWNvbG9yOiMwMTkwOWUiLz4KICAgIDwvbGluZWFyR3JhZGllbnQ+CiAgPC9kZWZzPgogIDxyZWN0IHdpZHRoPSI4MDAiIGhlaWdodD0iODAwIiBmaWxsPSJ1cmwoI2JnKSIvPgogIDxyZWN0IHg9IjYwIiB5PSI2MCIgd2lkdGg9IjY4MCIgaGVpZ2h0PSI2ODAiIHJ4PSIyNCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSJyZ2JhKDI1NSwyNTUsMjU1LDAuMTUpIiBzdHJva2Utd2lkdGg9IjIiLz4KCiAgPCEtLSBVcGRhdGVkIDIwMjYgYmFkZ2UgdG9wIHJpZ2h0IC0tPgogIDxyZWN0IHg9IjU2MCIgeT0iODgiIHdpZHRoPSIxNTIiIGhlaWdodD0iMzYiIHJ4PSIxOCIgZmlsbD0iI2Y2YWQ1NSIvPgogIDx0ZXh0IHg9IjYzNiIgeT0iMTEyIiBmb250LWZhbWlseT0iQXJpYWwgQmxhY2ssc2Fucy1zZXJpZiIgZm9udC1zaXplPSIxNCIgZmlsbD0iIzdiNGYwMCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC13ZWlnaHQ9IjkwMCI+TUlTIEEgSk9VUiAyMDI2PC90ZXh0PgoKICA8IS0tIFRvcCBsYWJlbCAtLT4KICA8dGV4dCB4PSIzODAiIHk9IjE2MCIgZm9udC1mYW1pbHk9IkFyaWFsLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTIiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC41KSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgbGV0dGVyLXNwYWNpbmc9IjMiPkVCT09LIFBSRU1JVU08L3RleHQ+CgogIDwhLS0gTWFpbiB0aXRsZSAtLT4KICA8dGV4dCB4PSI0MDAiIHk9IjIzMCIgZm9udC1mYW1pbHk9IkFyaWFsIEJsYWNrLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMzQiIGZpbGw9IndoaXRlIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LXdlaWdodD0iOTAwIj5MRVMgTUVJTExFVVJFUzwvdGV4dD4KICA8dGV4dCB4PSI0MDAiIHk9IjI3NCIgZm9udC1mYW1pbHk9IkFyaWFsIEJsYWNrLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMzQiIGZpbGw9IndoaXRlIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LXdlaWdodD0iOTAwIj5GT1VSTklTU0VVUlM8L3RleHQ+CiAgPHRleHQgeD0iNDAwIiB5PSIzMTgiIGZvbnQtZmFtaWx5PSJBcmlhbCBCbGFjayxzYW5zLXNlcmlmIiBmb250LXNpemU9IjM0IiBmaWxsPSIjYThlZGZmIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LXdlaWdodD0iOTAwIj5WSU5URUQ8L3RleHQ+CgogIDwhLS0gRGl2aWRlciAtLT4KICA8cmVjdCB4PSIxNTAiIHk9IjM0NSIgd2lkdGg9IjUwMCIgaGVpZ2h0PSIyIiBmaWxsPSJyZ2JhKDI1NSwyNTUsMjU1LDAuMikiIHJ4PSIxIi8+CgogIDwhLS0gQnJhbmQgdGFncyByb3cgMSAtLT4KICA8cmVjdCB4PSI5MCIgeT0iMzY1IiB3aWR0aD0iMTMwIiBoZWlnaHQ9IjMyIiByeD0iMTYiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC4xMikiLz4KICA8dGV4dCB4PSIxNTUiIHk9IjM4NiIgZm9udC1mYW1pbHk9IkFyaWFsLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTIiIGZpbGw9IndoaXRlIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LXdlaWdodD0iNzAwIj5OSUtFIERVTks8L3RleHQ+CgogIDxyZWN0IHg9IjIzMiIgeT0iMzY1IiB3aWR0aD0iMTQ4IiBoZWlnaHQ9IjMyIiByeD0iMTYiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC4xMikiLz4KICA8dGV4dCB4PSIzMDYiIHk9IjM4NiIgZm9udC1mYW1pbHk9IkFyaWFsLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTIiIGZpbGw9IndoaXRlIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LXdlaWdodD0iNzAwIj5BRElEQVMgU0FNQkE8L3RleHQ+CgogIDxyZWN0IHg9IjM5MiIgeT0iMzY1IiB3aWR0aD0iOTgiIGhlaWdodD0iMzIiIHJ4PSIxNiIgZmlsbD0icmdiYSgyNTUsMjU1LDI1NSwwLjEyKSIvPgogIDx0ZXh0IHg9IjQ0MSIgeT0iMzg2IiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIxMiIgZmlsbD0id2hpdGUiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtd2VpZ2h0PSI3MDAiPkRZU09OPC90ZXh0PgoKICA8cmVjdCB4PSI1MDIiIHk9IjM2NSIgd2lkdGg9Ijc2IiBoZWlnaHQ9IjMyIiByeD0iMTYiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC4xMikiLz4KICA8dGV4dCB4PSI1NDAiIHk9IjM4NiIgZm9udC1mYW1pbHk9IkFyaWFsLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTIiIGZpbGw9IndoaXRlIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LXdlaWdodD0iNzAwIj5VR0c8L3RleHQ+CgogIDxyZWN0IHg9IjU5MCIgeT0iMzY1IiB3aWR0aD0iMTIwIiBoZWlnaHQ9IjMyIiByeD0iMTYiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC4xMikiLz4KICA8dGV4dCB4PSI2NTAiIHk9IjM4NiIgZm9udC1mYW1pbHk9IkFyaWFsLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTIiIGZpbGw9IndoaXRlIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LXdlaWdodD0iNzAwIj5OSUtFIFRFQ0g8L3RleHQ+CgogIDwhLS0gQnJhbmQgdGFncyByb3cgMiAtLT4KICA8cmVjdCB4PSI5MCIgeT0iNDEwIiB3aWR0aD0iMTUwIiBoZWlnaHQ9IjMyIiByeD0iMTYiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC4xMikiLz4KICA8dGV4dCB4PSIxNjUiIHk9IjQzMSIgZm9udC1mYW1pbHk9IkFyaWFsLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTIiIGZpbGw9IndoaXRlIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LXdlaWdodD0iNzAwIj5SQUxQSCBMQVVSRU48L3RleHQ+CgogIDxyZWN0IHg9IjI1MiIgeT0iNDEwIiB3aWR0aD0iMTQ4IiBoZWlnaHQ9IjMyIiByeD0iMTYiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC4xMikiLz4KICA8dGV4dCB4PSIzMjYiIHk9IjQzMSIgZm9udC1mYW1pbHk9IkFyaWFsLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTIiIGZpbGw9IndoaXRlIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LXdlaWdodD0iNzAwIj5UT01NWSBISUxGSUdFUjwvdGV4dD4KCiAgPCEtLSBORVc6IEFpclBvZHMgTWF4IGJhZGdlIC0gaGlnaGxpZ2h0ZWQgLS0+CiAgPHJlY3QgeD0iNDEyIiB5PSI0MTAiIHdpZHRoPSIxMzgiIGhlaWdodD0iMzIiIHJ4PSIxNiIgZmlsbD0icmdiYSgxNjgsMjM3LDI1NSwwLjIyKSIgc3Ryb2tlPSIjYThlZGZmIiBzdHJva2Utd2lkdGg9IjEuNSIvPgogIDx0ZXh0IHg9IjQ4MSIgeT0iNDMxIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIxMiIgZmlsbD0iI2E4ZWRmZiIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC13ZWlnaHQ9IjcwMCI+QUlSUE9EUyBNQVg8L3RleHQ+CgogIDxyZWN0IHg9IjU2MiIgeT0iNDEwIiB3aWR0aD0iMTQ4IiBoZWlnaHQ9IjMyIiByeD0iMTYiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC4xMikiLz4KICA8dGV4dCB4PSI2MzYiIHk9IjQzMSIgZm9udC1mYW1pbHk9IkFyaWFsLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTIiIGZpbGw9IndoaXRlIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LXdlaWdodD0iNzAwIj4rIDEwMCBBVVRSRVM8L3RleHQ+CgogIDwhLS0gRGl2aWRlciAyIC0tPgogIDxyZWN0IHg9IjE1MCIgeT0iNDU4IiB3aWR0aD0iNTAwIiBoZWlnaHQ9IjEiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC4xKSIgcng9IjEiLz4KCiAgPCEtLSBCb251cyBiYWRnZSAtLT4KICA8cmVjdCB4PSIyMDAiIHk9IjQ3NSIgd2lkdGg9IjQwMCIgaGVpZ2h0PSI0NCIgcng9IjIyIiBmaWxsPSIjZjZhZDU1Ii8+CiAgPHRleHQgeD0iNDAwIiB5PSI1MDMiIGZvbnQtZmFtaWx5PSJBcmlhbCBCbGFjayxzYW5zLXNlcmlmIiBmb250LXNpemU9IjE0IiBmaWxsPSIjN2I0ZjAwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LXdlaWdodD0iOTAwIj5CT05VUyA6ICsxMDAgRk9VUk5JU1NFVVJTIElOQ0xVUzwvdGV4dD4KCiAgPCEtLSBBaXJQb2RzIGhpZ2hsaWdodCBib3ggLS0+CiAgPHJlY3QgeD0iOTAiIHk9IjUzNSIgd2lkdGg9IjYyMCIgaGVpZ2h0PSI3MCIgcng9IjE2IiBmaWxsPSJyZ2JhKDE2OCwyMzcsMjU1LDAuMDgpIiBzdHJva2U9InJnYmEoMTY4LDIzNywyNTUsMC4zKSIgc3Ryb2tlLXdpZHRoPSIxLjUiLz4KICA8dGV4dCB4PSI0MDAiIHk9IjU2MiIgZm9udC1mYW1pbHk9IkFyaWFsIEJsYWNrLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTUiIGZpbGw9IiNhOGVkZmYiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtd2VpZ2h0PSI5MDAiPk5PVVZFQVUgOiBGT1VSTklTU0VVUiBBSVJQT0RTIE1BWDwvdGV4dD4KICA8dGV4dCB4PSI0MDAiIHk9IjU4NiIgZm9udC1mYW1pbHk9IkFyaWFsLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTIiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC42KSIgdGV4dC1hbmNob3I9Im1pZGRsZSI+Q29udGFjdCBkaXJlY3QgaW5jbHVzIGRhbnMgbCBlYm9vazwvdGV4dD4KCiAgPCEtLSBQcmljZSAtLT4KICA8dGV4dCB4PSI0MDAiIHk9IjY3MCIgZm9udC1mYW1pbHk9IkFyaWFsIEJsYWNrLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iNTYiIGZpbGw9IndoaXRlIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LXdlaWdodD0iOTAwIj42LDk5IEVVUjwvdGV4dD4KICA8dGV4dCB4PSI0MDAiIHk9IjcxMCIgZm9udC1mYW1pbHk9IkFyaWFsLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTQiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC41NSkiIHRleHQtYW5jaG9yPSJtaWRkbGUiPkFjY2VzIGltbWVkaWF0IC0gUERGIC0gTWlzIGEgam91ciAyMDI2PC90ZXh0Pgo8L3N2Zz4=" alt="Vue 1" onclick="changeMainImg(this,'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4MDAiIGhlaWdodD0iODAwIiB2aWV3Qm94PSIwIDAgODAwIDgwMCI+CiAgPGRlZnM+CiAgICA8bGluZWFyR3JhZGllbnQgaWQ9ImJnIiB4MT0iMCUiIHkxPSIwJSIgeDI9IjEwMCUiIHkyPSIxMDAlIj4KICAgICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3R5bGU9InN0b3AtY29sb3I6IzAxNWY2YiIvPgogICAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0eWxlPSJzdG9wLWNvbG9yOiMwMTkwOWUiLz4KICAgIDwvbGluZWFyR3JhZGllbnQ+CiAgPC9kZWZzPgogIDxyZWN0IHdpZHRoPSI4MDAiIGhlaWdodD0iODAwIiBmaWxsPSJ1cmwoI2JnKSIvPgogIDxyZWN0IHg9IjYwIiB5PSI2MCIgd2lkdGg9IjY4MCIgaGVpZ2h0PSI2ODAiIHJ4PSIyNCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSJyZ2JhKDI1NSwyNTUsMjU1LDAuMTUpIiBzdHJva2Utd2lkdGg9IjIiLz4KCiAgPCEtLSBVcGRhdGVkIDIwMjYgYmFkZ2UgdG9wIHJpZ2h0IC0tPgogIDxyZWN0IHg9IjU2MCIgeT0iODgiIHdpZHRoPSIxNTIiIGhlaWdodD0iMzYiIHJ4PSIxOCIgZmlsbD0iI2Y2YWQ1NSIvPgogIDx0ZXh0IHg9IjYzNiIgeT0iMTEyIiBmb250LWZhbWlseT0iQXJpYWwgQmxhY2ssc2Fucy1zZXJpZiIgZm9udC1zaXplPSIxNCIgZmlsbD0iIzdiNGYwMCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC13ZWlnaHQ9IjkwMCI+TUlTIEEgSk9VUiAyMDI2PC90ZXh0PgoKICA8IS0tIFRvcCBsYWJlbCAtLT4KICA8dGV4dCB4PSIzODAiIHk9IjE2MCIgZm9udC1mYW1pbHk9IkFyaWFsLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTIiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC41KSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgbGV0dGVyLXNwYWNpbmc9IjMiPkVCT09LIFBSRU1JVU08L3RleHQ+CgogIDwhLS0gTWFpbiB0aXRsZSAtLT4KICA8dGV4dCB4PSI0MDAiIHk9IjIzMCIgZm9udC1mYW1pbHk9IkFyaWFsIEJsYWNrLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMzQiIGZpbGw9IndoaXRlIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LXdlaWdodD0iOTAwIj5MRVMgTUVJTExFVVJFUzwvdGV4dD4KICA8dGV4dCB4PSI0MDAiIHk9IjI3NCIgZm9udC1mYW1pbHk9IkFyaWFsIEJsYWNrLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMzQiIGZpbGw9IndoaXRlIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LXdlaWdodD0iOTAwIj5GT1VSTklTU0VVUlM8L3RleHQ+CiAgPHRleHQgeD0iNDAwIiB5PSIzMTgiIGZvbnQtZmFtaWx5PSJBcmlhbCBCbGFjayxzYW5zLXNlcmlmIiBmb250LXNpemU9IjM0IiBmaWxsPSIjYThlZGZmIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LXdlaWdodD0iOTAwIj5WSU5URUQ8L3RleHQ+CgogIDwhLS0gRGl2aWRlciAtLT4KICA8cmVjdCB4PSIxNTAiIHk9IjM0NSIgd2lkdGg9IjUwMCIgaGVpZ2h0PSIyIiBmaWxsPSJyZ2JhKDI1NSwyNTUsMjU1LDAuMikiIHJ4PSIxIi8+CgogIDwhLS0gQnJhbmQgdGFncyByb3cgMSAtLT4KICA8cmVjdCB4PSI5MCIgeT0iMzY1IiB3aWR0aD0iMTMwIiBoZWlnaHQ9IjMyIiByeD0iMTYiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC4xMikiLz4KICA8dGV4dCB4PSIxNTUiIHk9IjM4NiIgZm9udC1mYW1pbHk9IkFyaWFsLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTIiIGZpbGw9IndoaXRlIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LXdlaWdodD0iNzAwIj5OSUtFIERVTks8L3RleHQ+CgogIDxyZWN0IHg9IjIzMiIgeT0iMzY1IiB3aWR0aD0iMTQ4IiBoZWlnaHQ9IjMyIiByeD0iMTYiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC4xMikiLz4KICA8dGV4dCB4PSIzMDYiIHk9IjM4NiIgZm9udC1mYW1pbHk9IkFyaWFsLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTIiIGZpbGw9IndoaXRlIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LXdlaWdodD0iNzAwIj5BRElEQVMgU0FNQkE8L3RleHQ+CgogIDxyZWN0IHg9IjM5MiIgeT0iMzY1IiB3aWR0aD0iOTgiIGhlaWdodD0iMzIiIHJ4PSIxNiIgZmlsbD0icmdiYSgyNTUsMjU1LDI1NSwwLjEyKSIvPgogIDx0ZXh0IHg9IjQ0MSIgeT0iMzg2IiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIxMiIgZmlsbD0id2hpdGUiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtd2VpZ2h0PSI3MDAiPkRZU09OPC90ZXh0PgoKICA8cmVjdCB4PSI1MDIiIHk9IjM2NSIgd2lkdGg9Ijc2IiBoZWlnaHQ9IjMyIiByeD0iMTYiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC4xMikiLz4KICA8dGV4dCB4PSI1NDAiIHk9IjM4NiIgZm9udC1mYW1pbHk9IkFyaWFsLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTIiIGZpbGw9IndoaXRlIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LXdlaWdodD0iNzAwIj5VR0c8L3RleHQ+CgogIDxyZWN0IHg9IjU5MCIgeT0iMzY1IiB3aWR0aD0iMTIwIiBoZWlnaHQ9IjMyIiByeD0iMTYiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC4xMikiLz4KICA8dGV4dCB4PSI2NTAiIHk9IjM4NiIgZm9udC1mYW1pbHk9IkFyaWFsLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTIiIGZpbGw9IndoaXRlIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LXdlaWdodD0iNzAwIj5OSUtFIFRFQ0g8L3RleHQ+CgogIDwhLS0gQnJhbmQgdGFncyByb3cgMiAtLT4KICA8cmVjdCB4PSI5MCIgeT0iNDEwIiB3aWR0aD0iMTUwIiBoZWlnaHQ9IjMyIiByeD0iMTYiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC4xMikiLz4KICA8dGV4dCB4PSIxNjUiIHk9IjQzMSIgZm9udC1mYW1pbHk9IkFyaWFsLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTIiIGZpbGw9IndoaXRlIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LXdlaWdodD0iNzAwIj5SQUxQSCBMQVVSRU48L3RleHQ+CgogIDxyZWN0IHg9IjI1MiIgeT0iNDEwIiB3aWR0aD0iMTQ4IiBoZWlnaHQ9IjMyIiByeD0iMTYiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC4xMikiLz4KICA8dGV4dCB4PSIzMjYiIHk9IjQzMSIgZm9udC1mYW1pbHk9IkFyaWFsLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTIiIGZpbGw9IndoaXRlIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LXdlaWdodD0iNzAwIj5UT01NWSBISUxGSUdFUjwvdGV4dD4KCiAgPCEtLSBORVc6IEFpclBvZHMgTWF4IGJhZGdlIC0gaGlnaGxpZ2h0ZWQgLS0+CiAgPHJlY3QgeD0iNDEyIiB5PSI0MTAiIHdpZHRoPSIxMzgiIGhlaWdodD0iMzIiIHJ4PSIxNiIgZmlsbD0icmdiYSgxNjgsMjM3LDI1NSwwLjIyKSIgc3Ryb2tlPSIjYThlZGZmIiBzdHJva2Utd2lkdGg9IjEuNSIvPgogIDx0ZXh0IHg9IjQ4MSIgeT0iNDMxIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIxMiIgZmlsbD0iI2E4ZWRmZiIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC13ZWlnaHQ9IjcwMCI+QUlSUE9EUyBNQVg8L3RleHQ+CgogIDxyZWN0IHg9IjU2MiIgeT0iNDEwIiB3aWR0aD0iMTQ4IiBoZWlnaHQ9IjMyIiByeD0iMTYiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC4xMikiLz4KICA8dGV4dCB4PSI2MzYiIHk9IjQzMSIgZm9udC1mYW1pbHk9IkFyaWFsLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTIiIGZpbGw9IndoaXRlIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LXdlaWdodD0iNzAwIj4rIDEwMCBBVVRSRVM8L3RleHQ+CgogIDwhLS0gRGl2aWRlciAyIC0tPgogIDxyZWN0IHg9IjE1MCIgeT0iNDU4IiB3aWR0aD0iNTAwIiBoZWlnaHQ9IjEiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC4xKSIgcng9IjEiLz4KCiAgPCEtLSBCb251cyBiYWRnZSAtLT4KICA8cmVjdCB4PSIyMDAiIHk9IjQ3NSIgd2lkdGg9IjQwMCIgaGVpZ2h0PSI0NCIgcng9IjIyIiBmaWxsPSIjZjZhZDU1Ii8+CiAgPHRleHQgeD0iNDAwIiB5PSI1MDMiIGZvbnQtZmFtaWx5PSJBcmlhbCBCbGFjayxzYW5zLXNlcmlmIiBmb250LXNpemU9IjE0IiBmaWxsPSIjN2I0ZjAwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LXdlaWdodD0iOTAwIj5CT05VUyA6ICsxMDAgRk9VUk5JU1NFVVJTIElOQ0xVUzwvdGV4dD4KCiAgPCEtLSBBaXJQb2RzIGhpZ2hsaWdodCBib3ggLS0+CiAgPHJlY3QgeD0iOTAiIHk9IjUzNSIgd2lkdGg9IjYyMCIgaGVpZ2h0PSI3MCIgcng9IjE2IiBmaWxsPSJyZ2JhKDE2OCwyMzcsMjU1LDAuMDgpIiBzdHJva2U9InJnYmEoMTY4LDIzNywyNTUsMC4zKSIgc3Ryb2tlLXdpZHRoPSIxLjUiLz4KICA8dGV4dCB4PSI0MDAiIHk9IjU2MiIgZm9udC1mYW1pbHk9IkFyaWFsIEJsYWNrLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTUiIGZpbGw9IiNhOGVkZmYiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtd2VpZ2h0PSI5MDAiPk5PVVZFQVUgOiBGT1VSTklTU0VVUiBBSVJQT0RTIE1BWDwvdGV4dD4KICA8dGV4dCB4PSI0MDAiIHk9IjU4NiIgZm9udC1mYW1pbHk9IkFyaWFsLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTIiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC42KSIgdGV4dC1hbmNob3I9Im1pZGRsZSI+Q29udGFjdCBkaXJlY3QgaW5jbHVzIGRhbnMgbCBlYm9vazwvdGV4dD4KCiAgPCEtLSBQcmljZSAtLT4KICA8dGV4dCB4PSI0MDAiIHk9IjY3MCIgZm9udC1mYW1pbHk9IkFyaWFsIEJsYWNrLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iNTYiIGZpbGw9IndoaXRlIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LXdlaWdodD0iOTAwIj42LDk5IEVVUjwvdGV4dD4KICA8dGV4dCB4PSI0MDAiIHk9IjcxMCIgZm9udC1mYW1pbHk9IkFyaWFsLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTQiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC41NSkiIHRleHQtYW5jaG9yPSJtaWRkbGUiPkFjY2VzIGltbWVkaWF0IC0gUERGIC0gTWlzIGEgam91ciAyMDI2PC90ZXh0Pgo8L3N2Zz4=')">
+          <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4MDAiIGhlaWdodD0iODAwIiB2aWV3Qm94PSIwIDAgODAwIDgwMCI+CiAgPGRlZnM+CiAgICA8bGluZWFyR3JhZGllbnQgaWQ9ImJnIiB4MT0iMCUiIHkxPSIwJSIgeDI9IjEwMCUiIHkyPSIxMDAlIj4KICAgICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3R5bGU9InN0b3AtY29sb3I6IzAxNWY2YiIvPgogICAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0eWxlPSJzdG9wLWNvbG9yOiMwMTkwOWUiLz4KICAgIDwvbGluZWFyR3JhZGllbnQ+CiAgPC9kZWZzPgogIDxyZWN0IHdpZHRoPSI4MDAiIGhlaWdodD0iODAwIiBmaWxsPSJ1cmwoI2JnKSIvPgogIDxyZWN0IHg9IjYwIiB5PSI2MCIgd2lkdGg9IjY4MCIgaGVpZ2h0PSI2ODAiIHJ4PSIyNCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSJyZ2JhKDI1NSwyNTUsMjU1LDAuMTUpIiBzdHJva2Utd2lkdGg9IjIiLz4KCiAgPCEtLSBVcGRhdGVkIDIwMjYgYmFkZ2UgdG9wIHJpZ2h0IC0tPgogIDxyZWN0IHg9IjU2MCIgeT0iODgiIHdpZHRoPSIxNTIiIGhlaWdodD0iMzYiIHJ4PSIxOCIgZmlsbD0iI2Y2YWQ1NSIvPgogIDx0ZXh0IHg9IjYzNiIgeT0iMTEyIiBmb250LWZhbWlseT0iQXJpYWwgQmxhY2ssc2Fucy1zZXJpZiIgZm9udC1zaXplPSIxNCIgZmlsbD0iIzdiNGYwMCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC13ZWlnaHQ9IjkwMCI+TUlTIEEgSk9VUiAyMDI2PC90ZXh0PgoKICA8IS0tIFRvcCBsYWJlbCAtLT4KICA8dGV4dCB4PSIzODAiIHk9IjE2MCIgZm9udC1mYW1pbHk9IkFyaWFsLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTIiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC41KSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgbGV0dGVyLXNwYWNpbmc9IjMiPkVCT09LIFBSRU1JVU08L3RleHQ+CgogIDwhLS0gTWFpbiB0aXRsZSAtLT4KICA8dGV4dCB4PSI0MDAiIHk9IjIzMCIgZm9udC1mYW1pbHk9IkFyaWFsIEJsYWNrLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMzQiIGZpbGw9IndoaXRlIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LXdlaWdodD0iOTAwIj5MRVMgTUVJTExFVVJFUzwvdGV4dD4KICA8dGV4dCB4PSI0MDAiIHk9IjI3NCIgZm9udC1mYW1pbHk9IkFyaWFsIEJsYWNrLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMzQiIGZpbGw9IndoaXRlIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LXdlaWdodD0iOTAwIj5GT1VSTklTU0VVUlM8L3RleHQ+CiAgPHRleHQgeD0iNDAwIiB5PSIzMTgiIGZvbnQtZmFtaWx5PSJBcmlhbCBCbGFjayxzYW5zLXNlcmlmIiBmb250LXNpemU9IjM0IiBmaWxsPSIjYThlZGZmIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LXdlaWdodD0iOTAwIj5WSU5URUQ8L3RleHQ+CgogIDwhLS0gRGl2aWRlciAtLT4KICA8cmVjdCB4PSIxNTAiIHk9IjM0NSIgd2lkdGg9IjUwMCIgaGVpZ2h0PSIyIiBmaWxsPSJyZ2JhKDI1NSwyNTUsMjU1LDAuMikiIHJ4PSIxIi8+CgogIDwhLS0gQnJhbmQgdGFncyByb3cgMSAtLT4KICA8cmVjdCB4PSI5MCIgeT0iMzY1IiB3aWR0aD0iMTMwIiBoZWlnaHQ9IjMyIiByeD0iMTYiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC4xMikiLz4KICA8dGV4dCB4PSIxNTUiIHk9IjM4NiIgZm9udC1mYW1pbHk9IkFyaWFsLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTIiIGZpbGw9IndoaXRlIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LXdlaWdodD0iNzAwIj5OSUtFIERVTks8L3RleHQ+CgogIDxyZWN0IHg9IjIzMiIgeT0iMzY1IiB3aWR0aD0iMTQ4IiBoZWlnaHQ9IjMyIiByeD0iMTYiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC4xMikiLz4KICA8dGV4dCB4PSIzMDYiIHk9IjM4NiIgZm9udC1mYW1pbHk9IkFyaWFsLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTIiIGZpbGw9IndoaXRlIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LXdlaWdodD0iNzAwIj5BRElEQVMgU0FNQkE8L3RleHQ+CgogIDxyZWN0IHg9IjM5MiIgeT0iMzY1IiB3aWR0aD0iOTgiIGhlaWdodD0iMzIiIHJ4PSIxNiIgZmlsbD0icmdiYSgyNTUsMjU1LDI1NSwwLjEyKSIvPgogIDx0ZXh0IHg9IjQ0MSIgeT0iMzg2IiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIxMiIgZmlsbD0id2hpdGUiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtd2VpZ2h0PSI3MDAiPkRZU09OPC90ZXh0PgoKICA8cmVjdCB4PSI1MDIiIHk9IjM2NSIgd2lkdGg9Ijc2IiBoZWlnaHQ9IjMyIiByeD0iMTYiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC4xMikiLz4KICA8dGV4dCB4PSI1NDAiIHk9IjM4NiIgZm9udC1mYW1pbHk9IkFyaWFsLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTIiIGZpbGw9IndoaXRlIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LXdlaWdodD0iNzAwIj5VR0c8L3RleHQ+CgogIDxyZWN0IHg9IjU5MCIgeT0iMzY1IiB3aWR0aD0iMTIwIiBoZWlnaHQ9IjMyIiByeD0iMTYiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC4xMikiLz4KICA8dGV4dCB4PSI2NTAiIHk9IjM4NiIgZm9udC1mYW1pbHk9IkFyaWFsLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTIiIGZpbGw9IndoaXRlIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LXdlaWdodD0iNzAwIj5OSUtFIFRFQ0g8L3RleHQ+CgogIDwhLS0gQnJhbmQgdGFncyByb3cgMiAtLT4KICA8cmVjdCB4PSI5MCIgeT0iNDEwIiB3aWR0aD0iMTUwIiBoZWlnaHQ9IjMyIiByeD0iMTYiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC4xMikiLz4KICA8dGV4dCB4PSIxNjUiIHk9IjQzMSIgZm9udC1mYW1pbHk9IkFyaWFsLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTIiIGZpbGw9IndoaXRlIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LXdlaWdodD0iNzAwIj5SQUxQSCBMQVVSRU48L3RleHQ+CgogIDxyZWN0IHg9IjI1MiIgeT0iNDEwIiB3aWR0aD0iMTQ4IiBoZWlnaHQ9IjMyIiByeD0iMTYiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC4xMikiLz4KICA8dGV4dCB4PSIzMjYiIHk9IjQzMSIgZm9udC1mYW1pbHk9IkFyaWFsLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTIiIGZpbGw9IndoaXRlIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LXdlaWdodD0iNzAwIj5UT01NWSBISUxGSUdFUjwvdGV4dD4KCiAgPCEtLSBORVc6IEFpclBvZHMgTWF4IGJhZGdlIC0gaGlnaGxpZ2h0ZWQgLS0+CiAgPHJlY3QgeD0iNDEyIiB5PSI0MTAiIHdpZHRoPSIxMzgiIGhlaWdodD0iMzIiIHJ4PSIxNiIgZmlsbD0icmdiYSgxNjgsMjM3LDI1NSwwLjIyKSIgc3Ryb2tlPSIjYThlZGZmIiBzdHJva2Utd2lkdGg9IjEuNSIvPgogIDx0ZXh0IHg9IjQ4MSIgeT0iNDMxIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIxMiIgZmlsbD0iI2E4ZWRmZiIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC13ZWlnaHQ9IjcwMCI+QUlSUE9EUyBNQVg8L3RleHQ+CgogIDxyZWN0IHg9IjU2MiIgeT0iNDEwIiB3aWR0aD0iMTQ4IiBoZWlnaHQ9IjMyIiByeD0iMTYiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC4xMikiLz4KICA8dGV4dCB4PSI2MzYiIHk9IjQzMSIgZm9udC1mYW1pbHk9IkFyaWFsLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTIiIGZpbGw9IndoaXRlIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LXdlaWdodD0iNzAwIj4rIDEwMCBBVVRSRVM8L3RleHQ+CgogIDwhLS0gRGl2aWRlciAyIC0tPgogIDxyZWN0IHg9IjE1MCIgeT0iNDU4IiB3aWR0aD0iNTAwIiBoZWlnaHQ9IjEiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC4xKSIgcng9IjEiLz4KCiAgPCEtLSBCb251cyBiYWRnZSAtLT4KICA8cmVjdCB4PSIyMDAiIHk9IjQ3NSIgd2lkdGg9IjQwMCIgaGVpZ2h0PSI0NCIgcng9IjIyIiBmaWxsPSIjZjZhZDU1Ii8+CiAgPHRleHQgeD0iNDAwIiB5PSI1MDMiIGZvbnQtZmFtaWx5PSJBcmlhbCBCbGFjayxzYW5zLXNlcmlmIiBmb250LXNpemU9IjE0IiBmaWxsPSIjN2I0ZjAwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LXdlaWdodD0iOTAwIj5CT05VUyA6ICsxMDAgRk9VUk5JU1NFVVJTIElOQ0xVUzwvdGV4dD4KCiAgPCEtLSBBaXJQb2RzIGhpZ2hsaWdodCBib3ggLS0+CiAgPHJlY3QgeD0iOTAiIHk9IjUzNSIgd2lkdGg9IjYyMCIgaGVpZ2h0PSI3MCIgcng9IjE2IiBmaWxsPSJyZ2JhKDE2OCwyMzcsMjU1LDAuMDgpIiBzdHJva2U9InJnYmEoMTY4LDIzNywyNTUsMC4zKSIgc3Ryb2tlLXdpZHRoPSIxLjUiLz4KICA8dGV4dCB4PSI0MDAiIHk9IjU2MiIgZm9udC1mYW1pbHk9IkFyaWFsIEJsYWNrLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTUiIGZpbGw9IiNhOGVkZmYiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtd2VpZ2h0PSI5MDAiPk5PVVZFQVUgOiBGT1VSTklTU0VVUiBBSVJQT0RTIE1BWDwvdGV4dD4KICA8dGV4dCB4PSI0MDAiIHk9IjU4NiIgZm9udC1mYW1pbHk9IkFyaWFsLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTIiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC42KSIgdGV4dC1hbmNob3I9Im1pZGRsZSI+Q29udGFjdCBkaXJlY3QgaW5jbHVzIGRhbnMgbCBlYm9vazwvdGV4dD4KCiAgPCEtLSBQcmljZSAtLT4KICA8dGV4dCB4PSI0MDAiIHk9IjY3MCIgZm9udC1mYW1pbHk9IkFyaWFsIEJsYWNrLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iNTYiIGZpbGw9IndoaXRlIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LXdlaWdodD0iOTAwIj42LDk5IEVVUjwvdGV4dD4KICA8dGV4dCB4PSI0MDAiIHk9IjcxMCIgZm9udC1mYW1pbHk9IkFyaWFsLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTQiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC41NSkiIHRleHQtYW5jaG9yPSJtaWRkbGUiPkFjY2VzIGltbWVkaWF0IC0gUERGIC0gTWlzIGEgam91ciAyMDI2PC90ZXh0Pgo8L3N2Zz4=" alt="Vue 2" onclick="changeMainImg(this,'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4MDAiIGhlaWdodD0iODAwIiB2aWV3Qm94PSIwIDAgODAwIDgwMCI+CiAgPGRlZnM+CiAgICA8bGluZWFyR3JhZGllbnQgaWQ9ImJnIiB4MT0iMCUiIHkxPSIwJSIgeDI9IjEwMCUiIHkyPSIxMDAlIj4KICAgICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3R5bGU9InN0b3AtY29sb3I6IzAxNWY2YiIvPgogICAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0eWxlPSJzdG9wLWNvbG9yOiMwMTkwOWUiLz4KICAgIDwvbGluZWFyR3JhZGllbnQ+CiAgPC9kZWZzPgogIDxyZWN0IHdpZHRoPSI4MDAiIGhlaWdodD0iODAwIiBmaWxsPSJ1cmwoI2JnKSIvPgogIDxyZWN0IHg9IjYwIiB5PSI2MCIgd2lkdGg9IjY4MCIgaGVpZ2h0PSI2ODAiIHJ4PSIyNCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSJyZ2JhKDI1NSwyNTUsMjU1LDAuMTUpIiBzdHJva2Utd2lkdGg9IjIiLz4KCiAgPCEtLSBVcGRhdGVkIDIwMjYgYmFkZ2UgdG9wIHJpZ2h0IC0tPgogIDxyZWN0IHg9IjU2MCIgeT0iODgiIHdpZHRoPSIxNTIiIGhlaWdodD0iMzYiIHJ4PSIxOCIgZmlsbD0iI2Y2YWQ1NSIvPgogIDx0ZXh0IHg9IjYzNiIgeT0iMTEyIiBmb250LWZhbWlseT0iQXJpYWwgQmxhY2ssc2Fucy1zZXJpZiIgZm9udC1zaXplPSIxNCIgZmlsbD0iIzdiNGYwMCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC13ZWlnaHQ9IjkwMCI+TUlTIEEgSk9VUiAyMDI2PC90ZXh0PgoKICA8IS0tIFRvcCBsYWJlbCAtLT4KICA8dGV4dCB4PSIzODAiIHk9IjE2MCIgZm9udC1mYW1pbHk9IkFyaWFsLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTIiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC41KSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgbGV0dGVyLXNwYWNpbmc9IjMiPkVCT09LIFBSRU1JVU08L3RleHQ+CgogIDwhLS0gTWFpbiB0aXRsZSAtLT4KICA8dGV4dCB4PSI0MDAiIHk9IjIzMCIgZm9udC1mYW1pbHk9IkFyaWFsIEJsYWNrLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMzQiIGZpbGw9IndoaXRlIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LXdlaWdodD0iOTAwIj5MRVMgTUVJTExFVVJFUzwvdGV4dD4KICA8dGV4dCB4PSI0MDAiIHk9IjI3NCIgZm9udC1mYW1pbHk9IkFyaWFsIEJsYWNrLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMzQiIGZpbGw9IndoaXRlIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LXdlaWdodD0iOTAwIj5GT1VSTklTU0VVUlM8L3RleHQ+CiAgPHRleHQgeD0iNDAwIiB5PSIzMTgiIGZvbnQtZmFtaWx5PSJBcmlhbCBCbGFjayxzYW5zLXNlcmlmIiBmb250LXNpemU9IjM0IiBmaWxsPSIjYThlZGZmIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LXdlaWdodD0iOTAwIj5WSU5URUQ8L3RleHQ+CgogIDwhLS0gRGl2aWRlciAtLT4KICA8cmVjdCB4PSIxNTAiIHk9IjM0NSIgd2lkdGg9IjUwMCIgaGVpZ2h0PSIyIiBmaWxsPSJyZ2JhKDI1NSwyNTUsMjU1LDAuMikiIHJ4PSIxIi8+CgogIDwhLS0gQnJhbmQgdGFncyByb3cgMSAtLT4KICA8cmVjdCB4PSI5MCIgeT0iMzY1IiB3aWR0aD0iMTMwIiBoZWlnaHQ9IjMyIiByeD0iMTYiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC4xMikiLz4KICA8dGV4dCB4PSIxNTUiIHk9IjM4NiIgZm9udC1mYW1pbHk9IkFyaWFsLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTIiIGZpbGw9IndoaXRlIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LXdlaWdodD0iNzAwIj5OSUtFIERVTks8L3RleHQ+CgogIDxyZWN0IHg9IjIzMiIgeT0iMzY1IiB3aWR0aD0iMTQ4IiBoZWlnaHQ9IjMyIiByeD0iMTYiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC4xMikiLz4KICA8dGV4dCB4PSIzMDYiIHk9IjM4NiIgZm9udC1mYW1pbHk9IkFyaWFsLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTIiIGZpbGw9IndoaXRlIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LXdlaWdodD0iNzAwIj5BRElEQVMgU0FNQkE8L3RleHQ+CgogIDxyZWN0IHg9IjM5MiIgeT0iMzY1IiB3aWR0aD0iOTgiIGhlaWdodD0iMzIiIHJ4PSIxNiIgZmlsbD0icmdiYSgyNTUsMjU1LDI1NSwwLjEyKSIvPgogIDx0ZXh0IHg9IjQ0MSIgeT0iMzg2IiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIxMiIgZmlsbD0id2hpdGUiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtd2VpZ2h0PSI3MDAiPkRZU09OPC90ZXh0PgoKICA8cmVjdCB4PSI1MDIiIHk9IjM2NSIgd2lkdGg9Ijc2IiBoZWlnaHQ9IjMyIiByeD0iMTYiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC4xMikiLz4KICA8dGV4dCB4PSI1NDAiIHk9IjM4NiIgZm9udC1mYW1pbHk9IkFyaWFsLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTIiIGZpbGw9IndoaXRlIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LXdlaWdodD0iNzAwIj5VR0c8L3RleHQ+CgogIDxyZWN0IHg9IjU5MCIgeT0iMzY1IiB3aWR0aD0iMTIwIiBoZWlnaHQ9IjMyIiByeD0iMTYiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC4xMikiLz4KICA8dGV4dCB4PSI2NTAiIHk9IjM4NiIgZm9udC1mYW1pbHk9IkFyaWFsLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTIiIGZpbGw9IndoaXRlIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LXdlaWdodD0iNzAwIj5OSUtFIFRFQ0g8L3RleHQ+CgogIDwhLS0gQnJhbmQgdGFncyByb3cgMiAtLT4KICA8cmVjdCB4PSI5MCIgeT0iNDEwIiB3aWR0aD0iMTUwIiBoZWlnaHQ9IjMyIiByeD0iMTYiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC4xMikiLz4KICA8dGV4dCB4PSIxNjUiIHk9IjQzMSIgZm9udC1mYW1pbHk9IkFyaWFsLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTIiIGZpbGw9IndoaXRlIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LXdlaWdodD0iNzAwIj5SQUxQSCBMQVVSRU48L3RleHQ+CgogIDxyZWN0IHg9IjI1MiIgeT0iNDEwIiB3aWR0aD0iMTQ4IiBoZWlnaHQ9IjMyIiByeD0iMTYiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC4xMikiLz4KICA8dGV4dCB4PSIzMjYiIHk9IjQzMSIgZm9udC1mYW1pbHk9IkFyaWFsLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTIiIGZpbGw9IndoaXRlIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LXdlaWdodD0iNzAwIj5UT01NWSBISUxGSUdFUjwvdGV4dD4KCiAgPCEtLSBORVc6IEFpclBvZHMgTWF4IGJhZGdlIC0gaGlnaGxpZ2h0ZWQgLS0+CiAgPHJlY3QgeD0iNDEyIiB5PSI0MTAiIHdpZHRoPSIxMzgiIGhlaWdodD0iMzIiIHJ4PSIxNiIgZmlsbD0icmdiYSgxNjgsMjM3LDI1NSwwLjIyKSIgc3Ryb2tlPSIjYThlZGZmIiBzdHJva2Utd2lkdGg9IjEuNSIvPgogIDx0ZXh0IHg9IjQ4MSIgeT0iNDMxIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIxMiIgZmlsbD0iI2E4ZWRmZiIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC13ZWlnaHQ9IjcwMCI+QUlSUE9EUyBNQVg8L3RleHQ+CgogIDxyZWN0IHg9IjU2MiIgeT0iNDEwIiB3aWR0aD0iMTQ4IiBoZWlnaHQ9IjMyIiByeD0iMTYiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC4xMikiLz4KICA8dGV4dCB4PSI2MzYiIHk9IjQzMSIgZm9udC1mYW1pbHk9IkFyaWFsLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTIiIGZpbGw9IndoaXRlIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LXdlaWdodD0iNzAwIj4rIDEwMCBBVVRSRVM8L3RleHQ+CgogIDwhLS0gRGl2aWRlciAyIC0tPgogIDxyZWN0IHg9IjE1MCIgeT0iNDU4IiB3aWR0aD0iNTAwIiBoZWlnaHQ9IjEiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC4xKSIgcng9IjEiLz4KCiAgPCEtLSBCb251cyBiYWRnZSAtLT4KICA8cmVjdCB4PSIyMDAiIHk9IjQ3NSIgd2lkdGg9IjQwMCIgaGVpZ2h0PSI0NCIgcng9IjIyIiBmaWxsPSIjZjZhZDU1Ii8+CiAgPHRleHQgeD0iNDAwIiB5PSI1MDMiIGZvbnQtZmFtaWx5PSJBcmlhbCBCbGFjayxzYW5zLXNlcmlmIiBmb250LXNpemU9IjE0IiBmaWxsPSIjN2I0ZjAwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LXdlaWdodD0iOTAwIj5CT05VUyA6ICsxMDAgRk9VUk5JU1NFVVJTIElOQ0xVUzwvdGV4dD4KCiAgPCEtLSBBaXJQb2RzIGhpZ2hsaWdodCBib3ggLS0+CiAgPHJlY3QgeD0iOTAiIHk9IjUzNSIgd2lkdGg9IjYyMCIgaGVpZ2h0PSI3MCIgcng9IjE2IiBmaWxsPSJyZ2JhKDE2OCwyMzcsMjU1LDAuMDgpIiBzdHJva2U9InJnYmEoMTY4LDIzNywyNTUsMC4zKSIgc3Ryb2tlLXdpZHRoPSIxLjUiLz4KICA8dGV4dCB4PSI0MDAiIHk9IjU2MiIgZm9udC1mYW1pbHk9IkFyaWFsIEJsYWNrLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTUiIGZpbGw9IiNhOGVkZmYiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtd2VpZ2h0PSI5MDAiPk5PVVZFQVUgOiBGT1VSTklTU0VVUiBBSVJQT0RTIE1BWDwvdGV4dD4KICA8dGV4dCB4PSI0MDAiIHk9IjU4NiIgZm9udC1mYW1pbHk9IkFyaWFsLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTIiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC42KSIgdGV4dC1hbmNob3I9Im1pZGRsZSI+Q29udGFjdCBkaXJlY3QgaW5jbHVzIGRhbnMgbCBlYm9vazwvdGV4dD4KCiAgPCEtLSBQcmljZSAtLT4KICA8dGV4dCB4PSI0MDAiIHk9IjY3MCIgZm9udC1mYW1pbHk9IkFyaWFsIEJsYWNrLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iNTYiIGZpbGw9IndoaXRlIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LXdlaWdodD0iOTAwIj42LDk5IEVVUjwvdGV4dD4KICA8dGV4dCB4PSI0MDAiIHk9IjcxMCIgZm9udC1mYW1pbHk9IkFyaWFsLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTQiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC41NSkiIHRleHQtYW5jaG9yPSJtaWRkbGUiPkFjY2VzIGltbWVkaWF0IC0gUERGIC0gTWlzIGEgam91ciAyMDI2PC90ZXh0Pgo8L3N2Zz4=')">
+          <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4MDAiIGhlaWdodD0iODAwIiB2aWV3Qm94PSIwIDAgODAwIDgwMCI+CiAgPGRlZnM+CiAgICA8bGluZWFyR3JhZGllbnQgaWQ9ImJnIiB4MT0iMCUiIHkxPSIwJSIgeDI9IjEwMCUiIHkyPSIxMDAlIj4KICAgICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3R5bGU9InN0b3AtY29sb3I6IzAxNWY2YiIvPgogICAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0eWxlPSJzdG9wLWNvbG9yOiMwMTkwOWUiLz4KICAgIDwvbGluZWFyR3JhZGllbnQ+CiAgPC9kZWZzPgogIDxyZWN0IHdpZHRoPSI4MDAiIGhlaWdodD0iODAwIiBmaWxsPSJ1cmwoI2JnKSIvPgogIDxyZWN0IHg9IjYwIiB5PSI2MCIgd2lkdGg9IjY4MCIgaGVpZ2h0PSI2ODAiIHJ4PSIyNCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSJyZ2JhKDI1NSwyNTUsMjU1LDAuMTUpIiBzdHJva2Utd2lkdGg9IjIiLz4KCiAgPCEtLSBVcGRhdGVkIDIwMjYgYmFkZ2UgdG9wIHJpZ2h0IC0tPgogIDxyZWN0IHg9IjU2MCIgeT0iODgiIHdpZHRoPSIxNTIiIGhlaWdodD0iMzYiIHJ4PSIxOCIgZmlsbD0iI2Y2YWQ1NSIvPgogIDx0ZXh0IHg9IjYzNiIgeT0iMTEyIiBmb250LWZhbWlseT0iQXJpYWwgQmxhY2ssc2Fucy1zZXJpZiIgZm9udC1zaXplPSIxNCIgZmlsbD0iIzdiNGYwMCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC13ZWlnaHQ9IjkwMCI+TUlTIEEgSk9VUiAyMDI2PC90ZXh0PgoKICA8IS0tIFRvcCBsYWJlbCAtLT4KICA8dGV4dCB4PSIzODAiIHk9IjE2MCIgZm9udC1mYW1pbHk9IkFyaWFsLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTIiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC41KSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgbGV0dGVyLXNwYWNpbmc9IjMiPkVCT09LIFBSRU1JVU08L3RleHQ+CgogIDwhLS0gTWFpbiB0aXRsZSAtLT4KICA8dGV4dCB4PSI0MDAiIHk9IjIzMCIgZm9udC1mYW1pbHk9IkFyaWFsIEJsYWNrLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMzQiIGZpbGw9IndoaXRlIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LXdlaWdodD0iOTAwIj5MRVMgTUVJTExFVVJFUzwvdGV4dD4KICA8dGV4dCB4PSI0MDAiIHk9IjI3NCIgZm9udC1mYW1pbHk9IkFyaWFsIEJsYWNrLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMzQiIGZpbGw9IndoaXRlIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LXdlaWdodD0iOTAwIj5GT1VSTklTU0VVUlM8L3RleHQ+CiAgPHRleHQgeD0iNDAwIiB5PSIzMTgiIGZvbnQtZmFtaWx5PSJBcmlhbCBCbGFjayxzYW5zLXNlcmlmIiBmb250LXNpemU9IjM0IiBmaWxsPSIjYThlZGZmIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LXdlaWdodD0iOTAwIj5WSU5URUQ8L3RleHQ+CgogIDwhLS0gRGl2aWRlciAtLT4KICA8cmVjdCB4PSIxNTAiIHk9IjM0NSIgd2lkdGg9IjUwMCIgaGVpZ2h0PSIyIiBmaWxsPSJyZ2JhKDI1NSwyNTUsMjU1LDAuMikiIHJ4PSIxIi8+CgogIDwhLS0gQnJhbmQgdGFncyByb3cgMSAtLT4KICA8cmVjdCB4PSI5MCIgeT0iMzY1IiB3aWR0aD0iMTMwIiBoZWlnaHQ9IjMyIiByeD0iMTYiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC4xMikiLz4KICA8dGV4dCB4PSIxNTUiIHk9IjM4NiIgZm9udC1mYW1pbHk9IkFyaWFsLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTIiIGZpbGw9IndoaXRlIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LXdlaWdodD0iNzAwIj5OSUtFIERVTks8L3RleHQ+CgogIDxyZWN0IHg9IjIzMiIgeT0iMzY1IiB3aWR0aD0iMTQ4IiBoZWlnaHQ9IjMyIiByeD0iMTYiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC4xMikiLz4KICA8dGV4dCB4PSIzMDYiIHk9IjM4NiIgZm9udC1mYW1pbHk9IkFyaWFsLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTIiIGZpbGw9IndoaXRlIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LXdlaWdodD0iNzAwIj5BRElEQVMgU0FNQkE8L3RleHQ+CgogIDxyZWN0IHg9IjM5MiIgeT0iMzY1IiB3aWR0aD0iOTgiIGhlaWdodD0iMzIiIHJ4PSIxNiIgZmlsbD0icmdiYSgyNTUsMjU1LDI1NSwwLjEyKSIvPgogIDx0ZXh0IHg9IjQ0MSIgeT0iMzg2IiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIxMiIgZmlsbD0id2hpdGUiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtd2VpZ2h0PSI3MDAiPkRZU09OPC90ZXh0PgoKICA8cmVjdCB4PSI1MDIiIHk9IjM2NSIgd2lkdGg9Ijc2IiBoZWlnaHQ9IjMyIiByeD0iMTYiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC4xMikiLz4KICA8dGV4dCB4PSI1NDAiIHk9IjM4NiIgZm9udC1mYW1pbHk9IkFyaWFsLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTIiIGZpbGw9IndoaXRlIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LXdlaWdodD0iNzAwIj5VR0c8L3RleHQ+CgogIDxyZWN0IHg9IjU5MCIgeT0iMzY1IiB3aWR0aD0iMTIwIiBoZWlnaHQ9IjMyIiByeD0iMTYiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC4xMikiLz4KICA8dGV4dCB4PSI2NTAiIHk9IjM4NiIgZm9udC1mYW1pbHk9IkFyaWFsLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTIiIGZpbGw9IndoaXRlIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LXdlaWdodD0iNzAwIj5OSUtFIFRFQ0g8L3RleHQ+CgogIDwhLS0gQnJhbmQgdGFncyByb3cgMiAtLT4KICA8cmVjdCB4PSI5MCIgeT0iNDEwIiB3aWR0aD0iMTUwIiBoZWlnaHQ9IjMyIiByeD0iMTYiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC4xMikiLz4KICA8dGV4dCB4PSIxNjUiIHk9IjQzMSIgZm9udC1mYW1pbHk9IkFyaWFsLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTIiIGZpbGw9IndoaXRlIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LXdlaWdodD0iNzAwIj5SQUxQSCBMQVVSRU48L3RleHQ+CgogIDxyZWN0IHg9IjI1MiIgeT0iNDEwIiB3aWR0aD0iMTQ4IiBoZWlnaHQ9IjMyIiByeD0iMTYiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC4xMikiLz4KICA8dGV4dCB4PSIzMjYiIHk9IjQzMSIgZm9udC1mYW1pbHk9IkFyaWFsLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTIiIGZpbGw9IndoaXRlIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LXdlaWdodD0iNzAwIj5UT01NWSBISUxGSUdFUjwvdGV4dD4KCiAgPCEtLSBORVc6IEFpclBvZHMgTWF4IGJhZGdlIC0gaGlnaGxpZ2h0ZWQgLS0+CiAgPHJlY3QgeD0iNDEyIiB5PSI0MTAiIHdpZHRoPSIxMzgiIGhlaWdodD0iMzIiIHJ4PSIxNiIgZmlsbD0icmdiYSgxNjgsMjM3LDI1NSwwLjIyKSIgc3Ryb2tlPSIjYThlZGZmIiBzdHJva2Utd2lkdGg9IjEuNSIvPgogIDx0ZXh0IHg9IjQ4MSIgeT0iNDMxIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIxMiIgZmlsbD0iI2E4ZWRmZiIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC13ZWlnaHQ9IjcwMCI+QUlSUE9EUyBNQVg8L3RleHQ+CgogIDxyZWN0IHg9IjU2MiIgeT0iNDEwIiB3aWR0aD0iMTQ4IiBoZWlnaHQ9IjMyIiByeD0iMTYiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC4xMikiLz4KICA8dGV4dCB4PSI2MzYiIHk9IjQzMSIgZm9udC1mYW1pbHk9IkFyaWFsLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTIiIGZpbGw9IndoaXRlIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LXdlaWdodD0iNzAwIj4rIDEwMCBBVVRSRVM8L3RleHQ+CgogIDwhLS0gRGl2aWRlciAyIC0tPgogIDxyZWN0IHg9IjE1MCIgeT0iNDU4IiB3aWR0aD0iNTAwIiBoZWlnaHQ9IjEiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC4xKSIgcng9IjEiLz4KCiAgPCEtLSBCb251cyBiYWRnZSAtLT4KICA8cmVjdCB4PSIyMDAiIHk9IjQ3NSIgd2lkdGg9IjQwMCIgaGVpZ2h0PSI0NCIgcng9IjIyIiBmaWxsPSIjZjZhZDU1Ii8+CiAgPHRleHQgeD0iNDAwIiB5PSI1MDMiIGZvbnQtZmFtaWx5PSJBcmlhbCBCbGFjayxzYW5zLXNlcmlmIiBmb250LXNpemU9IjE0IiBmaWxsPSIjN2I0ZjAwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LXdlaWdodD0iOTAwIj5CT05VUyA6ICsxMDAgRk9VUk5JU1NFVVJTIElOQ0xVUzwvdGV4dD4KCiAgPCEtLSBBaXJQb2RzIGhpZ2hsaWdodCBib3ggLS0+CiAgPHJlY3QgeD0iOTAiIHk9IjUzNSIgd2lkdGg9IjYyMCIgaGVpZ2h0PSI3MCIgcng9IjE2IiBmaWxsPSJyZ2JhKDE2OCwyMzcsMjU1LDAuMDgpIiBzdHJva2U9InJnYmEoMTY4LDIzNywyNTUsMC4zKSIgc3Ryb2tlLXdpZHRoPSIxLjUiLz4KICA8dGV4dCB4PSI0MDAiIHk9IjU2MiIgZm9udC1mYW1pbHk9IkFyaWFsIEJsYWNrLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTUiIGZpbGw9IiNhOGVkZmYiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtd2VpZ2h0PSI5MDAiPk5PVVZFQVUgOiBGT1VSTklTU0VVUiBBSVJQT0RTIE1BWDwvdGV4dD4KICA8dGV4dCB4PSI0MDAiIHk9IjU4NiIgZm9udC1mYW1pbHk9IkFyaWFsLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTIiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC42KSIgdGV4dC1hbmNob3I9Im1pZGRsZSI+Q29udGFjdCBkaXJlY3QgaW5jbHVzIGRhbnMgbCBlYm9vazwvdGV4dD4KCiAgPCEtLSBQcmljZSAtLT4KICA8dGV4dCB4PSI0MDAiIHk9IjY3MCIgZm9udC1mYW1pbHk9IkFyaWFsIEJsYWNrLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iNTYiIGZpbGw9IndoaXRlIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LXdlaWdodD0iOTAwIj42LDk5IEVVUjwvdGV4dD4KICA8dGV4dCB4PSI0MDAiIHk9IjcxMCIgZm9udC1mYW1pbHk9IkFyaWFsLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTQiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC41NSkiIHRleHQtYW5jaG9yPSJtaWRkbGUiPkFjY2VzIGltbWVkaWF0IC0gUERGIC0gTWlzIGEgam91ciAyMDI2PC90ZXh0Pgo8L3N2Zz4=" alt="Vue 3" onclick="changeMainImg(this,'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4MDAiIGhlaWdodD0iODAwIiB2aWV3Qm94PSIwIDAgODAwIDgwMCI+CiAgPGRlZnM+CiAgICA8bGluZWFyR3JhZGllbnQgaWQ9ImJnIiB4MT0iMCUiIHkxPSIwJSIgeDI9IjEwMCUiIHkyPSIxMDAlIj4KICAgICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3R5bGU9InN0b3AtY29sb3I6IzAxNWY2YiIvPgogICAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0eWxlPSJzdG9wLWNvbG9yOiMwMTkwOWUiLz4KICAgIDwvbGluZWFyR3JhZGllbnQ+CiAgPC9kZWZzPgogIDxyZWN0IHdpZHRoPSI4MDAiIGhlaWdodD0iODAwIiBmaWxsPSJ1cmwoI2JnKSIvPgogIDxyZWN0IHg9IjYwIiB5PSI2MCIgd2lkdGg9IjY4MCIgaGVpZ2h0PSI2ODAiIHJ4PSIyNCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSJyZ2JhKDI1NSwyNTUsMjU1LDAuMTUpIiBzdHJva2Utd2lkdGg9IjIiLz4KCiAgPCEtLSBVcGRhdGVkIDIwMjYgYmFkZ2UgdG9wIHJpZ2h0IC0tPgogIDxyZWN0IHg9IjU2MCIgeT0iODgiIHdpZHRoPSIxNTIiIGhlaWdodD0iMzYiIHJ4PSIxOCIgZmlsbD0iI2Y2YWQ1NSIvPgogIDx0ZXh0IHg9IjYzNiIgeT0iMTEyIiBmb250LWZhbWlseT0iQXJpYWwgQmxhY2ssc2Fucy1zZXJpZiIgZm9udC1zaXplPSIxNCIgZmlsbD0iIzdiNGYwMCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC13ZWlnaHQ9IjkwMCI+TUlTIEEgSk9VUiAyMDI2PC90ZXh0PgoKICA8IS0tIFRvcCBsYWJlbCAtLT4KICA8dGV4dCB4PSIzODAiIHk9IjE2MCIgZm9udC1mYW1pbHk9IkFyaWFsLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTIiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC41KSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgbGV0dGVyLXNwYWNpbmc9IjMiPkVCT09LIFBSRU1JVU08L3RleHQ+CgogIDwhLS0gTWFpbiB0aXRsZSAtLT4KICA8dGV4dCB4PSI0MDAiIHk9IjIzMCIgZm9udC1mYW1pbHk9IkFyaWFsIEJsYWNrLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMzQiIGZpbGw9IndoaXRlIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LXdlaWdodD0iOTAwIj5MRVMgTUVJTExFVVJFUzwvdGV4dD4KICA8dGV4dCB4PSI0MDAiIHk9IjI3NCIgZm9udC1mYW1pbHk9IkFyaWFsIEJsYWNrLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMzQiIGZpbGw9IndoaXRlIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LXdlaWdodD0iOTAwIj5GT1VSTklTU0VVUlM8L3RleHQ+CiAgPHRleHQgeD0iNDAwIiB5PSIzMTgiIGZvbnQtZmFtaWx5PSJBcmlhbCBCbGFjayxzYW5zLXNlcmlmIiBmb250LXNpemU9IjM0IiBmaWxsPSIjYThlZGZmIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LXdlaWdodD0iOTAwIj5WSU5URUQ8L3RleHQ+CgogIDwhLS0gRGl2aWRlciAtLT4KICA8cmVjdCB4PSIxNTAiIHk9IjM0NSIgd2lkdGg9IjUwMCIgaGVpZ2h0PSIyIiBmaWxsPSJyZ2JhKDI1NSwyNTUsMjU1LDAuMikiIHJ4PSIxIi8+CgogIDwhLS0gQnJhbmQgdGFncyByb3cgMSAtLT4KICA8cmVjdCB4PSI5MCIgeT0iMzY1IiB3aWR0aD0iMTMwIiBoZWlnaHQ9IjMyIiByeD0iMTYiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC4xMikiLz4KICA8dGV4dCB4PSIxNTUiIHk9IjM4NiIgZm9udC1mYW1pbHk9IkFyaWFsLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTIiIGZpbGw9IndoaXRlIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LXdlaWdodD0iNzAwIj5OSUtFIERVTks8L3RleHQ+CgogIDxyZWN0IHg9IjIzMiIgeT0iMzY1IiB3aWR0aD0iMTQ4IiBoZWlnaHQ9IjMyIiByeD0iMTYiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC4xMikiLz4KICA8dGV4dCB4PSIzMDYiIHk9IjM4NiIgZm9udC1mYW1pbHk9IkFyaWFsLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTIiIGZpbGw9IndoaXRlIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LXdlaWdodD0iNzAwIj5BRElEQVMgU0FNQkE8L3RleHQ+CgogIDxyZWN0IHg9IjM5MiIgeT0iMzY1IiB3aWR0aD0iOTgiIGhlaWdodD0iMzIiIHJ4PSIxNiIgZmlsbD0icmdiYSgyNTUsMjU1LDI1NSwwLjEyKSIvPgogIDx0ZXh0IHg9IjQ0MSIgeT0iMzg2IiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIxMiIgZmlsbD0id2hpdGUiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtd2VpZ2h0PSI3MDAiPkRZU09OPC90ZXh0PgoKICA8cmVjdCB4PSI1MDIiIHk9IjM2NSIgd2lkdGg9Ijc2IiBoZWlnaHQ9IjMyIiByeD0iMTYiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC4xMikiLz4KICA8dGV4dCB4PSI1NDAiIHk9IjM4NiIgZm9udC1mYW1pbHk9IkFyaWFsLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTIiIGZpbGw9IndoaXRlIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LXdlaWdodD0iNzAwIj5VR0c8L3RleHQ+CgogIDxyZWN0IHg9IjU5MCIgeT0iMzY1IiB3aWR0aD0iMTIwIiBoZWlnaHQ9IjMyIiByeD0iMTYiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC4xMikiLz4KICA8dGV4dCB4PSI2NTAiIHk9IjM4NiIgZm9udC1mYW1pbHk9IkFyaWFsLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTIiIGZpbGw9IndoaXRlIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LXdlaWdodD0iNzAwIj5OSUtFIFRFQ0g8L3RleHQ+CgogIDwhLS0gQnJhbmQgdGFncyByb3cgMiAtLT4KICA8cmVjdCB4PSI5MCIgeT0iNDEwIiB3aWR0aD0iMTUwIiBoZWlnaHQ9IjMyIiByeD0iMTYiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC4xMikiLz4KICA8dGV4dCB4PSIxNjUiIHk9IjQzMSIgZm9udC1mYW1pbHk9IkFyaWFsLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTIiIGZpbGw9IndoaXRlIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LXdlaWdodD0iNzAwIj5SQUxQSCBMQVVSRU48L3RleHQ+CgogIDxyZWN0IHg9IjI1MiIgeT0iNDEwIiB3aWR0aD0iMTQ4IiBoZWlnaHQ9IjMyIiByeD0iMTYiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC4xMikiLz4KICA8dGV4dCB4PSIzMjYiIHk9IjQzMSIgZm9udC1mYW1pbHk9IkFyaWFsLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTIiIGZpbGw9IndoaXRlIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LXdlaWdodD0iNzAwIj5UT01NWSBISUxGSUdFUjwvdGV4dD4KCiAgPCEtLSBORVc6IEFpclBvZHMgTWF4IGJhZGdlIC0gaGlnaGxpZ2h0ZWQgLS0+CiAgPHJlY3QgeD0iNDEyIiB5PSI0MTAiIHdpZHRoPSIxMzgiIGhlaWdodD0iMzIiIHJ4PSIxNiIgZmlsbD0icmdiYSgxNjgsMjM3LDI1NSwwLjIyKSIgc3Ryb2tlPSIjYThlZGZmIiBzdHJva2Utd2lkdGg9IjEuNSIvPgogIDx0ZXh0IHg9IjQ4MSIgeT0iNDMxIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIxMiIgZmlsbD0iI2E4ZWRmZiIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC13ZWlnaHQ9IjcwMCI+QUlSUE9EUyBNQVg8L3RleHQ+CgogIDxyZWN0IHg9IjU2MiIgeT0iNDEwIiB3aWR0aD0iMTQ4IiBoZWlnaHQ9IjMyIiByeD0iMTYiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC4xMikiLz4KICA8dGV4dCB4PSI2MzYiIHk9IjQzMSIgZm9udC1mYW1pbHk9IkFyaWFsLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTIiIGZpbGw9IndoaXRlIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LXdlaWdodD0iNzAwIj4rIDEwMCBBVVRSRVM8L3RleHQ+CgogIDwhLS0gRGl2aWRlciAyIC0tPgogIDxyZWN0IHg9IjE1MCIgeT0iNDU4IiB3aWR0aD0iNTAwIiBoZWlnaHQ9IjEiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC4xKSIgcng9IjEiLz4KCiAgPCEtLSBCb251cyBiYWRnZSAtLT4KICA8cmVjdCB4PSIyMDAiIHk9IjQ3NSIgd2lkdGg9IjQwMCIgaGVpZ2h0PSI0NCIgcng9IjIyIiBmaWxsPSIjZjZhZDU1Ii8+CiAgPHRleHQgeD0iNDAwIiB5PSI1MDMiIGZvbnQtZmFtaWx5PSJBcmlhbCBCbGFjayxzYW5zLXNlcmlmIiBmb250LXNpemU9IjE0IiBmaWxsPSIjN2I0ZjAwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LXdlaWdodD0iOTAwIj5CT05VUyA6ICsxMDAgRk9VUk5JU1NFVVJTIElOQ0xVUzwvdGV4dD4KCiAgPCEtLSBBaXJQb2RzIGhpZ2hsaWdodCBib3ggLS0+CiAgPHJlY3QgeD0iOTAiIHk9IjUzNSIgd2lkdGg9IjYyMCIgaGVpZ2h0PSI3MCIgcng9IjE2IiBmaWxsPSJyZ2JhKDE2OCwyMzcsMjU1LDAuMDgpIiBzdHJva2U9InJnYmEoMTY4LDIzNywyNTUsMC4zKSIgc3Ryb2tlLXdpZHRoPSIxLjUiLz4KICA8dGV4dCB4PSI0MDAiIHk9IjU2MiIgZm9udC1mYW1pbHk9IkFyaWFsIEJsYWNrLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTUiIGZpbGw9IiNhOGVkZmYiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtd2VpZ2h0PSI5MDAiPk5PVVZFQVUgOiBGT1VSTklTU0VVUiBBSVJQT0RTIE1BWDwvdGV4dD4KICA8dGV4dCB4PSI0MDAiIHk9IjU4NiIgZm9udC1mYW1pbHk9IkFyaWFsLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTIiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC42KSIgdGV4dC1hbmNob3I9Im1pZGRsZSI+Q29udGFjdCBkaXJlY3QgaW5jbHVzIGRhbnMgbCBlYm9vazwvdGV4dD4KCiAgPCEtLSBQcmljZSAtLT4KICA8dGV4dCB4PSI0MDAiIHk9IjY3MCIgZm9udC1mYW1pbHk9IkFyaWFsIEJsYWNrLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iNTYiIGZpbGw9IndoaXRlIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LXdlaWdodD0iOTAwIj42LDk5IEVVUjwvdGV4dD4KICA8dGV4dCB4PSI0MDAiIHk9IjcxMCIgZm9udC1mYW1pbHk9IkFyaWFsLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTQiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC41NSkiIHRleHQtYW5jaG9yPSJtaWRkbGUiPkFjY2VzIGltbWVkaWF0IC0gUERGIC0gTWlzIGEgam91ciAyMDI2PC90ZXh0Pgo8L3N2Zz4=')">
+        </div>
+      </div>
+
+      <!-- Colonne Droite -->
+      <div class="product-right">
+        <div>
+          <span style="background:var(--primary);color:#fff;padding:4px 14px;border-radius:100px;font-size:12px;font-weight:700;display:inline-block;margin-bottom:12px;">BEST-SELLER</span>
+          <h1>Les Meilleures Fournisseurs Vinted</h1>
+        </div>
+        <a href="https://trustpilot.customerthread.com/?country=FR&shop=MonMagasinEbook&logo=&url=MonMagasinEbook.com" target="_blank" class="product-tp-badge">
+          <span style="color:var(--green-tp);">★★★★★</span> 4,8/5 · 2 400+ avis sur Trustpilot
+        </a>
+        <div class="product-price-block">
+          <span class="product-price-old">9,99€</span>
+          <span class="product-price-new">6,99€</span>
+          <span class="product-discount-badge">✦ MIS À JOUR 2026</span>
+        </div>
+        <a href="https://tkfs.trackforces.com/aff_c?offer_id=104738&aff_id=1315&aff_sub5=2238554926882361&source=LES%20MEILLEURES%20FOURNISSEURS%20VINTED___https://i.imgur.com/CYkxMnS.png" target="_blank" class="btn-atc">
+          🛒 AJOUTER AU PANIER — 6,99€
+        </a>
+        <div class="trust-badges">
+          <div class="trust-badge"><span class="t-icon">🚀</span><span>Livraison<br>instantanée</span></div>
+          <div class="trust-badge"><span class="t-icon">🔄</span><span>Retours<br>30 jours</span></div>
+          <div class="trust-badge"><span class="t-icon">🔒</span><span>Paiement<br>sécurisé</span></div>
+        </div>
+        <div style="background:var(--bg-light);border-radius:var(--radius-md);padding:16px 20px;border:1px solid var(--border);">
+          <p style="font-size:14px;color:var(--text-mid);line-height:1.7;">🔄 <strong style="color:var(--primary);">Mis à jour 2026</strong> — Tous les contacts fournisseurs sont vérifiés et actifs. Accès immédiat après paiement.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ZONE 2: Feature Badges -->
+  <div class="product-zone" style="background:var(--bg-section);padding-top:40px;padding-bottom:40px;">
+    <div style="max-width:1200px;margin:0 auto;padding:0 20px;">
+      <div class="feat-badges-grid">
+        <div class="feat-badge-card">
+          <span class="feat-badge-icon">👟</span>
+          <div class="feat-badge-text">
+            <h4>Nike, Adidas & UGG</h4>
+            <p>Sources vérifiées Nike Dunk, Adidas Samba, Nike Tech et UGG pour des marges imbattables</p>
+          </div>
+        </div>
+        <div class="feat-badge-card">
+          <span class="feat-badge-icon">💨</span>
+          <div class="feat-badge-text">
+            <h4>Dyson & Électronique</h4>
+            <p>Fournisseurs liquidateurs et reconditionneurs Dyson et grandes marques high-tech</p>
+          </div>
+        </div>
+        <div class="feat-badge-card">
+          <span class="feat-badge-icon">👔</span>
+          <div class="feat-badge-text">
+            <h4>Ralph Lauren & Tommy</h4>
+            <p>Sources directes Ralph Lauren et Tommy Hilfiger, les marques les plus revendues sur Vinted</p>
+          </div>
+        </div>
+        <div class="feat-badge-card">
+          <span class="feat-badge-icon">🎁</span>
+          <div class="feat-badge-text">
+            <h4>+100 Fournisseurs Bonus</h4>
+            <p>Bonus exclusif : +100 fournisseurs supplémentaires pour toutes catégories de produits</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ZONE 3: Caractéristiques Techniques -->
+  <div class="product-zone">
+    <div class="zone-title">Caractéristiques du Guide</div>
+    <table class="tech-table">
+      <tr><td>Format</td><td>PDF numérique (téléchargement instantané)</td></tr>
+      <tr><td>Nombre de pages</td><td>85+ pages de contenu actionnable</td></tr>
+      <tr><td>Langue</td><td>Français</td></tr>
+      <tr><td>Niveau</td><td>Débutant à Avancé</td></tr>
+      <tr><td>Mises à jour</td><td>Gratuites à vie</td></tr>
+      <tr><td>Compatibilité</td><td>PC, Mac, Smartphone, Tablette</td></tr>
+      <tr><td>Support inclus</td><td>Email 7j/7 pendant 30 jours</td></tr>
+    </table>
+  </div>
+
+  <!-- ZONE 4: Contenu du Colis -->
+  <div class="product-zone" style="background:var(--bg-section);padding-top:40px;padding-bottom:40px;">
+    <div style="max-width:1200px;margin:0 auto;padding:0 20px;">
+      <div class="zone-title">📦 Ce que tu reçois</div>
+
+      <!-- Fournisseurs marques - cards grid -->
+      <p style="font-size:13px;font-weight:700;color:var(--primary);text-transform:uppercase;letter-spacing:1.5px;margin-bottom:12px;">🔑 Fournisseurs inclus</p>
+      <div class="colis-brands-grid">
+        <div class="colis-brand-card">
+          <span class="colis-brand-icon">👟</span>
+          <div class="colis-brand-info">
+            <span class="colis-brand-name">Nike Dunk</span>
+            <span class="colis-brand-desc">Contacts directs · Prix grossiste</span>
+          </div>
+          <span class="colis-check">✓</span>
+        </div>
+        <div class="colis-brand-card">
+          <span class="colis-brand-icon">👟</span>
+          <div class="colis-brand-info">
+            <span class="colis-brand-name">Adidas Samba</span>
+            <span class="colis-brand-desc">Sources vérifiées · Prix grossiste</span>
+          </div>
+          <span class="colis-check">✓</span>
+        </div>
+        <div class="colis-brand-card">
+          <span class="colis-brand-icon">💨</span>
+          <div class="colis-brand-info">
+            <span class="colis-brand-name">Dyson</span>
+            <span class="colis-brand-desc">Liquidateurs officiels · Reconditionneurs</span>
+          </div>
+          <span class="colis-check">✓</span>
+        </div>
+        <div class="colis-brand-card">
+          <span class="colis-brand-icon">🥾</span>
+          <div class="colis-brand-info">
+            <span class="colis-brand-name">UGG</span>
+            <span class="colis-brand-desc">Tous modèles bestsellers</span>
+          </div>
+          <span class="colis-check">✓</span>
+        </div>
+        <div class="colis-brand-card">
+          <span class="colis-brand-icon">👔</span>
+          <div class="colis-brand-info">
+            <span class="colis-brand-name">Ralph Lauren & Tommy</span>
+            <span class="colis-brand-desc">Grossistes mode premium Europe</span>
+          </div>
+          <span class="colis-check">✓</span>
+        </div>
+        <div class="colis-brand-card">
+          <span class="colis-brand-icon">🏃</span>
+          <div class="colis-brand-info">
+            <span class="colis-brand-name">Nike Tech</span>
+            <span class="colis-brand-desc">Joggings · Vestes Tech Fleece</span>
+          </div>
+          <span class="colis-check">✓</span>
+        </div>
+        <div class="colis-brand-card colis-brand-new">
+          <span class="colis-brand-icon">🎧</span>
+          <div class="colis-brand-info">
+            <span class="colis-brand-name">AirPods Max <span class="colis-new-tag">NOUVEAU</span></span>
+            <span class="colis-brand-desc">Contact direct · Prix grossiste Apple</span>
+          </div>
+          <span class="colis-check">✓</span>
+        </div>
+      </div>
+
+      <!-- Bonus card -->
+      <div class="colis-bonus-card">
+        <div class="colis-bonus-left">
+          <span style="font-size:32px;">🎁</span>
+        </div>
+        <div class="colis-bonus-right">
+          <div class="colis-bonus-title">BONUS — +100 Fournisseurs</div>
+          <div class="colis-bonus-desc">Électronique, luxe, sport, mode, maison et plus</div>
+          <div class="colis-bonus-value">Valeur : 49,99€ — Offert</div>
+        </div>
+      </div>
+
+      <!-- Inclus aussi -->
+      <p style="font-size:13px;font-weight:700;color:var(--primary);text-transform:uppercase;letter-spacing:1.5px;margin:20px 0 10px;">📚 Inclus aussi</p>
+      <div class="colis-extras">
+        <div class="colis-extra-item"><span>📄</span><span>Ebook PDF 85+ pages</span></div>
+        <div class="colis-extra-item"><span>💬</span><span>Scripts de négociation</span></div>
+        <div class="colis-extra-item"><span>📱</span><span>Guide optimisation Vinted</span></div>
+        <div class="colis-extra-item"><span>👥</span><span>Groupe privé de vendeurs</span></div>
+        <div class="colis-extra-item"><span>🔄</span><span>Mises à jour gratuites à vie</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ZONE 5: Description Détaillée -->
+  <div class="product-zone">
+    <div class="zone-title">À Propos de ce Guide</div>
+    <div class="product-desc">
+      <p style="margin-bottom:20px;">Vous voulez <strong>multiplier vos revenus sur Vinted</strong> mais vous ne savez pas où trouver des articles de qualité à des prix compétitifs ? Ce guide est fait pour vous.</p>
+      <p style="margin-bottom:20px;">"<strong>Les Meilleures Fournisseurs Vinted</strong>" révèle pour la première fois les <strong>sources directes des marques les plus revendues sur Vinted</strong> : Nike Dunk, Adidas Samba, Dyson, UGG, Ralph Lauren, Tommy Hilfiger et Nike Tech. Ce sont les marques que tout le monde recherche — et dont personne ne connaît les vrais fournisseurs.</p>
+      <p style="margin-bottom:16px;"><strong>🔓 Ce que vous trouverez à l'intérieur :</strong></p>
+      <p style="margin-bottom:12px;">👟 <strong>Nike Dunk & Nike Tech</strong> — Contacts directs de grossistes et liquidateurs Nike en Europe. Achetez des paires à partir de 25-40€ et revendez-les 80-150€ sur Vinted.</p>
+      <p style="margin-bottom:12px;">👟 <strong>Adidas Samba & Gazelle</strong> — Sources exclusives pour les silhouettes Adidas les plus tendance. Des prix de gros introuvables ailleurs.</p>
+      <p style="margin-bottom:12px;">💨 <strong>Dyson</strong> — Liquidateurs et reconditionneurs officiels Dyson. Aspirateurs, sèche-cheveux Airwrap, Supersonic — des produits à forte valeur avec des marges de 200-400%.</p>
+      <p style="margin-bottom:12px;">🥾 <strong>UGG</strong> — Fournisseurs pour les boots, chaussons et plateformes UGG. Parfait pour les pics de vente automne-hiver sur Vinted.</p>
+      <p style="margin-bottom:12px;">👔 <strong>Ralph Lauren & Tommy Hilfiger</strong> — Grossistes mode premium européens. Les polos, chemises et accessoires Ralph Lauren & Tommy sont parmi les articles les plus vendus sur Vinted toute l'année.</p>
+      <p style="margin-bottom:20px;">🎧 <strong>NOUVEAU 2026 — AirPods Max</strong> — Contact direct du fournisseur AirPods Max inclus dans l'édition 2026. L'un des produits Apple les plus recherchés sur Vinted, avec des marges de 150 à 300% selon les modèles.</p>
+      <p style="margin-bottom:20px;">🎁 <strong>BONUS EXCLUSIF — +100 Fournisseurs Supplémentaires</strong> : En bonus, vous recevez notre liste étendue de plus de 100 fournisseurs supplémentaires couvrant toutes les catégories : électronique, luxe accessible, sport, mode enfant, maison, beauté et bien plus encore. Ce bonus seul est valorisé à 49,99€.</p>
+      <p>Ce n'est pas juste un guide théorique — c'est un <strong>accès direct à des contacts que vous ne trouverez nulle part ailleurs</strong>. Des centaines de vendeurs ont déjà transformé leur activité Vinted grâce à ces sources. À 6,99€, c'est l'investissement le plus rentable que vous ferez cette année.</p>
+    </div>
+  </div>
+
+  <!-- ZONE 6: Avis Clients sur ce Produit -->
+  <div class="product-zone" style="background:var(--bg-section);padding-top:40px;padding-bottom:40px;">
+    <div style="max-width:1200px;margin:0 auto;padding:0 20px;">
+      <div class="zone-title">Avis Clients sur ce Produit</div>
+      <div class="reviews-carousel">
+        <div class="review-card">
+          <div class="review-header">
+            <img class="review-avatar" src="https://i.pravatar.cc/100?img=30" alt="Julie P.">
+            <div><div class="review-name">Julie P.</div><div class="review-date">18 mars 2025</div></div>
+          </div>
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">Ce guide a changé ma vie ! J'ai trouvé le fournisseur Nike Dunk listé dedans — j'achète des paires à 28€ et je les revends 90€ sur Vinted. En 3 semaines j'ai récupéré 10x mon investissement !</p>
+          <div class="review-verified">✓ Achat Vérifié</div>
+        </div>
+        <div class="review-card">
+          <div class="review-header">
+            <img class="review-avatar" src="https://i.pravatar.cc/100?img=35" alt="Marc L.">
+            <div><div class="review-name">Marc L.</div><div class="review-date">10 mars 2025</div></div>
+          </div>
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">Le fournisseur Adidas Samba est 🔥. J'en commande 10 paires par semaine, je revends chaque paire 60-80€ sur Vinted. Et le bonus des +100 fournisseurs m'a permis de diversifier avec du Dyson. Merci !</p>
+          <div class="review-verified">✓ Achat Vérifié</div>
+        </div>
+        <div class="review-card">
+          <div class="review-header">
+            <img class="review-avatar" src="https://i.pravatar.cc/100?img=40" alt="Emma G.">
+            <div><div class="review-name">Emma G.</div><div class="review-date">5 mars 2025</div></div>
+          </div>
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">Je me suis spécialisée dans les UGG et Ralph Lauren grâce à ce guide. Les fournisseurs sont vérifiés et sérieux. L'hiver dernier j'ai fait +800€ de bénéfice sur Vinted rien qu'avec les UGG.</p>
+          <div class="review-verified">✓ Achat Vérifié</div>
+        </div>
+        <div class="review-card">
+          <div class="review-header">
+            <img class="review-avatar" src="https://i.pravatar.cc/100?img=45" alt="Nicolas D.">
+            <div><div class="review-name">Nicolas D.</div><div class="review-date">22 mars 2025</div></div>
+          </div>
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">Le bonus des +100 fournisseurs est énorme ! J'ai notamment découvert des sources pour le Nike Tech que je ne connaissais pas. Pour 6,99€ c'est vraiment l'investissement le plus rentable de l'année.</p>
+          <div class="review-verified">✓ Achat Vérifié</div>
+        </div>
+      </div>
+      <div style="text-align:center;margin-top:24px;">
+        <a href="https://trustpilot.customerthread.com/?country=FR&shop=MonMagasinEbook&logo=&url=MonMagasinEbook.com" target="_blank" class="tp-btn-all">Voir tous les avis sur Trustpilot →</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Sticky ATC Mobile -->
+  <div class="sticky-atc">
+    <a href="https://tkfs.trackforces.com/aff_c?offer_id=104738&aff_id=1315&aff_sub5=2238554926882361&source=LES%20MEILLEURES%20FOURNISSEURS%20VINTED___https://i.imgur.com/CYkxMnS.png" target="_blank" class="btn-atc">
+      🛒 ACHETER MAINTENANT — 6,99€
+    </a>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="logo-footer">MonMagasinEbook</div>
+          <p>La référence française pour les guides Vinted premium.</p>
+          <a href="https://trustpilot.customerthread.com/?country=FR&shop=MonMagasinEbook&logo=&url=MonMagasinEbook.com" target="_blank" class="footer-tp">
+            <span style="color:var(--green-tp);font-weight:900;">Trustpilot</span>
+            <span style="color:var(--green-tp);">★★★★★</span>
+            <span>4,8/5 · Excellent</span>
+          </a>
+        </div>
+        <div class="footer-col"><h4>Navigation</h4><ul><li><a href="#home" onclick="navigateTo('home');return false;">Accueil</a></li><li><a href="#collection" onclick="navigateTo('collection');return false;">Collection</a></li><li><a href="#faq" onclick="navigateTo('faq');return false;">FAQ</a></li><li><a href="#contact" onclick="navigateTo('contact');return false;">Contact</a></li></ul></div>
+        <div class="footer-col"><h4>Aide</h4><ul><li><a href="#faq" onclick="navigateTo('faq');return false;">FAQ</a></li><li><a href="#contact" onclick="navigateTo('contact');return false;">Support</a></li></ul></div>
+        <div class="footer-col"><h4>Légal</h4><ul><li><a href="#contact" onclick="navigateTo('contact');return false;">Mentions légales</a></li><li><a href="#contact" onclick="navigateTo('contact');return false;">CGV</a></li></ul></div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2025 MonMagasinEbook.com</span>
+        <div class="footer-links"><a href="#contact" onclick="navigateTo('contact');return false;">Mentions légales</a><a href="#contact" onclick="navigateTo('contact');return false;">CGV</a></div>
+      </div>
+    </div>
+  </footer>
+</div>
+
+<!-- ===================== PAGE: FAQ ===================== -->
+<div class="page" id="faq">
+  <div class="collection-hero">
+    <div class="section-title">Questions Fréquentes</div>
+    <p style="color:var(--text-mid);font-size:16px;margin-top:8px;">Toutes les réponses à vos questions</p>
+  </div>
+  <section class="section">
+    <div class="container" style="max-width:900px;">
+      <div class="faq-tabs">
+        <button class="faq-tab active" onclick="switchTab('livraison')">📦 Livraison</button>
+        <button class="faq-tab" onclick="switchTab('commande')">🛒 Commande</button>
+        <button class="faq-tab" onclick="switchTab('retours')">↩️ Retours</button>
+        <button class="faq-tab" onclick="switchTab('boutique')">🏪 Boutique</button>
+        <button class="faq-tab" onclick="switchTab('technique')">⚙️ Technique</button>
+      </div>
+
+      <!-- LIVRAISON -->
+      <div class="faq-panel active" id="tab-livraison">
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFaq(this)">Comment recevoir mon ebook après l'achat ?<span class="faq-arrow">▼</span></div>
+          <div class="faq-answer">Votre ebook vous est envoyé immédiatement après la confirmation de paiement. Vous recevrez un email avec un lien de téléchargement sécurisé valable 30 jours. Si vous ne le recevez pas dans les 5 minutes, vérifiez vos spams ou contactez notre support.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFaq(this)">Combien de temps faut-il pour recevoir l'accès ?<span class="faq-arrow">▼</span></div>
+          <div class="faq-answer">L'accès est instantané — en moins de 2 minutes après le paiement, vous recevez votre email de confirmation avec le lien de téléchargement. C'est l'un des grands avantages des produits numériques !</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFaq(this)">Puis-je télécharger l'ebook sur plusieurs appareils ?<span class="faq-arrow">▼</span></div>
+          <div class="faq-answer">Oui, absolument ! Une fois téléchargé, l'ebook est en format PDF et vous pouvez le lire sur votre ordinateur, smartphone, tablette ou e-reader. Il n'y a aucune restriction d'appareils.</div>
+        </div>
+      </div>
+
+      <!-- COMMANDE -->
+      <div class="faq-panel" id="tab-commande">
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFaq(this)">Quels moyens de paiement acceptez-vous ?<span class="faq-arrow">▼</span></div>
+          <div class="faq-answer">Nous acceptons toutes les cartes bancaires (Visa, Mastercard, American Express), PayPal, et Apple Pay. Tous les paiements sont sécurisés et chiffrés SSL.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFaq(this)">Mon paiement est-il sécurisé ?<span class="faq-arrow">▼</span></div>
+          <div class="faq-answer">Absolument. Nous utilisons des passerelles de paiement certifiées PCI-DSS avec chiffrement SSL 256 bits. Vos données bancaires ne sont jamais stockées sur nos serveurs.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFaq(this)">Puis-je obtenir une facture pour mon achat ?<span class="faq-arrow">▼</span></div>
+          <div class="faq-answer">Oui, une facture est automatiquement générée et envoyée par email après chaque achat. Si vous avez besoin d'une facture avec TVA pour votre entreprise, contactez notre service client.</div>
+        </div>
+      </div>
+
+      <!-- RETOURS -->
+      <div class="faq-panel" id="tab-retours">
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFaq(this)">Quelle est votre politique de remboursement ?<span class="faq-arrow">▼</span></div>
+          <div class="faq-answer">Nous offrons une garantie satisfait ou remboursé de 30 jours sans condition. Si vous n'êtes pas satisfait pour quelque raison que ce soit, contactez-nous et nous vous remboursons intégralement sous 3-5 jours ouvrables.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFaq(this)">Comment demander un remboursement ?<span class="faq-arrow">▼</span></div>
+          <div class="faq-answer">Envoyez simplement un email à notre support avec votre numéro de commande et la raison de votre demande. Notre équipe traitera votre remboursement sous 24h ouvrables.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFaq(this)">Y a-t-il des frais de retour ?<span class="faq-arrow">▼</span></div>
+          <div class="faq-answer">Comme il s'agit de produits numériques, il n'y a pas de retour physique à effectuer. Le remboursement est traité directement sur votre moyen de paiement original, sans aucun frais.</div>
+        </div>
+      </div>
+
+      <!-- BOUTIQUE -->
+      <div class="faq-panel" id="tab-boutique">
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFaq(this)">Qui est derrière MonMagasinEbook ?<span class="faq-arrow">▼</span></div>
+          <div class="faq-answer">MonMagasinEbook est une boutique française spécialisée dans les guides numériques pour la revente sur Vinted. Nos guides sont créés par des experts ayant eux-mêmes vendu sur Vinted pendant plusieurs années.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFaq(this)">Les informations des guides sont-elles à jour ?<span class="faq-arrow">▼</span></div>
+          <div class="faq-answer">Oui, nos guides sont mis à jour régulièrement (au minimum tous les 3 mois) pour refléter les évolutions de Vinted et les nouveaux fournisseurs disponibles. Les mises à jour sont gratuites pour tous les acheteurs.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFaq(this)">Avez-vous un programme d'affiliation ?<span class="faq-arrow">▼</span></div>
+          <div class="faq-answer">Oui ! Nous avons un programme d'affiliation qui vous permet de gagner des commissions en recommandant nos guides. Contactez-nous pour plus d'informations sur les conditions et taux de commission.</div>
+        </div>
+      </div>
+
+      <!-- TECHNIQUE -->
+      <div class="faq-panel" id="tab-technique">
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFaq(this)">Dans quel format sont les ebooks ?<span class="faq-arrow">▼</span></div>
+          <div class="faq-answer">Tous nos guides sont disponibles en format PDF, compatible avec tous les appareils (PC, Mac, iPhone, Android, tablettes). Aucun logiciel spécial n'est nécessaire, Adobe Reader (gratuit) suffit.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFaq(this)">Je n'ai pas reçu mon email de confirmation, que faire ?<span class="faq-arrow">▼</span></div>
+          <div class="faq-answer">Vérifiez d'abord votre dossier spams/indésirables. Si l'email n'est pas là, attendez 10 minutes et vérifiez à nouveau. Si après 30 minutes vous n'avez toujours rien reçu, contactez notre support avec votre adresse email et nous vous renverrons l'accès immédiatement.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFaq(this)">Le lien de téléchargement a expiré, comment le renouveler ?<span class="faq-arrow">▼</span></div>
+          <div class="faq-answer">Les liens de téléchargement sont valables 30 jours. Si votre lien a expiré, contactez notre support avec votre numéro de commande et nous vous fournirons un nouveau lien dans les 24h.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-grid">
+        <div class="footer-brand"><div class="logo-footer">MonMagasinEbook</div><p>La référence française pour les guides Vinted premium.</p><a href="https://trustpilot.customerthread.com/?country=FR&shop=MonMagasinEbook&logo=&url=MonMagasinEbook.com" target="_blank" class="footer-tp"><span style="color:var(--green-tp);font-weight:900;">Trustpilot</span><span style="color:var(--green-tp);">★★★★★</span><span>4,8/5</span></a></div>
+        <div class="footer-col"><h4>Navigation</h4><ul><li><a href="#home" onclick="navigateTo('home');return false;">Accueil</a></li><li><a href="#collection" onclick="navigateTo('collection');return false;">Collection</a></li><li><a href="#faq" onclick="navigateTo('faq');return false;">FAQ</a></li><li><a href="#contact" onclick="navigateTo('contact');return false;">Contact</a></li></ul></div>
+        <div class="footer-col"><h4>Aide</h4><ul><li><a href="#faq" onclick="navigateTo('faq');return false;">FAQ</a></li><li><a href="#contact" onclick="navigateTo('contact');return false;">Support</a></li></ul></div>
+        <div class="footer-col"><h4>Légal</h4><ul><li><a href="#contact" onclick="navigateTo('contact');return false;">Mentions légales</a></li><li><a href="#contact" onclick="navigateTo('contact');return false;">CGV</a></li></ul></div>
+      </div>
+      <div class="footer-bottom"><span>© 2025 MonMagasinEbook.com</span><div class="footer-links"><a href="#contact" onclick="navigateTo('contact');return false;">Mentions légales</a><a href="#contact" onclick="navigateTo('contact');return false;">CGV</a></div></div>
+    </div>
+  </footer>
+</div>
+
+<!-- ===================== PAGE: CONTACT ===================== -->
+<div class="page" id="contact">
+  <div class="collection-hero">
+    <div class="section-title">Contact & Informations Légales</div>
+    <p style="color:var(--text-mid);font-size:16px;margin-top:8px;">Nous sommes là pour vous aider</p>
+  </div>
+  <section class="section">
+    <div class="container">
+      <div class="contact-layout">
+        <div>
+          <h2 style="font-size:22px;font-weight:800;color:var(--text-dark);margin-bottom:24px;">Envoyez-nous un Message</h2>
+          <div class="contact-form-group">
+            <label for="cname">Nom complet</label>
+            <input type="text" id="cname" placeholder="Votre nom...">
+          </div>
+          <div class="contact-form-group">
+            <label for="cemail">Adresse email</label>
+            <input type="email" id="cemail" placeholder="votre@email.com">
+          </div>
+          <div class="contact-form-group">
+            <label for="csujet">Sujet</label>
+            <input type="text" id="csujet" placeholder="Objet de votre message...">
+          </div>
+          <div class="contact-form-group">
+            <label for="cmessage">Message</label>
+            <textarea id="cmessage" rows="6" placeholder="Décrivez votre demande..."></textarea>
+          </div>
+          <button class="btn-submit" onclick="alert('Message envoyé ! Nous vous répondrons sous 24h.')">Envoyer le Message →</button>
+          <div style="margin-top:24px;padding:20px;background:var(--bg-light);border-radius:var(--radius-md);border:1px solid var(--border);">
+            <p style="font-size:14px;color:var(--text-mid);margin-bottom:8px;">📧 <strong>Email :</strong> <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="64171114140b161024090b0a09050305170d0a01060b0b0f4a070b09">[email&#160;protected]</a></p>
+            <p style="font-size:14px;color:var(--text-mid);margin-bottom:8px;">🕐 <strong>Horaires :</strong> Lun-Ven 9h-18h, Sam 10h-16h</p>
+            <p style="font-size:14px;color:var(--text-mid);">⏱️ <strong>Délai de réponse :</strong> Moins de 24h ouvrables</p>
+          </div>
+        </div>
+
+        <div style="display:flex;flex-direction:column;gap:20px;">
+          <div class="legal-card">
+            <h3>Mentions Légales</h3>
+            <p><strong>Raison sociale :</strong> MonMagasinEbook</p>
+            <p><strong>Domaine :</strong> MonMagasinEbook.com</p>
+            <p><strong>Siège social :</strong> France</p>
+            <p><strong>Email :</strong> <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="80ece5e7e1ecc0edefeeede1e7e1f3e9eee5e2efefebaee3efed">[email&#160;protected]</a></p>
+            <p>Ce site est un site e-commerce proposant des produits numériques sous forme d'ebooks.</p>
+          </div>
+
+          <div class="legal-card">
+            <h3>Conditions Générales de Vente</h3>
+            <p>Les produits vendus sur MonMagasinEbook.com sont des biens numériques. Conformément à la législation française, le droit de rétractation s'applique dans un délai de 14 jours sauf si le téléchargement a été effectué avec votre accord explicite.</p>
+            <p>Prix TTC. Paiement sécurisé. Livraison numérique immédiate.</p>
+          </div>
+
+          <div class="legal-card">
+            <h3>Politique de Confidentialité</h3>
+            <p>Vos données personnelles sont collectées uniquement pour le traitement de votre commande et ne sont jamais revendues à des tiers. Conformément au RGPD, vous disposez d'un droit d'accès, de modification et de suppression de vos données.</p>
+            <p>Pour exercer ces droits : <strong><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="0272706b7463617b426f6d6c6f636563716b6c67606d6d692c616d6f">[email&#160;protected]</a></strong></p>
+          </div>
+
+          <div class="legal-card">
+            <h3>Garantie & Remboursement</h3>
+            <p>Nous offrons une garantie satisfait ou remboursé de <strong>30 jours</strong>. Si vous n'êtes pas satisfait, contactez notre support et nous procéderons au remboursement intégral sans poser de questions.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-grid">
+        <div class="footer-brand"><div class="logo-footer">MonMagasinEbook</div><p>La référence française pour les guides Vinted premium.</p><a href="https://trustpilot.customerthread.com/?country=FR&shop=MonMagasinEbook&logo=&url=MonMagasinEbook.com" target="_blank" class="footer-tp"><span style="color:var(--green-tp);font-weight:900;">Trustpilot</span><span style="color:var(--green-tp);">★★★★★</span><span>4,8/5</span></a></div>
+        <div class="footer-col"><h4>Navigation</h4><ul><li><a href="#home" onclick="navigateTo('home');return false;">Accueil</a></li><li><a href="#collection" onclick="navigateTo('collection');return false;">Collection</a></li><li><a href="#faq" onclick="navigateTo('faq');return false;">FAQ</a></li><li><a href="#contact" onclick="navigateTo('contact');return false;">Contact</a></li></ul></div>
+        <div class="footer-col"><h4>Aide</h4><ul><li><a href="#faq" onclick="navigateTo('faq');return false;">FAQ</a></li><li><a href="#contact" onclick="navigateTo('contact');return false;">Support</a></li></ul></div>
+        <div class="footer-col"><h4>Légal</h4><ul><li><a href="#contact" onclick="navigateTo('contact');return false;">Mentions légales</a></li><li><a href="#contact" onclick="navigateTo('contact');return false;">CGV</a></li></ul></div>
+      </div>
+      <div class="footer-bottom"><span>© 2025 MonMagasinEbook.com</span><div class="footer-links"><a href="#contact" onclick="navigateTo('contact');return false;">Mentions légales</a><a href="#contact" onclick="navigateTo('contact');return false;">CGV</a></div></div>
+    </div>
+  </footer>
+</div>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+// ========== SPA ROUTING ==========
+function navigateTo(page) {
+  document.querySelectorAll('.page').forEach(p => {
+    p.style.display = 'none';
+    p.classList.remove('active');
+  });
+  const target = document.getElementById(page);
+  if (target) {
+    target.style.display = 'block';
+    target.classList.add('active');
+    window.scrollTo(0, 0);
+  }
+  window.location.hash = page;
+  // Track FB PageView
+  if (typeof fbq !== 'undefined') { fbq('track', 'PageView'); }
+}
+
+window.addEventListener('hashchange', () => {
+  const hash = location.hash.slice(1);
+  navigateTo(hash || 'home');
+});
+
+window.addEventListener('DOMContentLoaded', () => {
+  const hash = location.hash.slice(1);
+  navigateTo(hash || 'home');
+});
+
+// ========== MOBILE MENU ==========
+function openMenu() { document.getElementById('mobile-menu').classList.add('open'); document.body.style.overflow = 'hidden'; }
+function closeMenu() { document.getElementById('mobile-menu').classList.remove('open'); document.body.style.overflow = ''; }
+
+// ========== ANNOUNCEMENT SLIDESHOW ==========
+(function() {
+  const slider = document.getElementById('annSlider');
+  if (!slider) return;
+  const slides = slider.querySelectorAll('.ann-slide');
+  let current = 0;
+  const total = slides.length;
+  setInterval(() => {
+    current = (current + 1) % total;
+    slider.style.transform = `translateX(-${current * 100}%)`;
+  }, 3500);
+})();
+
+// ========== FAQ TOGGLE ==========
+function toggleFaq(el) {
+  const item = el.parentElement;
+  const isOpen = item.classList.contains('open');
+  // Close all in same panel
+  const panel = item.closest('.faq-panel') || document.querySelector('.page.active');
+  panel.querySelectorAll('.faq-item.open').forEach(i => i.classList.remove('open'));
+  if (!isOpen) item.classList.add('open');
+}
+
+// ========== FAQ TABS ==========
+function switchTab(tabId) {
+  document.querySelectorAll('.faq-tab').forEach(t => t.classList.remove('active'));
+  document.querySelectorAll('.faq-panel').forEach(p => p.classList.remove('active'));
+  event.target.classList.add('active');
+  const panel = document.getElementById('tab-' + tabId);
+  if (panel) panel.classList.add('active');
+}
+
+// ========== GALLERY ==========
+function changeMainImg(thumb, src) {
+  document.getElementById('mainProductImg').src = src;
+  document.querySelectorAll('.thumb-row img').forEach(t => t.classList.remove('active'));
+  thumb.classList.add('active');
+}
+
+// ========== SCROLL ANIMATIONS ==========
+const observerOptions = { threshold: 0.12, rootMargin: '0px 0px -40px 0px' };
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.style.opacity = '1';
+      entry.target.style.transform = 'translateY(0)';
+    }
+  });
+}, observerOptions);
+
+document.querySelectorAll('.animate-in').forEach(el => {
+  el.style.opacity = '0';
+  el.style.transform = 'translateY(24px)';
+  el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+  observer.observe(el);
+});
+
+// ========== STICKY HEADER EFFECT ==========
+window.addEventListener('scroll', () => {
+  const header = document.getElementById('header');
+  if (window.scrollY > 10) {
+    header.style.boxShadow = '0 4px 24px rgba(0,0,0,0.1)';
+  } else {
+    header.style.boxShadow = '0 1px 3px rgba(0,0,0,0.08)';
+  }
+});
+</script>
+</body>
+</html>
